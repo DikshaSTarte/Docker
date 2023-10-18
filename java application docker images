@@ -232,4 +232,11 @@ ad13f653c1f6fd898325a93040b61db01b9eda3a38d8e24fe45a27d274f84206
 root@ip-172-31-42-149:~/mydocker# docker ps
 CONTAINER ID   IMAGE         COMMAND             CREATED         STATUS         PORTS                                       NAMES
 ad13f653c1f6   myjavaapp:1   "catalina.sh run"   8 seconds ago   Up 7 seconds   0.0.0.0:8081->8080/tcp, :::8081->8080/tcp   myc1
-root@ip-172-31-42-149:~/mydocker#
+
+
+------------------------------------------------------------------------------------
+Here we use AWS s3 bucket and in that we can upload our java application. we can copy object url 
+and use wget paste object url  to get war file of our application
+
+
+then with the help of public ip and application name we can access it via internet.
