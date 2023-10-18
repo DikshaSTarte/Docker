@@ -1,0 +1,235 @@
+MFS088@MFS088 MINGW64 ~/Downloads (main)
+$ ssh -i "MyDockerKey13Oct2023.pem" ubuntu@ec2-18-221-100-43.us-east-2.compute.amazonaws.com
+
+ubuntu@ip-172-31-42-149:~$ sudo -i
+root@ip-172-31-42-149:~# apt-get update
+root@ip-172-31-42-149:~# apt-get install apache2
+root@ip-172-31-42-149:~# service apache2 start
+root@ip-172-31-42-149:~# service apache2 status
+root@ip-172-31-42-149:~# ls
+Dockerfile  Dockerfile2  install-docker.sh  mydocker  snap
+root@ip-172-31-42-149:~# cd mydocker
+root@ip-172-31-42-149:~/mydocker# ls
+Dockerfile
+root@ip-172-31-42-149:~/mydocker# vi Dockerfile
+root@ip-172-31-42-149:~/mydocker# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@ip-172-31-42-149:~/mydocker# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+
+  
+root@ip-172-31-42-149:~# ls
+Dockerfile  Dockerfile2  install-docker.sh  mydocker  snap
+  
+root@ip-172-31-42-149:~# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+  
+root@ip-172-31-42-149:~# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+  
+root@ip-172-31-42-149:~# docker build -t myjenkins:1 .
+[+] Building 0.4s (6/6) FINISHED                                 docker:default
+ => [internal] load build definition from Dockerfile                       0.0s
+ => => transferring dockerfile: 148B                                       0.0s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:22.04            0.2s
+ => [1/2] FROM docker.io/library/ubuntu:22.04@sha256:2b7412e6465c3c7fc5bb  0.0s
+ => CACHED [2/2] RUN apt-get update                                        0.0s
+ => exporting to image                                                     0.0s
+ => => exporting layers                                                    0.0s
+ => => writing image sha256:ecc1d5ae64e7aebe2ea2abfb3e24176590979eebbd5e8  0.0s
+ => => naming to docker.io/library/myjenkins:1                             0.0s
+  
+root@ip-172-31-42-149:~# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+  
+root@ip-172-31-42-149:~# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+myjenkins    1         ecc1d5ae64e7   22 hours ago   122MB
+  
+root@ip-172-31-42-149:~# docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@ip-172-31-42-149:~# docker run --name myc1 -d -p 8081:8080 myjenkins:1
+  
+root@ip-172-31-42-149:~# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+  
+root@ip-172-31-42-149:~# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+myjenkins    1         ecc1d5ae64e7   22 hours ago   122MB
+  
+root@ip-172-31-42-149:~# wget https://get.jenkins.io/war-stable/2.414.2/jenkins.war
+--2023-10-18 06:05:11--  https://get.jenkins.io/war-stable/2.414.2/jenkins.war
+Resolving get.jenkins.io (get.jenkins.io)... 20.7.178.24, 2603:1030:408:5::15a
+Connecting to get.jenkins.io (get.jenkins.io)|20.7.178.24|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://ftp-chi.osuosl.org/pub/jenkins/war-stable/2.414.2/jenkins.war [following]
+--2023-10-18 06:05:11--  https://ftp-chi.osuosl.org/pub/jenkins/war-stable/2.414.2/jenkins.war
+Resolving ftp-chi.osuosl.org (ftp-chi.osuosl.org)... 64.50.236.52, 2600:3402:200:227::2
+Connecting to ftp-chi.osuosl.org (ftp-chi.osuosl.org)|64.50.236.52|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 89532729 (85M) [application/x-java-archive]
+Saving to: ‘jenkins.war’
+
+jenkins.war         100%[===================>]  85.38M  18.0MB/s    in 9.2s
+
+2023-10-18 06:05:20 (9.27 MB/s) - ‘jenkins.war’ saved [89532729/89532729]
+
+root@ip-172-31-42-149:~# ls
+Dockerfile  Dockerfile2  install-docker.sh  jenkins.war  mydocker  snap
+  
+
+root@ip-172-31-42-149:~# docker rm $(docker ps -a -q)
+5d89cca7dd98
+
+root@ip-172-31-42-149:~# docker rmi $(docker images -q)
+Untagged: myjenkins:1
+Deleted: sha256:ecc1d5ae64e7aebe2ea2abfb3e24176590979eebbd5e8168f4eddccaae8f065b
+  
+root@ip-172-31-42-149:~# ls
+Dockerfile  Dockerfile2  install-docker.sh  jenkins.war  mydocker  snap
+  
+root@ip-172-31-42-149:~# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+  
+root@ip-172-31-42-149:~# docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+  
+root@ip-172-31-42-149:~# ls
+Dockerfile  Dockerfile2  install-docker.sh  jenkins.war  mydocker  snap
+
+
+
+
+root@ip-172-31-42-149:~/mydocker# vi Dockerfile
+
+
+root@ip-172-31-42-149:~/mydocker# docker rmi $(docker images -q)
+Untagged: myjavaapp:1
+Deleted: sha256:6cf40035397bf4e4b4ff311d2cf0d0ffc444076aeb37f2ab33d001fa567558e5
+
+  
+root@ip-172-31-42-149:~/mydocker# docker build -t myjavaapp:1 .
+[+] Building 15.2s (7/7) FINISHED                                docker:default
+ => [internal] load build definition from Dockerfile                       0.1s
+ => => transferring dockerfile: 170B                                       0.0s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [internal] load metadata for docker.io/library/tomcat:8.5.37-jre8      0.9s
+ => [internal] load build context                                          0.0s
+ => => transferring context: 41B                                           0.0s
+ => [1/2] FROM docker.io/library/tomcat:8.5.37-jre8@sha256:5396af6087334  13.6s
+ => => resolve docker.io/library/tomcat:8.5.37-jre8@sha256:5396af60873341  0.0s
+ => => sha256:0a108aa2667933b852b8d003f97b344d014fcd7e06a 4.34MB / 4.34MB  0.3s
+ => => sha256:741437d97401b83849ccbfe4ed8964049b7520816 45.34MB / 45.34MB  0.8s
+ => => sha256:34d8874714d74b636739b8a52204650a664fca8ff 10.78MB / 10.78MB  0.5s
+ => => sha256:5396af6087334178544ec0ccda6a33bbdb29be13660 2.04kB / 2.04kB  0.0s
+ => => sha256:2429af8ef1a67992a18229e01809db3b001cfac178e 2.63kB / 2.63kB  0.0s
+ => => sha256:a0de3d800756804999d8225fecfaee17b4d073b70 15.66kB / 15.66kB  0.0s
+ => => sha256:eea0f08c7492aa49cb62b7fc7cf5a3b91e5c83c 852.91kB / 852.91kB  0.6s
+ => => sha256:f11a643c4a8511e3f7d00a7f7c01059bf80487683399289 131B / 131B  0.8s
+ => => sha256:ca74b3d90c15cc3066bb46f8b6cdb617805b39e46ba39b8 247B / 247B  0.6s
+ => => sha256:05eafed73b65f1719e1ad5446e1f57859feb2f7 122.12MB / 122.12MB  2.7s
+ => => extracting sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1e  3.8s
+ => => sha256:f24105f282aadee3e59151424724bc5962ef2aea0b9516f 149B / 149B  0.9s
+ => => sha256:e27e73cbbd3f3821d48e165fd1c6905d23efe96 528.44kB / 528.44kB  1.0s
+ => => sha256:10cd1b45b7e6793be4263757b089fc56c210ef909 10.62MB / 10.62MB  1.5s
+ => => sha256:ba1e4a237c0c4802527d8d7b716f827c9de069cce2cdca9 165B / 165B  1.1s
+ => => extracting sha256:34d8874714d74b636739b8a52204650a664fca8ff9741dd6  0.6s
+ => => extracting sha256:0a108aa2667933b852b8d003f97b344d014fcd7e06a0c0e6  0.2s
+ => => extracting sha256:eea0f08c7492aa49cb62b7fc7cf5a3b91e5c83c182cecdda  0.1s
+ => => extracting sha256:ca74b3d90c15cc3066bb46f8b6cdb617805b39e46ba39b89  0.0s
+ => => extracting sha256:f11a643c4a8511e3f7d00a7f7c01059bf804876833992895  0.0s
+ => => extracting sha256:05eafed73b65f1719e1ad5446e1f57859feb2f71f0b21d5f  6.7s
+ => => extracting sha256:f24105f282aadee3e59151424724bc5962ef2aea0b9516f7  0.0s
+ => => extracting sha256:e27e73cbbd3f3821d48e165fd1c6905d23efe9651ed5f7d8  0.0s
+ => => extracting sha256:10cd1b45b7e6793be4263757b089fc56c210ef909320d0cc  0.5s
+ => => extracting sha256:ba1e4a237c0c4802527d8d7b716f827c9de069cce2cdca93  0.0s
+ => [2/2] COPY mahaLogin-2.0.war /usr/local/tomcat/webapps/                0.4s
+ => exporting to image                                                     0.2s
+ => => exporting layers                                                    0.1s
+ => => writing image sha256:ef494fadc6eee5e6c0d077b90ee1a6ebb93efd69cf474  0.0s
+ => => naming to docker.io/library/myjavaapp:1                             0.0s
+  
+root@ip-172-31-42-149:~/mydocker# ls
+Dockerfile  mahaLogin-2.0.war
+  
+root@ip-172-31-42-149:~/mydocker# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+myjavaapp    1         ef494fadc6ee   15 seconds ago   480MB
+  
+root@ip-172-31-42-149:~/mydocker# docker run --name myc1 -d -p 8081:8080 myjavaapp:1
+a6855cb51b42ccaba2b301b76a23164f7a48d9e8eeaa701a0560fe7eba1effaa
+root@ip-172-31-42-149:~/mydocker# docker ps
+CONTAINER ID   IMAGE         COMMAND             CREATED         STATUS         PORTS                                       NAMES
+a6855cb51b42   myjavaapp:1   "catalina.sh run"   5 seconds ago   Up 3 seconds   0.0.0.0:8081->8080/tcp, :::8081->8080/tcp   myc1
+root@ip-172-31-42-149:~/mydocker# docker rmi $(docker images -q)
+Error response from daemon: conflict: unable to delete ef494fadc6ee (cannot be forced) - image is being used by running container a6855cb51b42
+root@ip-172-31-42-149:~/mydocker# docker rm $(docker ps -a -q)
+Error response from daemon: You cannot remove a running container a6855cb51b42ccaba2b301b76a23164f7a48d9e8eeaa701a0560fe7eba1effaa. Stop the container before attempting removal or force remove
+root@ip-172-31-42-149:~/mydocker# docker rm $(docker ps -a -q)-f
+Error response from daemon: No such container: a6855cb51b42-f
+root@ip-172-31-42-149:~/mydocker# docker rm $(docker ps -a -q) -f
+a6855cb51b42
+root@ip-172-31-42-149:~/mydocker# docker rmi $(docker images -q)
+Untagged: myjavaapp:1
+Deleted: sha256:ef494fadc6eee5e6c0d077b90ee1a6ebb93efd69cf4747749f3a89a24b79b856
+root@ip-172-31-42-149:~/mydocker# ls
+Dockerfile  mahaLogin-2.0.war
+root@ip-172-31-42-149:~/mydocker# ^C
+root@ip-172-31-42-149:~/mydocker# vi Dockerfile
+root@ip-172-31-42-149:~/mydocker# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+
+root@ip-172-31-42-149:~/mydocker# ls
+Dockerfile
+  
+root@ip-172-31-42-149:~/mydocker# wget https://mahalogin18aug.s3.us-east-2.amazonaws.com/mahaLogin.war
+--2023-10-18 07:04:10--  https://mahalogin18aug.s3.us-east-2.amazonaws.com/mahaLogin.war
+Resolving mahalogin18aug.s3.us-east-2.amazonaws.com (mahalogin18aug.s3.us-east-2.amazonaws.com)... 3.5.131.146, 52.219.178.114, 52.219.101.210, ...
+Connecting to mahalogin18aug.s3.us-east-2.amazonaws.com (mahalogin18aug.s3.us-east-2.amazonaws.com)|3.5.131.146|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 17453068 (17M) [binary/octet-stream]
+Saving to: ‘mahaLogin.war’
+
+mahaLogin.war       100%[===================>]  16.64M  --.-KB/s    in 0.1s
+
+2023-10-18 07:04:10 (114 MB/s) - ‘mahaLogin.war’ saved [17453068/17453068]
+
+root@ip-172-31-42-149:~/mydocker# ls
+Dockerfile  mahaLogin.war
+root@ip-172-31-42-149:~/mydocker# vi Dockerfile
+root@ip-172-31-42-149:~/mydocker# ls
+Dockerfile  mahaLogin.war
+root@ip-172-31-42-149:~/mydocker# docker build -t myjavaapp:1
+ERROR: "docker buildx build" requires exactly 1 argument.
+See 'docker buildx build --help'.
+
+Usage:  docker buildx build [OPTIONS] PATH | URL | -
+
+Start a build
+root@ip-172-31-42-149:~/mydocker# docker build -t myjavaapp:1 .
+[+] Building 1.0s (7/7) FINISHED                                 docker:default
+ => [internal] load build definition from Dockerfile                       0.0s
+ => => transferring dockerfile: 164B                                       0.0s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [internal] load metadata for docker.io/library/tomcat:8.5.37-jre8      0.2s
+ => [internal] load build context                                          0.3s
+ => => transferring context: 17.46MB                                       0.2s
+ => CACHED [1/2] FROM docker.io/library/tomcat:8.5.37-jre8@sha256:5396af6  0.0s
+ => [2/2] COPY mahaLogin.war /usr/local/tomcat/webapps/                    0.2s
+ => exporting to image                                                     0.1s
+ => => exporting layers                                                    0.1s
+ => => writing image sha256:c283236aea187ae5f1c00cc315b68a3ec1f3fcdc8907e  0.0s
+ => => naming to docker.io/library/myjavaapp:1                             0.0s
+root@ip-172-31-42-149:~/mydocker# docker run -name myc1 -d -p 8081:8080 myjavaapp:1
+unknown shorthand flag: 'n' in -name
+See 'docker run --help'.
+root@ip-172-31-42-149:~/mydocker# docker run --name myc1 -d -p 8081:8080 myjavaapp:1
+ad13f653c1f6fd898325a93040b61db01b9eda3a38d8e24fe45a27d274f84206
+root@ip-172-31-42-149:~/mydocker# docker ps
+CONTAINER ID   IMAGE         COMMAND             CREATED         STATUS         PORTS                                       NAMES
+ad13f653c1f6   myjavaapp:1   "catalina.sh run"   8 seconds ago   Up 7 seconds   0.0.0.0:8081->8080/tcp, :::8081->8080/tcp   myc1
+root@ip-172-31-42-149:~/mydocker#
