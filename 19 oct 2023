@@ -1,0 +1,267 @@
+MFS088@MFS088 MINGW64 ~/Downloads (main)
+$ ssh -i "DockerKey18Oct2023.pem" ubuntu@ec2-3-19-209-124.us-east-2.compute.amazonaws.com
+
+ubuntu@ip-172-31-37-200:~$ sudo -i
+root@ip-172-31-37-200:~# apt-get update
+
+root@ip-172-31-37-200:~# curl -fsSL https://get.docker.com -o install-docker.sh
+root@ip-172-31-37-200:~# sh install-docker.sh
+# Executing docker install script, commit: e5543d473431b782227f8908005543bb4389b8de
+Warning: the "docker" command appears to already exist on this system.
+
+If you already have Docker installed, this script can cause trouble, which is
+why we're displaying this warning and provide the opportunity to cancel the
+installation.
+
+If you installed the current Docker package using this script and are using it
+again to update Docker, you can safely ignore this message.
+
+You may press Ctrl+C now to abort this script.
++ sleep 20
++ sh -c apt-get update -qq >/dev/null
++ sh -c DEBIAN_FRONTEND=noninteractive apt-get install -y -qq apt-transport-https ca-certificates curl >/dev/null
++ sh -c install -m 0755 -d /etc/apt/keyrings
++ sh -c curl -fsSL "https://download.docker.com/linux/ubuntu/gpg" | gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg
++ sh -c chmod a+r /etc/apt/keyrings/docker.gpg
++ sh -c echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu focal stable" > /etc/apt/sources.list.d/docker.list
++ sh -c apt-get update -qq >/dev/null
++ sh -c DEBIAN_FRONTEND=noninteractive apt-get install -y -qq docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-ce-rootless-extras docker-buildx-plugin >/dev/null
++ sh -c docker version
+Client: Docker Engine - Community
+ Version:           24.0.6
+ API version:       1.43
+ Go version:        go1.20.7
+ Git commit:        ed223bc
+ Built:             Mon Sep  4 12:32:12 2023
+ OS/Arch:           linux/amd64
+ Context:           default
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          24.0.6
+  API version:      1.43 (minimum version 1.12)
+  Go version:       go1.20.7
+  Git commit:       1a79695
+  Built:            Mon Sep  4 12:32:12 2023
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.6.24
+  GitCommit:        61f9fd88f79f081d64d6fa3bb1a0dc71ec870523
+ runc:
+  Version:          1.1.9
+  GitCommit:        v1.1.9-0-gccaecfc
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+
+================================================================================
+
+To run Docker as a non-privileged user, consider setting up the
+Docker daemon in rootless mode for your user:
+
+    dockerd-rootless-setuptool.sh install
+
+Visit https://docs.docker.com/go/rootless/ to learn about rootless mode.
+
+
+To run the Docker daemon as a fully privileged service, but granting non-root
+users access, refer to https://docs.docker.com/go/daemon-access/
+
+WARNING: Access to the remote API on a privileged Docker daemon is equivalent
+         to root access on the host. Refer to the 'Docker daemon attack surface'
+         documentation for details: https://docs.docker.com/go/attack-surface/
+
+================================================================================
+
+root@ip-172-31-37-200:~# sudo sh install-docker.sh
+# Executing docker install script, commit: e5543d473431b782227f8908005543bb4389b8de
+Warning: the "docker" command appears to already exist on this system.
+
+If you already have Docker installed, this script can cause trouble, which is
+why we're displaying this warning and provide the opportunity to cancel the
+installation.
+
+If you installed the current Docker package using this script and are using it
+again to update Docker, you can safely ignore this message.
+
+You may press Ctrl+C now to abort this script.
++ sleep 20
+ls
++ sh -c apt-get update -qq >/dev/null
++ sh -c DEBIAN_FRONTEND=noninteractive apt-get install -y -qq apt-transport-https ca-certificates curl >/dev/null
++ sh -c install -m 0755 -d /etc/apt/keyrings
++ sh -c curl -fsSL "https://download.docker.com/linux/ubuntu/gpg" | gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg
++ sh -c chmod a+r /etc/apt/keyrings/docker.gpg
++ sh -c echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu focal stable" > /etc/apt/sources.list.d/docker.list
++ sh -c apt-get update -qq >/dev/null
++ sh -c DEBIAN_FRONTEND=noninteractive apt-get install -y -qq docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-ce-rootless-extras docker-buildx-plugin >/dev/null
++ sh -c docker version
+Client: Docker Engine - Community
+ Version:           24.0.6
+ API version:       1.43
+ Go version:        go1.20.7
+ Git commit:        ed223bc
+ Built:             Mon Sep  4 12:32:12 2023
+ OS/Arch:           linux/amd64
+ Context:           default
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          24.0.6
+  API version:      1.43 (minimum version 1.12)
+  Go version:       go1.20.7
+  Git commit:       1a79695
+  Built:            Mon Sep  4 12:32:12 2023
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.6.24
+  GitCommit:        61f9fd88f79f081d64d6fa3bb1a0dc71ec870523
+ runc:
+  Version:          1.1.9
+  GitCommit:        v1.1.9-0-gccaecfc
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+
+================================================================================
+
+To run Docker as a non-privileged user, consider setting up the
+Docker daemon in rootless mode for your user:
+
+    dockerd-rootless-setuptool.sh install
+
+Visit https://docs.docker.com/go/rootless/ to learn about rootless mode.
+
+
+To run the Docker daemon as a fully privileged service, but granting non-root
+users access, refer to https://docs.docker.com/go/daemon-access/
+
+WARNING: Access to the remote API on a privileged Docker daemon is equivalent
+         to root access on the host. Refer to the 'Docker daemon attack surface'
+         documentation for details: https://docs.docker.com/go/attack-surface/
+
+================================================================================
+
+root@ip-172-31-37-200:~# ls
+Dockerfile  install-docker.sh  snap
+root@ip-172-31-37-200:~# ls
+Dockerfile  install-docker.sh  snap
+root@ip-172-31-37-200:~# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@ip-172-31-37-200:~# cd /home/ubuntu/mydockervolume
+-bash: cd: /home/ubuntu/mydockervolume: No such file or directory
+root@ip-172-31-37-200:~# cd /home/ubuntu/
+root@ip-172-31-37-200:/home/ubuntu# ls
+mydockervlume
+root@ip-172-31-37-200:/home/ubuntu# cd mydockervolume
+-bash: cd: mydockervolume: No such file or directory
+root@ip-172-31-37-200:/home/ubuntu# ls
+mydockervlume
+root@ip-172-31-37-200:/home/ubuntu# rm -r mydockervlume
+root@ip-172-31-37-200:/home/ubuntu# ls
+root@ip-172-31-37-200:/home/ubuntu# mkdir mydockervolume
+root@ip-172-31-37-200:/home/ubuntu# ls
+mydockervolume
+root@ip-172-31-37-200:/home/ubuntu# cd mydockervolume
+root@ip-172-31-37-200:/home/ubuntu/mydockervolume# ls
+root@ip-172-31-37-200:/home/ubuntu/mydockervolume# docker run --name myc1 -v /myvolume -d maha4iac/myjavaapp:1
+docker: Error response from daemon: Conflict. The container name "/myc1" is already in use by container "46755ab89d7cf90f2853e715bff14ca1ed9174d82c7535bea6d59696229cef73". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+root@ip-172-31-37-200:/home/ubuntu/mydockervolume# sudo -i
+root@ip-172-31-37-200:~# apt-get update
+Hit:1 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:4 https://download.docker.com/linux/ubuntu focal InRelease
+Hit:5 http://security.ubuntu.com/ubuntu focal-security InRelease
+Reading package lists... Done
+root@ip-172-31-37-200:~# docker run --name myC1 -v /myvolume -d maha4iac/myjavaapp:1
+docker: Error response from daemon: Conflict. The container name "/myC1" is already in use by container "24cf3eed9792fbe6e51d3d0a58e174248583775acf804626c953494b574e4115". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+root@ip-172-31-37-200:~# docker run --name myContainer24 -v /myvolume -d maha4iac/myjavaapp:1
+8a3ea7d16a155d1cef0a7a54051a3cab381094fe2e4004f90430893f2d8d25c7
+root@ip-172-31-37-200:~# ls
+Dockerfile  install-docker.sh  snap
+root@ip-172-31-37-200:~# docker exec -it myContainer24
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Execute a command in a running container
+root@ip-172-31-37-200:~# docker exec -it myContainer24 /bin/bash
+root@8a3ea7d16a15:/usr/local/tomcat# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         7.6G  3.3G  4.4G  43% /
+tmpfs            64M     0   64M   0% /dev
+tmpfs           478M     0  478M   0% /sys/fs/cgroup
+shm              64M     0   64M   0% /dev/shm
+/dev/root       7.6G  3.3G  4.4G  43% /myvolume
+tmpfs           478M     0  478M   0% /proc/acpi
+tmpfs           478M     0  478M   0% /proc/scsi
+tmpfs           478M     0  478M   0% /sys/firmware
+root@8a3ea7d16a15:/usr/local/tomcat# cd /myvolume
+root@8a3ea7d16a15:/myvolume# ls
+root@8a3ea7d16a15:/myvolume# touch myContainer24file
+root@8a3ea7d16a15:/myvolume# ls
+myContainer24file
+root@8a3ea7d16a15:/myvolume# exit
+exit
+root@ip-172-31-37-200:~# docker run --name myContainer25 -v /home/ubuntu/mydockervolume/myvolume -d maha4iac/myjavaapp:1
+18b226197e3928b91afbfdc949c9bbe6b0436daf370ee16f80005dfb597c11c6
+root@ip-172-31-37-200:~# docker ps
+CONTAINER ID   IMAGE                  COMMAND             CREATED          STATUS          PORTS      NAMES
+18b226197e39   maha4iac/myjavaapp:1   "catalina.sh run"   13 seconds ago   Up 12 seconds   8080/tcp   myContainer25
+8a3ea7d16a15   maha4iac/myjavaapp:1   "catalina.sh run"   4 minutes ago    Up 4 minutes    8080/tcp   myContainer24
+root@ip-172-31-37-200:~# docker exec -it myContainer25 /bin/bash
+root@18b226197e39:/usr/local/tomcat# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         7.6G  3.3G  4.4G  44% /
+tmpfs            64M     0   64M   0% /dev
+tmpfs           478M     0  478M   0% /sys/fs/cgroup
+shm              64M     0   64M   0% /dev/shm
+/dev/root       7.6G  3.3G  4.4G  44% /etc/hosts
+tmpfs           478M     0  478M   0% /proc/acpi
+tmpfs           478M     0  478M   0% /proc/scsi
+tmpfs           478M     0  478M   0% /sys/firmware
+root@18b226197e39:/usr/local/tomcat# exit
+exit
+root@ip-172-31-37-200:~# docker s
+docker: 's' is not a docker command.
+See 'docker --help'
+root@ip-172-31-37-200:~# docker ps
+CONTAINER ID   IMAGE                  COMMAND             CREATED              STATUS              PORTS      NAMES
+18b226197e39   maha4iac/myjavaapp:1   "catalina.sh run"   About a minute ago   Up About a minute   8080/tcp   myContainer25
+8a3ea7d16a15   maha4iac/myjavaapp:1   "catalina.sh run"   6 minutes ago        Up 6 minutes        8080/tcp   myContainer24
+root@ip-172-31-37-200:~# docker rm 18b226197e39 8a3ea7d16a15  -f
+18b226197e39
+8a3ea7d16a15
+root@ip-172-31-37-200:~# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@ip-172-31-37-200:~# docker images
+REPOSITORY           TAG       IMAGE ID       CREATED       SIZE
+maha4iac/myjavaapp   1         b658109e1be1   8 weeks ago   480MB
+root@ip-172-31-37-200:~# docker rmi maha4iac/myjavaapp
+Error response from daemon: No such image: maha4iac/myjavaapp:latest
+root@ip-172-31-37-200:~# docker rmi maha4iac/myjavaapp:1
+Error response from daemon: conflict: unable to remove repository reference "maha4iac/myjavaapp:1" (must force) - container 46755ab89d7c is using its referenced image b658109e1be1
+root@ip-172-31-37-200:~# docker rmi maha4iac/myjavaapp:1 -f
+Untagged: maha4iac/myjavaapp:1
+Untagged: maha4iac/myjavaapp@sha256:e4907f910a4e78398d13043d43b555c7dbbe98eae9e2975f5bb0df0e4a9ba0d5
+Deleted: sha256:b658109e1be1009e56209deafd6f54c2d4189b3fbb3d07460a94d7409d4ff9b3
+root@ip-172-31-37-200:~# ls
+Dockerfile  install-docker.sh  snap
+root@ip-172-31-37-200:~# docker iamges
+docker: 'iamges' is not a docker command.
+See 'docker --help'
+root@ip-172-31-37-200:~# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+root@ip-172-31-37-200:~# docker ps -a
+CONTAINER ID   IMAGE          COMMAND             CREATED          STATUS                        PORTS                                       NAMES
+fa518e24a676   b658109e1be1   "catalina.sh run"   28 minutes ago   Exited (143) 18 minutes ago                                               myC2
+24cf3eed9792   b658109e1be1   "catalina.sh run"   48 minutes ago   Exited (143) 18 minutes ago                                               myC1
+46755ab89d7c   b658109e1be1   "catalina.sh run"   20 hours ago     Exited (143) 19 hours ago                                                 myc1
+68fe55b950a5   639717297cec   "Catalina.sh run"   20 hours ago     Created                       0.0.0.0:8081->8080/tcp, :::8081->8080/tcp   mycontainer1
+root@ip-172-31-37-200:~# Connection to ec2-3-19-209-124.us-east-2.compute.amazonaws.com closed by remote host.
