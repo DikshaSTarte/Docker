@@ -1,0 +1,551 @@
+
+MFS088@MFS088 MINGW64 ~/Downloads (main)
+$ ssh -i "DockerKey18Oct2023.pem" ubuntu@ec2-18-223-23-210.us-east-2.compute.amazonaws.com
+
+Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1036-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Oct 19 07:38:24 UTC 2023
+
+  System load:  0.07              Processes:                112
+  Usage of /:   42.4% of 7.57GB   Users logged in:          0
+  Memory usage: 52%               IPv4 address for docker0: 172.17.0.1
+  Swap usage:   0%                IPv4 address for eth0:    172.31.37.200
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+50 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+New release '22.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+*** System restart required ***
+Last login: Thu Oct 19 07:26:09 2023 from 49.248.69.154
+ubuntu@ip-172-31-37-200:~$
+ubuntu@ip-172-31-37-200:~$ sudo -i
+root@ip-172-31-37-200:~# apt-get update
+Hit:1 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:5 https://download.docker.com/linux/ubuntu focal InRelease
+Reading package lists... Done
+root@ip-172-31-37-200:~# docker ps
+CONTAINER ID   IMAGE                  COMMAND             CREATED          STATUS          PORTS                                       NAMES
+69547beb9275   maha4iac/myjavaapp:1   "catalina.sh run"   17 minutes ago   Up 17 minutes   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   myC1
+root@ip-172-31-37-200:~# docker images
+REPOSITORY           TAG       IMAGE ID       CREATED       SIZE
+maha4iac/myjavaapp   1         b658109e1be1   8 weeks ago   480MB
+root@ip-172-31-37-200:~# docker rm myC1 -f
+myC1
+root@ip-172-31-37-200:~# docker rmi maha4iac/myjavaapp
+Error response from daemon: No such image: maha4iac/myjavaapp:latest
+root@ip-172-31-37-200:~# docker rmi maha4iac/myjavaapp:1
+Error response from daemon: conflict: unable to remove repository reference "maha4iac/myjavaapp:1" (must force) - container 46755ab89d7c is using its referenced image b658109e1be1
+root@ip-172-31-37-200:~# docker rmi maha4iac/myjavaapp:1 -f
+Untagged: maha4iac/myjavaapp:1
+Untagged: maha4iac/myjavaapp@sha256:e4907f910a4e78398d13043d43b555c7dbbe98eae9e2975f5bb0df0e4a9ba0d5
+Deleted: sha256:b658109e1be1009e56209deafd6f54c2d4189b3fbb3d07460a94d7409d4ff9b3
+root@ip-172-31-37-200:~# ls
+Dockerfile  install-docker.sh  snap
+root@ip-172-31-37-200:~# docekr ps
+
+Command 'docekr' not found, did you mean:
+
+  command 'docker' from snap docker (20.10.24)
+  command 'docker' from snap docker (20.10.24)
+  command 'docker' from deb docker.io (24.0.5-0ubuntu1~20.04.1)
+
+See 'snap info <snapname>' for additional versions.
+
+root@ip-172-31-37-200:~# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@ip-172-31-37-200:~# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+root@ip-172-31-37-200:~# docker run --name myC1 -d -v /myvolumefolder maha4iac/myjavaapp:1
+Unable to find image 'maha4iac/myjavaapp:1' locally
+1: Pulling from maha4iac/myjavaapp
+741437d97401: Already exists
+34d8874714d7: Already exists
+0a108aa26679: Already exists
+eea0f08c7492: Already exists
+ca74b3d90c15: Already exists
+f11a643c4a85: Already exists
+05eafed73b65: Already exists
+f24105f282aa: Already exists
+e27e73cbbd3f: Already exists
+10cd1b45b7e6: Already exists
+ba1e4a237c0c: Already exists
+7b42e24f8ca4: Already exists
+Digest: sha256:e4907f910a4e78398d13043d43b555c7dbbe98eae9e2975f5bb0df0e4a9ba0d5
+Status: Downloaded newer image for maha4iac/myjavaapp:1
+24cf3eed9792fbe6e51d3d0a58e174248583775acf804626c953494b574e4115
+droot@ip-172-31-37-200:~# docker volume ls
+DRIVER    VOLUME NAME
+local     2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559
+local     3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59
+root@ip-172-31-37-200:~# docker ps
+CONTAINER ID   IMAGE                  COMMAND             CREATED          STATUS          PORTS      NAMES
+24cf3eed9792   maha4iac/myjavaapp:1   "catalina.sh run"   15 seconds ago   Up 13 seconds   8080/tcp   myC1
+root@ip-172-31-37-200:~# docker exec -it myC1 /bin/bash
+root@24cf3eed9792:/usr/local/tomcat# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         7.6G  3.3G  4.4G  43% /
+tmpfs            64M     0   64M   0% /dev
+tmpfs           484M     0  484M   0% /sys/fs/cgroup
+shm              64M     0   64M   0% /dev/shm
+/dev/root       7.6G  3.3G  4.4G  43% /myvolumefolder
+tmpfs           484M     0  484M   0% /proc/acpi
+tmpfs           484M     0  484M   0% /proc/scsi
+tmpfs           484M     0  484M   0% /sys/firmware
+root@24cf3eed9792:/usr/local/tomcat# cd myvolumefolder
+bash: cd: myvolumefolder: No such file or directory
+root@24cf3eed9792:/usr/local/tomcat# cd /myvolumefolder
+root@24cf3eed9792:/myvolumefolder#
+root@24cf3eed9792:/myvolumefolder# ls
+root@24cf3eed9792:/myvolumefolder# touch f1 f2 f3
+root@24cf3eed9792:/myvolumefolder# ls
+f1  f2  f3
+root@24cf3eed9792:/myvolumefolder# exit
+exit
+root@ip-172-31-37-200:~# ls
+Dockerfile  install-docker.sh  snap
+root@ip-172-31-37-200:~# cd /var/lib/docker/volumes
+root@ip-172-31-37-200:/var/lib/docker/volumes# ls
+2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559
+3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59
+backingFsBlockDev
+metadata.db
+root@ip-172-31-37-200:/var/lib/docker/volumes# cd ..
+root@ip-172-31-37-200:/var/lib/docker# cd ..
+root@ip-172-31-37-200:/var/lib# ls
+AccountsService    dhcp             os-prober    ubuntu-advantage
+PackageKit         docker           pam          ubuntu-release-upgrader
+amazon             dpkg             plymouth     ucf
+apache2            fwupd            polkit-1     udisks2
+apport             git              private      unattended-upgrades
+apt                grub             python       update-manager
+boltd              initramfs-tools  shim-signed  update-notifier
+cloud              landscape        snapd        usb_modeswitch
+command-not-found  logrotate        sudo         usbutils
+containerd         man-db           systemd      vim
+dbus               misc             tpm
+root@ip-172-31-37-200:/var/lib# cd docker
+root@ip-172-31-37-200:/var/lib/docker# ls
+buildkit    engine-id  network   plugins   swarm  volumes
+containers  image      overlay2  runtimes  tmp
+root@ip-172-31-37-200:/var/lib/docker# cd volumes
+root@ip-172-31-37-200:/var/lib/docker/volumes# ls
+2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559
+3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59
+backingFsBlockDev
+metadata.db
+root@ip-172-31-37-200:/var/lib/docker/volumes# cd _data
+-bash: cd: _data: No such file or directory
+root@ip-172-31-37-200:/var/lib/docker/volumes# ls
+2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559
+3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59
+backingFsBlockDev
+metadata.db
+root@ip-172-31-37-200:/var/lib/docker/volumes# ^C
+root@ip-172-31-37-200:/var/lib/docker/volumes# cd 3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59
+root@ip-172-31-37-200:/var/lib/docker/volumes/3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59#
+root@ip-172-31-37-200:/var/lib/docker/volumes/3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59# ls
+_data
+root@ip-172-31-37-200:/var/lib/docker/volumes/3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59# cd _data
+root@ip-172-31-37-200:/var/lib/docker/volumes/3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59/_data# ls
+root@ip-172-31-37-200:/var/lib/docker/volumes/3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59/_data# ls
+root@ip-172-31-37-200:/var/lib/docker/volumes/3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59/_data# cd ..
+root@ip-172-31-37-200:/var/lib/docker/volumes/3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59# cd ..
+root@ip-172-31-37-200:/var/lib/docker/volumes# ls
+2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559
+3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59
+backingFsBlockDev
+metadata.db
+root@ip-172-31-37-200:/var/lib/docker/volumes# cd
+root@ip-172-31-37-200:~# 2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559
+
+2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559: command not found
+root@ip-172-31-37-200:~#
+root@ip-172-31-37-200:~# ls
+Dockerfile  install-docker.sh  snap
+root@ip-172-31-37-200:~# ls
+Dockerfile  install-docker.sh  snap
+root@ip-172-31-37-200:~# exit
+logout
+ubuntu@ip-172-31-37-200:~$ cd 2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559
+-bash: cd: 2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559: No such file or directory
+ubuntu@ip-172-31-37-200:~$ docker ps
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json": dial unix /var/run/docker.sock: connect: permission denied
+ubuntu@ip-172-31-37-200:~$ sudo -i
+root@ip-172-31-37-200:~# docker ps
+CONTAINER ID   IMAGE                  COMMAND             CREATED          STATUS          PORTS      NAMES
+24cf3eed9792   maha4iac/myjavaapp:1   "catalina.sh run"   15 minutes ago   Up 15 minutes   8080/tcp   myC1
+root@ip-172-31-37-200:~# docker images
+REPOSITORY           TAG       IMAGE ID       CREATED       SIZE
+maha4iac/myjavaapp   1         b658109e1be1   8 weeks ago   480MB
+root@ip-172-31-37-200:~# docker exec -it myC1 /bin/bash
+root@24cf3eed9792:/usr/local/tomcat# ls
+BUILDING.txt     NOTICE         RUNNING.txt  include  native-jni-lib  work
+CONTRIBUTING.md  README.md      bin          lib      temp
+LICENSE          RELEASE-NOTES  conf         logs     webapps
+root@24cf3eed9792:/usr/local/tomcat# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         7.6G  3.3G  4.4G  43% /
+tmpfs            64M     0   64M   0% /dev
+tmpfs           484M     0  484M   0% /sys/fs/cgroup
+shm              64M     0   64M   0% /dev/shm
+/dev/root       7.6G  3.3G  4.4G  43% /myvolumefolder
+tmpfs           484M     0  484M   0% /proc/acpi
+tmpfs           484M     0  484M   0% /proc/scsi
+tmpfs           484M     0  484M   0% /sys/firmware
+root@24cf3eed9792:/usr/local/tomcat# cd /myvolumefolder
+root@24cf3eed9792:/myvolumefolder# ls
+f1  f2  f3
+root@24cf3eed9792:/myvolumefolder# exit
+exit
+root@ip-172-31-37-200:~# ls
+Dockerfile  install-docker.sh  snap
+root@ip-172-31-37-200:~# cd /var/lib/docker/volumes
+root@ip-172-31-37-200:/var/lib/docker/volumes# ls
+2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559
+3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59
+backingFsBlockDev
+metadata.db
+root@ip-172-31-37-200:/var/lib/docker/volumes# cd 2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559
+root@ip-172-31-37-200:/var/lib/docker/volumes/2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559#
+root@ip-172-31-37-200:/var/lib/docker/volumes/2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559# ls
+_data
+root@ip-172-31-37-200:/var/lib/docker/volumes/2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559# cd _data
+root@ip-172-31-37-200:/var/lib/docker/volumes/2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559/_data# ls
+f1  f2  f3
+root@ip-172-31-37-200:/var/lib/docker/volumes/2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559/_data# exit
+logout
+ubuntu@ip-172-31-37-200:~$ docker run --name myC2 -d -v /myvolumefolder maha4iac/myjavaapp:1
+docker: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create?name=myC2": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+ubuntu@ip-172-31-37-200:~$ docker run --name myC2 -d -v /myvolumefolder maha4iac/myjavaapp:1 .
+docker: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create?name=myC2": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+ubuntu@ip-172-31-37-200:~$ docker run --name myContainer2 -d -v /myvolumefolder maha4iac/myjavaapp:1
+docker: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create?name=myContainer2": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+ubuntu@ip-172-31-37-200:~$ sudo -i
+root@ip-172-31-37-200:~# docker run --name myC2 -d -v /myvolumefolder maha4iac/myjavaapp:1
+fa518e24a676f5a8edb53c90b2d913645e66687d62fba12fb532720afc13a504
+root@ip-172-31-37-200:~# ls
+Dockerfile  install-docker.sh  snap
+root@ip-172-31-37-200:~# docker ps
+CONTAINER ID   IMAGE                  COMMAND             CREATED          STATUS          PORTS      NAMES
+fa518e24a676   maha4iac/myjavaapp:1   "catalina.sh run"   12 seconds ago   Up 10 seconds   8080/tcp   myC2
+24cf3eed9792   maha4iac/myjavaapp:1   "catalina.sh run"   19 minutes ago   Up 19 minutes   8080/tcp   myC1
+root@ip-172-31-37-200:~# docker volume ls
+DRIVER    VOLUME NAME
+local     2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559
+local     9a8c26810039ac82ba77e97a6d7815edbdab1c7436f6a2608997f9f56d90472c
+local     3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59
+root@ip-172-31-37-200:~# docker inspect myC2
+[
+    {
+        "Id": "fa518e24a676f5a8edb53c90b2d913645e66687d62fba12fb532720afc13a504",
+        "Created": "2023-10-19T08:01:13.513479258Z",
+        "Path": "catalina.sh",
+        "Args": [
+            "run"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 36233,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2023-10-19T08:01:14.655916298Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:b658109e1be1009e56209deafd6f54c2d4189b3fbb3d07460a94d7409d4ff9b3",
+        "ResolvConfPath": "/var/lib/docker/containers/fa518e24a676f5a8edb53c90b2d913645e66687d62fba12fb532720afc13a504/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/fa518e24a676f5a8edb53c90b2d913645e66687d62fba12fb532720afc13a504/hostname",
+        "HostsPath": "/var/lib/docker/containers/fa518e24a676f5a8edb53c90b2d913645e66687d62fba12fb532720afc13a504/hosts",
+        "LogPath": "/var/lib/docker/containers/fa518e24a676f5a8edb53c90b2d913645e66687d62fba12fb532720afc13a504/fa518e24a676f5a8edb53c90b2d913645e66687d62fba12fb532720afc13a504-json.log",
+        "Name": "/myC2",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                24,
+                80
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/2f1814914b1f9b195539703cf5da2eac1d8c7541ed19d9d6c1e2d79ebe8e7d23-init/diff:/var/lib/docker/overlay2/7917b6ba3848490acb475d0927e493d4ec1e97c15435c58020406514bed2747a/diff:/var/lib/docker/overlay2/c5ba64348dcac1af1bdd69c2c95834f3bbaa35c30b1f8052c7c2fcbd4a006b8a/diff:/var/lib/docker/overlay2/419f6f1b85c12f43837e8eb7f542a9f1b2505deb7ea83bc18847876b562c8e57/diff:/var/lib/docker/overlay2/7b8af88f189f4c2321da0350354f6da86d7a3e6fef3179648ce092c16251bf08/diff:/var/lib/docker/overlay2/924052d75b473ec1cc102b90328ac11d7215aaaa6b8bf93556304df27c3e983e/diff:/var/lib/docker/overlay2/48186f99ae731f2cdb8ec0c832b05537dd0a34bf93a87304eba699898512c2e8/diff:/var/lib/docker/overlay2/a75900d429d5b65bb934d0a8284a0cd3768058b0e55b0960139f5649a6936ac9/diff:/var/lib/docker/overlay2/2367b7f4aa152c6de90bd0c44990e9a2bd316fce47ebf9a34e693e724965f64f/diff:/var/lib/docker/overlay2/bc820e147d5b3a6335df3eec80d073d7cc84527793208d9ee8d73716053801f4/diff:/var/lib/docker/overlay2/1a4b0d737d912adcc066a7a50074b82f2a43867f75234b358298f246224629bf/diff:/var/lib/docker/overlay2/e8ba93d889ecc7e938014222d6899f8a1ea785a07614aa9c26ce6021694f326f/diff:/var/lib/docker/overlay2/14bf7982e4b27de318059b86da6d4f2af8efcb95fc2175a3ed53dbdf1527e3f8/diff",
+                "MergedDir": "/var/lib/docker/overlay2/2f1814914b1f9b195539703cf5da2eac1d8c7541ed19d9d6c1e2d79ebe8e7d23/merged",
+                "UpperDir": "/var/lib/docker/overlay2/2f1814914b1f9b195539703cf5da2eac1d8c7541ed19d9d6c1e2d79ebe8e7d23/diff",
+                "WorkDir": "/var/lib/docker/overlay2/2f1814914b1f9b195539703cf5da2eac1d8c7541ed19d9d6c1e2d79ebe8e7d23/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "9a8c26810039ac82ba77e97a6d7815edbdab1c7436f6a2608997f9f56d90472c",
+                "Source": "/var/lib/docker/volumes/9a8c26810039ac82ba77e97a6d7815edbdab1c7436f6a2608997f9f56d90472c/_data",
+                "Destination": "/myvolumefolder",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "fa518e24a676",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "JAVA_HOME=/docker-java-home/jre",
+                "JAVA_VERSION=8u181",
+                "JAVA_DEBIAN_VERSION=8u181-b13-2~deb9u1",
+                "CATALINA_HOME=/usr/local/tomcat",
+                "TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib",
+                "LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib",
+                "OPENSSL_VERSION=1.1.0j-1~deb9u1",
+                "GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23",
+                "TOMCAT_MAJOR=8",
+                "TOMCAT_VERSION=8.5.37",
+                "TOMCAT_SHA512=be6d6df8b49a760b2e181d4a45d8e6dc7bba5ef2ec6a000f8562cf5f34db5b7fac300cba65bca782bfd25a9f9d8d4a48625f1ad046115c1d6629ea5f210a2718",
+                "TOMCAT_TGZ_URLS=https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz \thttps://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz \thttps://www.apache.org/dist/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz \thttps://archive.apache.org/dist/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz",
+                "TOMCAT_ASC_URLS=https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz.asc \thttps://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz.asc \thttps://www.apache.org/dist/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz.asc \thttps://archive.apache.org/dist/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz.asc"
+            ],
+            "Cmd": [
+                "catalina.sh",
+                "run"
+            ],
+            "Image": "maha4iac/myjavaapp:1",
+            "Volumes": {
+                "/myvolumefolder": {}
+            },
+            "WorkingDir": "/usr/local/tomcat",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "027067b2ab107ff47489acc4fffb863c0e1880e80a9944c224e5539e617892b3",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "8080/tcp": null
+            },
+            "SandboxKey": "/var/run/docker/netns/027067b2ab10",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "4ef9e5219811e89629c2f332184ae0ee702ec3f60d0c412ee096e9de68fc76af",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.3",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:03",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "696517e3570c7eaad566b2026f15b77b7b286c6363ee4f73f1b7bfd77dad93a4",
+                    "EndpointID": "4ef9e5219811e89629c2f332184ae0ee702ec3f60d0c412ee096e9de68fc76af",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.3",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:11:00:03",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+root@ip-172-31-37-200:~# docker volume ls
+DRIVER    VOLUME NAME
+local     2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559
+local     9a8c26810039ac82ba77e97a6d7815edbdab1c7436f6a2608997f9f56d90472c
+local     3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59
+root@ip-172-31-37-200:~# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       7.6G  3.3G  4.4G  43% /
+devtmpfs        476M     0  476M   0% /dev
+tmpfs           484M     0  484M   0% /dev/shm
+tmpfs            97M 1020K   96M   2% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           484M     0  484M   0% /sys/fs/cgroup
+/dev/loop0       25M   25M     0 100% /snap/amazon-ssm-agent/6312
+/dev/loop1       56M   56M     0 100% /snap/core18/2745
+/dev/loop2       64M   64M     0 100% /snap/core20/1891
+/dev/loop3       92M   92M     0 100% /snap/lxd/24061
+/dev/loop4       54M   54M     0 100% /snap/snapd/19122
+/dev/xvda15     105M  6.1M   99M   6% /boot/efi
+/dev/loop5       25M   25M     0 100% /snap/amazon-ssm-agent/7628
+tmpfs            97M     0   97M   0% /run/user/1000
+overlay         7.6G  3.3G  4.4G  43% /var/lib/docker/overlay2/b9598009f0f258f506fd20708007c00333c2f99f24e701055af187b14236180f/merged
+overlay         7.6G  3.3G  4.4G  43% /var/lib/docker/overlay2/2f1814914b1f9b195539703cf5da2eac1d8c7541ed19d9d6c1e2d79ebe8e7d23/merged
+root@ip-172-31-37-200:~# docker ps
+CONTAINER ID   IMAGE                  COMMAND             CREATED          STATUS          PORTS      NAMES
+fa518e24a676   maha4iac/myjavaapp:1   "catalina.sh run"   2 minutes ago    Up 2 minutes    8080/tcp   myC2
+24cf3eed9792   maha4iac/myjavaapp:1   "catalina.sh run"   22 minutes ago   Up 22 minutes   8080/tcp   myC1
+root@ip-172-31-37-200:~# docker volume ls
+DRIVER    VOLUME NAME
+local     2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559
+local     9a8c26810039ac82ba77e97a6d7815edbdab1c7436f6a2608997f9f56d90472c
+local     3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59
+root@ip-172-31-37-200:~# ls
+Dockerfile  install-docker.sh  snap
+root@ip-172-31-37-200:~# cd /var/lib/docker/volumes/
+root@ip-172-31-37-200:/var/lib/docker/volumes# ls
+2e2dc3536f49712861046afd2eb3458fcd59bd102daad6a9ca4b6802b33af559  backingFsBlockDev
+3411b9a210334071fa2f343baa50994e00f2eba5b548890cd70b7df368093e59  metadata.db
+9a8c26810039ac82ba77e97a6d7815edbdab1c7436f6a2608997f9f56d90472c
+root@ip-172-31-37-200:/var/lib/docker/volumes# cd fa518e24a676
+-bash: cd: fa518e24a676: No such file or directory
+root@ip-172-31-37-200:/var/lib/docker/volumes# cd 9a8c26810039ac82ba77e97a6d7815edbdab1c7436f6a2608997f9f56d90472c
+root@ip-172-31-37-200:/var/lib/docker/volumes/9a8c26810039ac82ba77e97a6d7815edbdab1c7436f6a2608997f9f56d90472c#
+root@ip-172-31-37-200:/var/lib/docker/volumes/9a8c26810039ac82ba77e97a6d7815edbdab1c7436f6a2608997f9f56d90472c# ls
+_data
+root@ip-172-31-37-200:/var/lib/docker/volumes/9a8c26810039ac82ba77e97a6d7815edbdab1c7436f6a2608997f9f56d90472c# cd _data
+root@ip-172-31-37-200:/var/lib/docker/volumes/9a8c26810039ac82ba77e97a6d7815edbdab1c7436f6a2608997f9f56d90472c/_data# ls
+root@ip-172-31-37-200:/var/lib/docker/volumes/9a8c26810039ac82ba77e97a6d7815edbdab1c7436f6a2608997f9f56d90472c/_data# touch f1 f2 f3
+root@ip-172-31-37-200:/var/lib/docker/volumes/9a8c26810039ac82ba77e97a6d7815edbdab1c7436f6a2608997f9f56d90472c/_data# ls
+f1  f2  f3
+root@ip-172-31-37-200:/var/lib/docker/volumes/9a8c26810039ac82ba77e97a6d7815edbdab1c7436f6a2608997f9f56d90472c/_data# cd
+root@ip-172-31-37-200:~# docker exec -it myC2 /bin/bash
+root@fa518e24a676:/usr/local/tomcat# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         7.6G  3.3G  4.4G  43% /
+tmpfs            64M     0   64M   0% /dev
+tmpfs           484M     0  484M   0% /sys/fs/cgroup
+shm              64M     0   64M   0% /dev/shm
+/dev/root       7.6G  3.3G  4.4G  43% /myvolumefolder
+tmpfs           484M     0  484M   0% /proc/acpi
+tmpfs           484M     0  484M   0% /proc/scsi
+tmpfs           484M     0  484M   0% /sys/firmware
+root@fa518e24a676:/usr/local/tomcat# cd  /myvolumefolder
+root@fa518e24a676:/myvolumefolder#
+root@fa518e24a676:/myvolumefolder# ls
+f1  f2  f3
