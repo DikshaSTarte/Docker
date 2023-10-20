@@ -1,0 +1,55 @@
+AWS Skill Set 
+Expertise in AWS services specifically: EC2, S3, ECS, Cloud Watch Events, Lamda, API Gateway, Route53,Amazon Web Services (AWS)
+AWS IAM
+
+
+DevOps Skill set: 
+Jenkins
+Docker
+Shell Scripting
+Java
+Jenkins
+GitHub
+Continuous Integration (CI)
+Continuous Delivery (CD)
+DevOps
+Software Development
+Automation
+Emerging Technologies
+Defining Requirements
+Design Patterns
+Problem Solving
+Dependency Management
+Optimization
+Repositories
+Software Requirements
+System Configuration
+24x7
+Application Deployment
+Cloud Services
+Microservices
+JAVA
+Scalability
+System Monitoring
+Troubleshooting
+Uptime
+
+
+Amazon CloudWatch
+Continuous Delivery (CD)
+Continuous Integration (CI)
+Elastic Stack (ELK)
+Knowledge Acquisition
+Monitoring Services
+Multitasking
+AWS Command Line Interface (CLI)
+
+Defining Requirements
+Domain Name System (DNS)
+Dynamic Host Configuration Protocol (DHCP)
+ITIL
+Knowledge Acquisition
+Network Switches
+Routers
+Service-Level Agreements (SLA)
+Solution Architecture
