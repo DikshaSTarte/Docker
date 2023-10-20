@@ -1,0 +1,45 @@
+
+JFrog installation Commands :
+yum install wget
+
+wget https://releases.jfrog.io/artifactory/artifactory-pro-rpms/artifactory-pro-rpms.repo -O jfrog-artifactory-pro-rpms.repo;
+
+sudo mv jfrog-artifactory-pro-rpms.repo /etc/yum.repos.d/;
+
+sudo yum update 
+
+sudo yum install jfrog-artifactory-pro
+
+
+---------------------------------
+Steps:-->
+$ ssh -i "myjfrogmasterkey6-9-2023.pem" ec2-user@ec2-52-14-253-167.us-east-2.compute.amazonaws.com
+
+[ec2-user@ip-172-31-18-174 ~]$ sudo -i
+
+[root@ip-172-31-18-174 ~]# yum update
+
+[root@ip-172-31-18-174 ~]#  sudo yum install java-1.8.0-openjdk
+ sudo yum install java-17-openjdk
+
+[root@ip-172-31-18-174 ~]# yum install wget
+
+[root@ip-172-31-18-174 ~]# wget https://releases.jfrog.io/artifactory/artifactory-pro-rpms/artifactory-pro-rpms.repo -O jfrog-artifactory-pro-rpms.repo;
+
+
+
+[root@ip-172-31-18-174 ~]# sudo mv jfrog-artifactory-pro-rpms.repo /etc/yum.repos.d/;
+
+[root@ip-172-31-18-174 ~]# sudo yum update
+
+[root@ip-172-31-18-174 ~]# sudo yum install jfrog-artifactory-pro
+
+Start Artifactory with:
+> systemctl start artifactory.service
+
+Check Artifactory status with:
+> systemctl status artifactory.service
+
+
+[root@ip-172-31-18-174 ~]# systemctl start artifactory.service
+

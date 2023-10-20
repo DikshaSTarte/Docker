@@ -1,0 +1,39 @@
+What is database testing, and why is it important?
+
+Explain the differences between functional testing and non-functional testing in the context of database testing.
+
+What are the key steps involved in the database testing process?
+
+How do you identify and handle performance bottlenecks in a database?
+
+Describe various types of database anomalies and how you would detect them during testing.
+
+What is SQL injection, and how can it be prevented during database testing?
+
+Can you explain the concept of normalization in database design? Why is it important?
+
+What is the purpose of primary keys and foreign keys in a database, and how would you test them?
+
+How would you test a database backup and recovery process?
+
+What are some common challenges in testing databases that handle large volumes of data?
+
+Can you provide examples of typical test cases for a database system?
+
+Explain the importance of referential integrity constraints in a relational database, and how would you verify them during testing?
+
+How do you perform data migration testing when transferring data from one database to another?
+
+What is a stored procedure, and how would you test it?
+
+Describe the concept of ACID properties in database transactions and how you would ensure they are maintained during testing.
+
+How do you handle concurrency issues in a multi-user database environment, and what testing techniques would you use?
+
+What tools and techniques do you use for automating database testing?
+
+Can you explain the differences between white-box testing and black-box testing for databases?
+
+What is the purpose of a database schema, and how would you validate it during testing?
+
+Have you worked with any specific database management systems (DBMS) like MySQL, Oracle, SQL Server, or PostgreSQL? What are the differences in testing approaches for these systems?

@@ -1,0 +1,84 @@
+--------Install & Configure Jenkins Master------
+1 . Create a Jenkins Jenkins_Master  with ubuntu 20
+connect -> ssh -->paste 
+sudo -i
+sudo apt-get update
+
+2. Isntall Openjdk -11
+sudo apt-get install openjdk-11-jdk
+
+3. Install maven
+sudo apt-get install maven
+
+4. Install git
+sudo apt-get install git
+java --version    //openjdk version "11.0.20.1" 2023-08-24
+mvn --version	  //Apache Maven 3.6.3
+git --version	  // git version 2.25.1
+
+
+5. Install Jenkins 
+ curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+    /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+  echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+    https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+    /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+  sudo apt-get update
+  sudo apt-get install jenkins
+
+6. Add Jenkins user with password
+#passwd:jenkins
+diksha
+diksha
+
+7. Make Jenkins User as sudoer
+visudo 
+jenkins ALL = (ALL) NOPASSWD : ALL
+
+8. Give Password Authentication
+vi /etc/ssh/sshd_config
+password authentication  yes
+
+9. Restart ssh service 
+service ssh restart
+
+
+----------Install & Configure Jenkins Nodes --------------
+10. Create a ubuntu linux server 
+onnect -> ssh -->paste 
+sudo -i
+sudo apt-get update
+
+11. Isntall Openjdk -11
+sudo apt-get install openjdk-11-jdk
+
+12.Install maven
+sudo apt-get install maven
+
+13.Install git
+sudo apt-get install git
+java --version    //openjdk version "11.0.20.1" 2023-08-24
+mvn --version	  //Apache Maven 3.6.3
+git --version	  // git version 2.25.1
+
+14 . No need to install jenkins at node side
+
+15. Add Jenkins User with password 
+#adduser jenkins
+
+16. Make Jenkins User as sudoer
+visudo 
+jenkins ALL = (ALL) NOPASSWD : ALL
+
+17. Give Password Authentication
+vi /etc/ssh/sshd_config
+password authentication  yes
+
+18. Restart ssh service 
+service ssh restart
+
+
+3.139.57.80 : Jenkins Master Public IP
+18.117.190.40:Jenkins node public IP

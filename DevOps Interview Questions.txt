@@ -1,0 +1,5 @@
+what is cloud computing? --> Computing  resources over the internet
+Cloud Computing Environments? 
+What is DevOps?
+what is AWS?
+Difference between AWS & DevOps?

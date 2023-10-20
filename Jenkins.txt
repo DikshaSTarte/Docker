@@ -1,0 +1,201 @@
+ssh -i "Jenkins_Master09-Sept-2023_Saturday_PracticeforHRMS.pem" ubuntu@ec2-18-117-158-186.us-east-2.compute.amazonaws.com
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/Downloads (main)
+$ ssh -i "Jenkins_Master09-Sept-2023_Saturday_PracticeforHRMS.pem" ubuntu@ec2-18-117-158-186.us-east-2.compute.amazonaws.com
+The authenticity of host 'ec2-18-117-158-186.us-east-2.compute.amazonaws.com (18.117.158.186)' can't be established.
+ED25519 key fingerprint is SHA256:jHJ+0TxcT5ftY6/CVcspRdnPO2nX4hFdR2XnQxrFjA4.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:175: ec2-13-59-66-209.us-east-2.compute.amazonaws.com
+    ~/.ssh/known_hosts:181: ec2-3-145-178-69.us-east-2.compute.amazonaws.com
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-18-117-158-186.us-east-2.compute.amazonaws.com' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.19.0-1025-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Sep  9 10:22:33 UTC 2023
+
+  System load:  0.53662109375     Processes:             101
+  Usage of /:   20.6% of 7.57GB   Users logged in:       0
+  Memory usage: 24%               IPv4 address for eth0: 172.31.14.166
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+116 updates can be applied immediately.
+66 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+2 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+Last login: Sat Sep  9 13:21:13 2023 from 58.84.60.102
+ubuntu@ip-172-31-14-166:~$ sudo -i
+root@ip-172-31-14-166:~# ls
+HRMS-BACKEND-dev  snap
+root@ip-172-31-14-166:~# cd HRMS-BACKEND-dev
+root@ip-172-31-14-166:~/HRMS-BACKEND-dev# ls
+Employee_module  README.md  RR_Module
+root@ip-172-31-14-166:~/HRMS-BACKEND-dev# cd Employee_module
+root@ip-172-31-14-166:~/HRMS-BACKEND-dev/Employee_module# ls
+BackendLogs  EmpDocumentsSaved  mvnw  mvnw.cmd  pom.xml  src  target
+root@ip-172-31-14-166:~/HRMS-BACKEND-dev/Employee_module# cd target/
+root@ip-172-31-14-166:~/HRMS-BACKEND-dev/Employee_module/target# ls
+classes                                     generated-test-sources
+emp_management-0.0.1-SNAPSHOT.jar           maven-archiver
+emp_management-0.0.1-SNAPSHOT.jar.original  maven-status
+generated-sources                           test-classes
+root@ip-172-31-14-166:~/HRMS-BACKEND-dev/Employee_module/target# cd /var/lib/jenkins
+root@ip-172-31-14-166:/var/lib/jenkins# ls
+com.cloudbees.hudson.plugins.folder.config.AbstractFolderConfiguration.xml
+config.xml
+github-plugin-configuration.xml
+hudson.maven.MavenModuleSet.xml
+hudson.model.UpdateCenter.xml
+hudson.plugins.build_timeout.global.GlobalTimeOutConfiguration.xml
+hudson.plugins.build_timeout.operations.BuildStepOperation.xml
+hudson.plugins.emailext.ExtendedEmailPublisher.xml
+hudson.plugins.git.GitSCM.xml
+hudson.plugins.git.GitTool.xml
+hudson.plugins.gradle.Gradle.xml
+hudson.plugins.gradle.enriched.EnrichedSummaryConfig.xml
+hudson.plugins.gradle.injection.InjectionConfig.xml
+hudson.plugins.sonar.MsBuildSQRunnerInstallation.xml
+hudson.plugins.sonar.SonarGlobalConfiguration.xml
+hudson.plugins.sonar.SonarRunnerInstallation.xml
+hudson.plugins.timestamper.TimestamperConfig.xml
+hudson.tasks.Ant.xml
+hudson.tasks.Mailer.xml
+hudson.tasks.Maven.xml
+hudson.tasks.Shell.xml
+hudson.triggers.SCMTrigger.xml
+identity.key.enc
+io.jenkins.plugins.jfrog.JfrogInstallation.xml
+io.jenkins.plugins.jfrog.configuration.JFrogPlatformBuilder.xml
+io.jenkins.plugins.junit.storage.JunitTestResultStorageConfiguration.xml
+jenkins.fingerprints.GlobalFingerprintConfiguration.xml
+jenkins.install.InstallUtil.lastExecVersion
+jenkins.install.UpgradeWizard.state
+jenkins.model.ArtifactManagerConfiguration.xml
+jenkins.model.GlobalBuildDiscarderConfiguration.xml
+jenkins.model.JenkinsLocationConfiguration.xml
+jenkins.mvn.GlobalMavenConfig.xml
+jenkins.security.ResourceDomainConfiguration.xml
+jenkins.tasks.filters.EnvVarsFilterGlobalConfiguration.xml
+jenkins.telemetry.Correlator.xml
+jobs
+logs
+nodeMonitors.xml
+nodes
+org.jenkinsci.plugins.displayurlapi.DefaultDisplayURLProviderGlobalConfiguration.xml
+org.jenkinsci.plugins.gitclient.JGitApacheTool.xml
+org.jenkinsci.plugins.gitclient.JGitTool.xml
+org.jenkinsci.plugins.github_branch_source.GitHubConfiguration.xml
+org.jenkinsci.plugins.workflow.flow.GlobalDefaultFlowDurabilityLevel.xml
+org.jenkinsci.plugins.workflow.libs.GlobalLibraries.xml
+org.jfrog.hudson.ArtifactoryBuilder.xml
+org.quality.gates.jenkins.plugin.GlobalConfig.xml
+plugins
+queue.xml.bak
+scriptApproval.xml
+secret.key
+secret.key.not-so-secret
+secrets
+tools
+updates
+userContent
+users
+workspace
+root@ip-172-31-14-166:/var/lib/jenkins# cd workspace/
+root@ip-172-31-14-166:/var/lib/jenkins/workspace# ls
+myfirstjob09-09-2023  myfirstjob09-09-2023@tmp
+root@ip-172-31-14-166:/var/lib/jenkins/workspace# cd ^C
+root@ip-172-31-14-166:/var/lib/jenkins/workspace# myfirstjob09-09-2023
+myfirstjob09-09-2023: command not found
+root@ip-172-31-14-166:/var/lib/jenkins/workspace# cd myfirstjob09-09-2023
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023# ls
+Employee_module  README.md  RR_Module  cache
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023# cd Employee_module
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module# ls
+BackendLogs  EmpDocumentsSaved  mvnw  mvnw.cmd  pom.xml  src  target
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module# cd target/
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/target# ls
+classes  generated-sources  generated-test-sources  maven-status  test-classes
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/target# cd ..
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module# mvn clean install -DskipTests
+[INFO] Scanning for projects...
+[WARNING]
+[WARNING] Some problems were encountered while building the effective model for com.emp.management:emp_management:jar:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.boot:spring-boot-starter-validation:jar -> duplicate declaration of version (?) @ line 50, column 15
+[WARNING]
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING]
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING]
+[INFO]
+[INFO] -----------------< com.emp.management:emp_management >------------------
+[INFO] Building emp_management 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ emp_management ---
+[INFO] Deleting /var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/target
+[INFO]
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ emp_management ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ emp_management ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 170 source files to /var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ emp_management ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ emp_management ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/target/test-classes
+[INFO]
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ emp_management ---
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ emp_management ---
+[INFO] Building jar: /var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/target/emp_management-0.0.1-SNAPSHOT.jar
+[INFO]
+[INFO] --- spring-boot-maven-plugin:2.7.16-SNAPSHOT:repackage (repackage) @ emp_management ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO]
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ emp_management ---
+[INFO] Installing /var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/target/emp_management-0.0.1-SNAPSHOT.jar to /root/.m2/repository/com/emp/management/emp_management/0.0.1-SNAPSHOT/emp_management-0.0.1-SNAPSHOT.jar
+[INFO] Installing /var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/pom.xml to /root/.m2/repository/com/emp/management/emp_management/0.0.1-SNAPSHOT/emp_management-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  21.056 s
+[INFO] Finished at: 2023-09-09T15:27:24Z
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module# ls
+BackendLogs  EmpDocumentsSaved  mvnw  mvnw.cmd  pom.xml  src  target
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module# cd target/
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/target# ls
+classes                            emp_management-0.0.1-SNAPSHOT.jar.original  generated-test-sources  maven-status
+emp_management-0.0.1-SNAPSHOT.jar  generated-sources                           maven-archiver          test-classes
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/target# ^C
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/target# ^C
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/target# ^C
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/target# cd ^C
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/target# ^C
+root@ip-172-31-14-166:/var/lib/jenkins/workspace/myfirstjob09-09-2023/Employee_module/target# Connection to ec2-18-117-158-186.us-east-2.compute.amazonaws.com closed by remote host.
+Connection to ec2-18-117-158-186.us-east-2.compute.amazonaws.com closed.
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/Downloads (main)
+$

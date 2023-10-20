@@ -1,0 +1,15 @@
+Pipeline script or groovy code
+
+clone java project 
+execute maven target  
+stage clone java project copy syntax and paste in syntax node
+grooy syntax
+node {
+  stage ('clone java project'){
+  git'HTTPS://GITHUB.COM/MAHA4DSVC/.GIT'
+}
+	stage('execute maven target'){
+	git 'https://github.com/maha4dsvc/.git'
+}
+}
+we can make changes in jenkins file without openining it with the help of poll scm

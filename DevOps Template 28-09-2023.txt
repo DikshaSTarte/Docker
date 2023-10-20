@@ -1,0 +1,12 @@
+Gradle,Apache Ant, Grunt,Apache Maven,CMake,Terraform,Jenkins,
+Ansible,Gulp.js,Terraform,Ansible,Webpack,TeamCity,CircleCI,Travis CI,
+Bamboo,MSBuild,Chef,Docker,GitLab,
+Sbt,GNU Make,GitHub,Azure DevOps Server,Bazel,Kubernetes
+
+Repositories:
+GitHub,GitLab,Bitbucket,Apache Subversion,SourceForge,Assembla
+
+Front End languages:
+JavaScript,TypeScript,PHP,jQuery,Swift,Dart,Next.js,C++,
+Rust,Angular,Java,HTML,CSS,React,Vue.js,Python,AngularJS,Kotlin,Djagno,
+Python,JavaScript,PHP,Java,Ruby,Golang,C#,SQL,Perl

@@ -1,0 +1,35 @@
+Greetings from Beroe-Inc!!!
+We are currently hiring fresher for AWS DevOps.
+Interested candidates can send their resumes to rohini.r@beroe-inc.com.
+Job Description:-
+Location – OMR Karapakkam, Chennai
+Role: DevOps Software Engineer- Trainee
+Experience – 0 to 1 yr
+Requirements:
+- Exposure to any one of the cloud platforms (AWS, Azure, GCP)
+- Exposure to Linux, Scripting Languages
+- Knowledge of DevOps Tools / Process
+- DevOps / Cloud Certification
+- Immediate Joiner
+
+Skill set to add into linkdin profile for DevOps
+Agile Methodologies
+GitBash
+Cloud Security
+Documentation
+Log Management
+Systems Design
+Virtualization
+Python (Programming Language)
+Amazon Web Services (AWS)
+CI
+Computer Science
+Configuration Management
+DevOps
+Jenkins
+Change Impact Analysis
+Continuous Delivery (CD)
+Continuous Integration (CI)
+Continuous Integration and Continuous Delivery (CI/CD)
+Performance Motivation
+Quality Assurance

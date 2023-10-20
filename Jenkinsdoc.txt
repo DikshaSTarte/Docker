@@ -1,0 +1,34 @@
+create a EC@ ubuntu 20 server and login 
+install opnjdk8==> sudo apt-get install openjdk-8-jdk
+
+install maven==> sudo apt-get install maven
+
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+sudo apt-get install jenkins
+sudo apt-get update
+
+sudo systemctl start jenkins.service
+sudo systemctl status jenkins
+
+
+
+jenkins ALL=(ALL) NOPASSWD:ALL
+git clone https://github.com/DikshaSTarte/mahalogin-master.git
+
+ls
+cd mahalogin-master
+
+install git
+	sudo -i
+	git -version
+git clone repo-url.git
+
+
+install jenkins
+
+	

@@ -1,0 +1,31 @@
+core java: Basics of java
+		Installation, Writing First program, Compile and run, Variables, 
+		Control Flow Statement,Arrays and String, method, class, object
+
+	 OOPS : class, object, inheritance, polymorphism, abstraction, Encapsulation, Constructor,
+		Super, this , static , final keyword , import and package, access modifier.
+
+
+advance concepts in java : Exception , Threading , Collection , DB connection , File Handling.
+jsp /servlet
+spring boot : Hibernate , ORM
+
+SQL
+
+html : 
+css : 
+Node js: 
+React/ Angular : 
+Bootstrap : 
+
+
+Maven 
+Git 
+Github
+Docker
+Kubernetes
+Ansible
+Chef
+Jenkins
+Jfrog
+Linux Commands

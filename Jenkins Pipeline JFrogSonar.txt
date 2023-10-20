@@ -1,0 +1,80 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                //checkout scm
+ 		// Checkout code from a Git repository
+                git(
+                    url: 'https://github.com/yourusername/your-repo.git',
+                    credentialsId: 'your-git-credentials-id', // Optional if using credentials
+                    branch: 'main' // Specify the branch you want to check out
+                )
+            }
+        }
+
+        stage('Build JAR') {
+            steps {
+                // Use Maven to build the project and create the JAR file
+                sh 'mvn clean package'
+            }
+            
+            post {
+                success {
+                    archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
+                }
+            }
+
+        
+        stage('Build and Publish Artifacts') {
+            steps {
+                // Build your project (e.g., Maven or Gradle)
+                sh 'mvn clean package'
+
+                // Publish artifacts to Artifactory
+                rtUpload (
+                    serverId: 'your-artifactory-server', // The configured Artifactory server name
+                    spec: """{
+                        "files": [
+                            {
+                                "pattern": "**/target/*.jar",
+                                "target": "your-repo-local/path/to/store/artifacts/"
+                            }
+                        ]
+                    }"""
+                )
+            }
+        }
+
+        stage('Download Artifacts') {
+            steps {
+                // Download artifacts from Artifactory
+                rtDownload (
+                    serverId: 'your-artifactory-server', // The configured Artifactory server name
+                    spec: """{
+                        "files": [
+                            {
+                                "pattern": "your-repo-local/path/to/store/artifacts/*.jar",
+                                "target": "downloaded-artifacts/"
+                            }
+                        ]
+                    }"""
+                )
+            }
+        }
+    }
+
+        stage('Code Analysis') {
+            steps {
+                // Run static code analysis using SonarQube
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Deploy your Spring Boot application
+            }
+        }
+    }
+}

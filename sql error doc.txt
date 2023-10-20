@@ -1,0 +1,45 @@
+40101 indicates that the comments are not to be retained in the database
+
+50503
+Invalid expression - Having without Group By
+This message appears when a SELECT statement includes a column in the projection list and a HAVING clause, but does not include a GROUP BY clause. 
+The SELECT statement cannot include a HAVING clause without a GROUP BY clause, unless the projection list and the HAVING clause
+ contain only aggregate functions.
+
+40000	16	0	Replicated tables support only local (non-DTC) two-phase commit involving the master database.
+
+
+
+
+
+SELECT COUNT(rr_master_Id) ,company_company_id FROM hrmsdb.rr_master rr 
+WHERE rr.start_Date between "2023-06-21" and "2023-07-14" group by company_company_id;
+
+select (SELECT COUNT(rr_master_Id) ,company_company_id FROM hrmsdb.rr_master rr 
+WHERE rr.start_Date between "2023-07-13" and now())  ;
+
+
+
+
+SELECT COUNT(rr_master_Id) AS rr_master_Id, company_company_id
+FROM (
+  SELECT COUNT(rr_master_Id) AS rr_master_Id, company_company_id
+  FROM hrmsdb.rr_master rr 
+  WHERE rr.start_Date BETWEEN "2023-06-21" AND "2023-07-14"
+  GROUP BY company_company_id
+  UNION
+  SELECT COUNT(rr_master_Id) AS rr_count, company_company_id
+  FROM hrmsdb.rr_master rr 
+  WHERE rr.start_Date BETWEEN "2023-07-13" AND NOW()
+  GROUP BY company_company_id
+) AS TotalCount;
+
+
+SELECT COUNT(rr_master_Id) AS count_rr_master, company_company_id
+FROM hrmsdb.rr_master rr
+WHERE (
+    rr.start_Date BETWEEN '2023-06-21' AND '2023-07-14'
+    OR
+    rr.start_Date BETWEEN '2023-07-13' AND NOW()
+)
+GROUP BY company_company_id;

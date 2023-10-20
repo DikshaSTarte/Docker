@@ -1,0 +1,91 @@
+package practice.swing.loginform;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
+
+public class LoginFormWithWelcome {
+    public static void main(String[] args) {
+    	MyNextPage p = new MyNextPage();
+        SwingUtilities.invokeLater(() -> {
+            createAndShowLoginForm();
+        });
+    }
+
+    private static void createAndShowLoginForm() {
+        JFrame frame = new JFrame("Login Form");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(500, 250);
+        frame.setLayout(new BorderLayout());
+
+        JPanel panel = new JPanel(new GridLayout(3, 2, 10, 10));
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+      
+        JLabel usernameLabel = new JLabel("Username:");
+      
+        JTextField usernameField = new JTextField(20);
+    
+      
+        
+        JLabel passwordLabel = new JLabel("Password:");
+        JPasswordField passwordField = new JPasswordField(20);
+     
+
+        JButton loginButton = new JButton("Login");
+        
+        loginButton.addActionListener((ActionListener) new ActionListener() {
+        	@Override
+        	 public void actionPerformed(ActionEvent e)   {
+                String enteredUsername = usernameField.getText();
+                String enteredPassword = new String(passwordField.getPassword());
+
+
+                if (enteredUsername.equals("diksha") && enteredPassword.equals("diksha")) {
+                    openWelcomeWindow(enteredUsername);
+                } else {
+                    JOptionPane.showMessageDialog(frame, "Invalid data. Please try again.", "Login failed", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+
+		
+        });
+
+        panel.add(usernameLabel);
+        panel.add(usernameField);
+        panel.add(passwordLabel);
+        panel.add(passwordField);
+        panel.add(new JLabel()); // Empty label for spacing
+        panel.add(loginButton);
+
+        frame.add(panel, BorderLayout.CENTER);
+
+        frame.setVisible(true);
+    }
+
+    private static void openWelcomeWindow(String username) {
+        JFrame welcomeFrame = new JFrame("Welcome");
+        welcomeFrame.setSize(500, 250);
+        welcomeFrame.setBackground(Color.RED);
+        welcomeFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        JLabel welcomeLabel = new JLabel("Welcome, " + username + "" +" To the Intresting Swing programming");
+        welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+
+        welcomeFrame.add(welcomeLabel);
+
+        welcomeFrame.setVisible(true);
+    }
+}

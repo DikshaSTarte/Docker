@@ -1,0 +1,21 @@
+
+
+Development Branch (e.g., develop or dev):
+
+Feature Branches:
+
+
+Release Branch (e.g., release or rc):
+
+Production Branch (e.g., main, master, or production):
+
+Hotfix Branches:
+
+
+Environment-Specific Branches:
+
+
+Maintenance or Long-Term Support (LTS) Branches:
+
+
+Documentation or Documentation-Related Branches:

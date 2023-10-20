@@ -1,0 +1,42 @@
+ssh -i "9OctKey.pem" ubuntu@ec2-18-223-143-0.us-east-2.compute.amazonaws.com
+sudo -i
+apt-get update
+sudo apt-get install openjdk-8-jdk
+java -version
+apt-get install maven
+mvn --version
+sudo apt-get update
+
+ curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+    /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+  
+    
+  echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+    https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+    /etc/apt/sources.list.d/jenkins.list > /dev/null
+     
+  sudo apt-get update
+  sudo apt-get install fontconfig openjdk-11-jre
+  sudo apt-get install jenkins
+
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+
+git clone https://github.com/DikshaSTarte/CrudDemo.git
+
+cd CrudDemo
+ls
+at pom.xml location mvn install or mvn clean install -DskipTests
+
+cat /var/lib/jenkins/secrets/initialAdminPassword
+
+port no 8080
+
+username : diksha diksha diksha dikshatarte@gmail.com 
+
+start using jenkins
+
+
+
+

@@ -1,0 +1,1895 @@
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/Downloads (main)
+$ ssh -i "JFrogServer09-09-2023.pem" ec2-user@ec2-18-118-111-159.us-east-2.compute.amazonaws.com
+The authenticity of host 'ec2-18-118-111-159.us-east-2.compute.amazonaws.com (18.118.111.159)' can't be established.
+ED25519 key fingerprint is SHA256:Ewey2d7HERipDGMlghSfRuU+Ob5qJRTBxsKApBoeN0M.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-18-118-111-159.us-east-2.compute.amazonaws.com' (ED25519) to the list of known hosts.
+Register this system with Red Hat Insights: insights-client --register
+Create an account or view all your systems at https://red.ht/insights-dashboard
+[ec2-user@ip-172-31-23-222 ~]$ sudo -i
+[root@ip-172-31-23-222 ~]# yum update
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Red Hat Enterprise Linux 9 for x86_64 - AppStre  47 MB/s |  24 MB     00:00
+Red Hat Enterprise Linux 9 for x86_64 - BaseOS   39 MB/s |  13 MB     00:00
+Red Hat Enterprise Linux 9 Client Configuration  30 kB/s | 3.4 kB     00:00
+Dependencies resolved.
+================================================================================
+ Package             Arch   Version               Repository               Size
+================================================================================
+Installing:
+ kernel              x86_64 5.14.0-284.25.1.el9_2 rhel-9-baseos-rhui-rpms 3.4 M
+ kernel-core         x86_64 5.14.0-284.25.1.el9_2 rhel-9-baseos-rhui-rpms  17 M
+ kernel-modules      x86_64 5.14.0-284.25.1.el9_2 rhel-9-baseos-rhui-rpms  37 M
+ kernel-modules-core x86_64 5.14.0-284.25.1.el9_2 rhel-9-baseos-rhui-rpms  36 M
+Upgrading:
+ NetworkManager      x86_64 1:1.42.2-6.el9_2      rhel-9-baseos-rhui-rpms 2.2 M
+ NetworkManager-cloud-setup
+                     x86_64 1:1.42.2-6.el9_2      rhel-9-appstream-rhui-rpms
+                                                                           72 k
+ NetworkManager-libnm
+                     x86_64 1:1.42.2-6.el9_2      rhel-9-baseos-rhui-rpms 1.8 M
+ NetworkManager-team x86_64 1:1.42.2-6.el9_2      rhel-9-baseos-rhui-rpms  39 k
+ NetworkManager-tui  x86_64 1:1.42.2-6.el9_2      rhel-9-baseos-rhui-rpms 243 k
+ c-ares              x86_64 1.17.1-5.el9_2.1      rhel-9-baseos-rhui-rpms 106 k
+ cloud-init          noarch 22.1-10.el9_2         rhel-9-appstream-rhui-rpms
+                                                                          1.1 M
+ curl                x86_64 7.76.1-23.el9_2.2     rhel-9-baseos-rhui-rpms 298 k
+ dbus                x86_64 1:1.12.20-7.el9_2.1   rhel-9-baseos-rhui-rpms 7.9 k
+ dbus-common         noarch 1:1.12.20-7.el9_2.1   rhel-9-baseos-rhui-rpms  18 k
+ dbus-libs           x86_64 1:1.12.20-7.el9_2.1   rhel-9-baseos-rhui-rpms 154 k
+ dbus-tools          x86_64 1:1.12.20-7.el9_2.1   rhel-9-baseos-rhui-rpms  56 k
+ file                x86_64 5.39-12.1.el9_2       rhel-9-baseos-rhui-rpms  52 k
+ file-libs           x86_64 5.39-12.1.el9_2       rhel-9-baseos-rhui-rpms 592 k
+ grub2-common        noarch 1:2.06-61.el9_2.1     rhel-9-baseos-rhui-rpms 917 k
+ grub2-pc            x86_64 1:2.06-61.el9_2.1     rhel-9-baseos-rhui-rpms  16 k
+ grub2-pc-modules    noarch 1:2.06-61.el9_2.1     rhel-9-baseos-rhui-rpms 977 k
+ grub2-tools         x86_64 1:2.06-61.el9_2.1     rhel-9-baseos-rhui-rpms 1.8 M
+ grub2-tools-minimal x86_64 1:2.06-61.el9_2.1     rhel-9-baseos-rhui-rpms 609 k
+ insights-client     noarch 3.1.7-12.1.el9_2      rhel-9-appstream-rhui-rpms
+                                                                          1.2 M
+ iputils             x86_64 20210202-8.el9_1.1    rhel-9-baseos-rhui-rpms 178 k
+ kernel-tools        x86_64 5.14.0-284.25.1.el9_2 rhel-9-baseos-rhui-rpms 3.7 M
+ kernel-tools-libs   x86_64 5.14.0-284.25.1.el9_2 rhel-9-baseos-rhui-rpms 3.5 M
+ kexec-tools         x86_64 2.0.25-13.el9_2.1     rhel-9-baseos-rhui-rpms 499 k
+ krb5-libs           x86_64 1.20.1-9.el9_2        rhel-9-baseos-rhui-rpms 731 k
+ less                x86_64 590-2.el9_2           rhel-9-baseos-rhui-rpms 166 k
+ libcurl             x86_64 7.76.1-23.el9_2.2     rhel-9-baseos-rhui-rpms 286 k
+ libdnf-plugin-subscription-manager
+                     x86_64 1.29.33.1-2.el9_2     rhel-9-baseos-rhui-rpms  75 k
+ libeconf            x86_64 0.4.1-3.el9_2         rhel-9-baseos-rhui-rpms  30 k
+ libsss_certmap      x86_64 2.8.2-3.el9_2         rhel-9-baseos-rhui-rpms  95 k
+ libsss_idmap        x86_64 2.8.2-3.el9_2         rhel-9-baseos-rhui-rpms  45 k
+ libsss_nss_idmap    x86_64 2.8.2-3.el9_2         rhel-9-baseos-rhui-rpms  49 k
+ libsss_sudo         x86_64 2.8.2-3.el9_2         rhel-9-baseos-rhui-rpms  38 k
+ libxml2             x86_64 2.9.13-3.el9_2.1      rhel-9-baseos-rhui-rpms 751 k
+ microcode_ctl       noarch 4:20220809-2.20230808.2.el9_2
+                                                  rhel-9-baseos-rhui-rpms 7.8 M
+ openssh             x86_64 8.7p1-30.el9_2        rhel-9-baseos-rhui-rpms 460 k
+ openssh-clients     x86_64 8.7p1-30.el9_2        rhel-9-baseos-rhui-rpms 709 k
+ openssh-server      x86_64 8.7p1-30.el9_2        rhel-9-baseos-rhui-rpms 459 k
+ openssl             x86_64 1:3.0.7-17.el9_2      rhel-9-baseos-rhui-rpms 1.2 M
+ openssl-libs        x86_64 1:3.0.7-17.el9_2      rhel-9-baseos-rhui-rpms 2.2 M
+ python-unversioned-command
+                     noarch 3.9.16-1.el9_2.1      rhel-9-appstream-rhui-rpms
+                                                                           11 k
+ python3             x86_64 3.9.16-1.el9_2.1      rhel-9-baseos-rhui-rpms  30 k
+ python3-cloud-what  x86_64 1.29.33.1-2.el9_2     rhel-9-baseos-rhui-rpms  91 k
+ python3-file-magic  noarch 5.39-12.1.el9_2       rhel-9-appstream-rhui-rpms
+                                                                           20 k
+ python3-libs        x86_64 3.9.16-1.el9_2.1      rhel-9-baseos-rhui-rpms 7.8 M
+ python3-perf        x86_64 5.14.0-284.25.1.el9_2 rhel-9-baseos-rhui-rpms 3.6 M
+ python3-requests    noarch 2.25.1-7.el9_2        rhel-9-baseos-rhui-rpms 128 k
+ python3-subscription-manager-rhsm
+                     x86_64 1.29.33.1-2.el9_2     rhel-9-baseos-rhui-rpms 176 k
+ redhat-cloud-client-configuration
+                     noarch 1-10.el9_0            rhel-9-appstream-rhui-rpms
+                                                                           20 k
+ rh-amazon-rhui-client
+                     noarch 4.0.10-1.el9          rhui-client-config-server-9
+                                                                           39 k
+ selinux-policy      noarch 38.1.11-2.el9_2.3     rhel-9-baseos-rhui-rpms  56 k
+ selinux-policy-targeted
+                     noarch 38.1.11-2.el9_2.3     rhel-9-baseos-rhui-rpms 6.8 M
+ sssd-client         x86_64 2.8.2-3.el9_2         rhel-9-baseos-rhui-rpms 169 k
+ sssd-common         x86_64 2.8.2-3.el9_2         rhel-9-baseos-rhui-rpms 1.6 M
+ sssd-kcm            x86_64 2.8.2-3.el9_2         rhel-9-baseos-rhui-rpms 113 k
+ subscription-manager
+                     x86_64 1.29.33.1-2.el9_2     rhel-9-baseos-rhui-rpms 906 k
+ systemd             x86_64 252-14.el9_2.3        rhel-9-baseos-rhui-rpms 4.1 M
+ systemd-libs        x86_64 252-14.el9_2.3        rhel-9-baseos-rhui-rpms 652 k
+ systemd-pam         x86_64 252-14.el9_2.3        rhel-9-baseos-rhui-rpms 257 k
+ systemd-rpm-macros  noarch 252-14.el9_2.3        rhel-9-baseos-rhui-rpms  45 k
+ systemd-udev        x86_64 252-14.el9_2.3        rhel-9-baseos-rhui-rpms 1.9 M
+Installing dependencies:
+ freetype            x86_64 2.10.4-9.el9          rhel-9-baseos-rhui-rpms 391 k
+ graphite2           x86_64 1.3.14-9.el9          rhel-9-baseos-rhui-rpms  98 k
+ grub2-tools-efi     x86_64 1:2.06-61.el9_2.1     rhel-9-baseos-rhui-rpms 543 k
+ grub2-tools-extra   x86_64 1:2.06-61.el9_2.1     rhel-9-baseos-rhui-rpms 848 k
+ harfbuzz            x86_64 2.7.4-8.el9           rhel-9-baseos-rhui-rpms 629 k
+ libpng              x86_64 2:1.6.37-12.el9       rhel-9-baseos-rhui-rpms 119 k
+
+Transaction Summary
+================================================================================
+Install  10 Packages
+Upgrade  61 Packages
+
+Total download size: 159 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/71): graphite2-1.3.14-9.el9.x86_64.rpm       1.6 MB/s |  98 kB     00:00
+(2/71): libpng-1.6.37-12.el9.x86_64.rpm         1.7 MB/s | 119 kB     00:00
+(3/71): freetype-2.10.4-9.el9.x86_64.rpm        4.5 MB/s | 391 kB     00:00
+(4/71): harfbuzz-2.7.4-8.el9.x86_64.rpm          14 MB/s | 629 kB     00:00
+(5/71): grub2-tools-extra-2.06-61.el9_2.1.x86_6  15 MB/s | 848 kB     00:00
+(6/71): grub2-tools-efi-2.06-61.el9_2.1.x86_64.  11 MB/s | 543 kB     00:00
+(7/71): kernel-core-5.14.0-284.25.1.el9_2.x86_6  29 MB/s |  17 MB     00:00
+(8/71): kernel-5.14.0-284.25.1.el9_2.x86_64.rpm  33 MB/s | 3.4 MB     00:00
+(9/71): redhat-cloud-client-configuration-1-10. 1.9 MB/s |  20 kB     00:00
+(10/71): python-unversioned-command-3.9.16-1.el 1.2 MB/s |  11 kB     00:00
+(11/71): insights-client-3.1.7-12.1.el9_2.noarc  26 MB/s | 1.2 MB     00:00
+(12/71): NetworkManager-cloud-setup-1.42.2-6.el 6.1 MB/s |  72 kB     00:00
+(13/71): python3-file-magic-5.39-12.1.el9_2.noa 1.6 MB/s |  20 kB     00:00
+(14/71): cloud-init-22.1-10.el9_2.noarch.rpm     24 MB/s | 1.1 MB     00:00
+(15/71): iputils-20210202-8.el9_1.1.x86_64.rpm   11 MB/s | 178 kB     00:00
+(16/71): c-ares-1.17.1-5.el9_2.1.x86_64.rpm     8.9 MB/s | 106 kB     00:00
+(17/71): python3-3.9.16-1.el9_2.1.x86_64.rpm    2.3 MB/s |  30 kB     00:00
+(18/71): kernel-modules-5.14.0-284.25.1.el9_2.x  28 MB/s |  37 MB     00:01
+(19/71): kernel-modules-core-5.14.0-284.25.1.el  21 MB/s |  36 MB     00:01
+(20/71): selinux-policy-38.1.11-2.el9_2.3.noarc 2.9 MB/s |  56 kB     00:00
+(21/71): krb5-libs-1.20.1-9.el9_2.x86_64.rpm     16 MB/s | 731 kB     00:00
+(22/71): less-590-2.el9_2.x86_64.rpm            7.9 MB/s | 166 kB     00:00
+(23/71): python3-libs-3.9.16-1.el9_2.1.x86_64.r 7.5 MB/s | 7.8 MB     00:01
+(24/71): kexec-tools-2.0.25-13.el9_2.1.x86_64.r 4.8 MB/s | 499 kB     00:00
+(25/71): libsss_nss_idmap-2.8.2-3.el9_2.x86_64. 2.6 MB/s |  49 kB     00:00
+(26/71): selinux-policy-targeted-38.1.11-2.el9_ 9.9 MB/s | 6.8 MB     00:00
+(27/71): NetworkManager-tui-1.42.2-6.el9_2.x86_ 2.8 MB/s | 243 kB     00:00
+(28/71): file-5.39-12.1.el9_2.x86_64.rpm        5.1 MB/s |  52 kB     00:00
+(29/71): grub2-common-2.06-61.el9_2.1.noarch.rp 8.9 MB/s | 917 kB     00:00
+(30/71): libsss_idmap-2.8.2-3.el9_2.x86_64.rpm  1.9 MB/s |  45 kB     00:00
+(31/71): libsss_certmap-2.8.2-3.el9_2.x86_64.rp 4.0 MB/s |  95 kB     00:00
+(32/71): libxml2-2.9.13-3.el9_2.1.x86_64.rpm     22 MB/s | 751 kB     00:00
+(33/71): sssd-client-2.8.2-3.el9_2.x86_64.rpm   4.7 MB/s | 169 kB     00:00
+(34/71): file-libs-5.39-12.1.el9_2.x86_64.rpm    13 MB/s | 592 kB     00:00
+(35/71): systemd-libs-252-14.el9_2.3.x86_64.rpm 6.4 MB/s | 652 kB     00:00
+(36/71): systemd-udev-252-14.el9_2.3.x86_64.rpm  12 MB/s | 1.9 MB     00:00
+(37/71): curl-7.76.1-23.el9_2.2.x86_64.rpm      6.7 MB/s | 298 kB     00:00
+(38/71): NetworkManager-1.42.2-6.el9_2.x86_64.r  12 MB/s | 2.2 MB     00:00
+(39/71): NetworkManager-team-1.42.2-6.el9_2.x86 1.3 MB/s |  39 kB     00:00
+(40/71): grub2-tools-minimal-2.06-61.el9_2.1.x8  21 MB/s | 609 kB     00:00
+(41/71): NetworkManager-libnm-1.42.2-6.el9_2.x8  19 MB/s | 1.8 MB     00:00
+(42/71): libsss_sudo-2.8.2-3.el9_2.x86_64.rpm   1.2 MB/s |  38 kB     00:00
+(43/71): sssd-common-2.8.2-3.el9_2.x86_64.rpm    21 MB/s | 1.6 MB     00:00
+(44/71): libcurl-7.76.1-23.el9_2.2.x86_64.rpm   8.3 MB/s | 286 kB     00:00
+(45/71): systemd-pam-252-14.el9_2.3.x86_64.rpm   16 MB/s | 257 kB     00:00
+(46/71): systemd-rpm-macros-252-14.el9_2.3.noar 4.0 MB/s |  45 kB     00:00
+(47/71): python3-requests-2.25.1-7.el9_2.noarch  11 MB/s | 128 kB     00:00
+(48/71): grub2-pc-2.06-61.el9_2.1.x86_64.rpm    1.4 MB/s |  16 kB     00:00
+(49/71): sssd-kcm-2.8.2-3.el9_2.x86_64.rpm      8.5 MB/s | 113 kB     00:00
+(50/71): grub2-pc-modules-2.06-61.el9_2.1.noarc  23 MB/s | 977 kB     00:00
+(51/71): openssl-3.0.7-17.el9_2.x86_64.rpm       20 MB/s | 1.2 MB     00:00
+(52/71): systemd-252-14.el9_2.3.x86_64.rpm       23 MB/s | 4.1 MB     00:00
+(53/71): libeconf-0.4.1-3.el9_2.x86_64.rpm      574 kB/s |  30 kB     00:00
+(54/71): grub2-tools-2.06-61.el9_2.1.x86_64.rpm  16 MB/s | 1.8 MB     00:00
+(55/71): openssl-libs-3.0.7-17.el9_2.x86_64.rpm  22 MB/s | 2.2 MB     00:00
+(56/71): kernel-tools-5.14.0-284.25.1.el9_2.x86  23 MB/s | 3.7 MB     00:00
+(57/71): python3-perf-5.14.0-284.25.1.el9_2.x86  21 MB/s | 3.6 MB     00:00
+(58/71): openssh-8.7p1-30.el9_2.x86_64.rpm      8.3 MB/s | 460 kB     00:00
+(59/71): openssh-server-8.7p1-30.el9_2.x86_64.r  14 MB/s | 459 kB     00:00
+(60/71): dbus-common-1.12.20-7.el9_2.1.noarch.r 1.9 MB/s |  18 kB     00:00
+(61/71): openssh-clients-8.7p1-30.el9_2.x86_64.  18 MB/s | 709 kB     00:00
+(62/71): dbus-1.12.20-7.el9_2.1.x86_64.rpm      600 kB/s | 7.9 kB     00:00
+(63/71): kernel-tools-libs-5.14.0-284.25.1.el9_  17 MB/s | 3.5 MB     00:00
+(64/71): dbus-tools-1.12.20-7.el9_2.1.x86_64.rp 1.3 MB/s |  56 kB     00:00
+(65/71): dbus-libs-1.12.20-7.el9_2.1.x86_64.rpm 3.1 MB/s | 154 kB     00:00
+(66/71): libdnf-plugin-subscription-manager-1.2 6.5 MB/s |  75 kB     00:00
+(67/71): python3-cloud-what-1.29.33.1-2.el9_2.x 7.4 MB/s |  91 kB     00:00
+(68/71): python3-subscription-manager-rhsm-1.29  12 MB/s | 176 kB     00:00
+(69/71): subscription-manager-1.29.33.1-2.el9_2  24 MB/s | 906 kB     00:00
+(70/71): rh-amazon-rhui-client-4.0.10-1.el9.noa 788 kB/s |  39 kB     00:00
+(71/71): microcode_ctl-20220809-2.20230808.2.el  40 MB/s | 7.8 MB     00:00
+--------------------------------------------------------------------------------
+Total                                            49 MB/s | 159 MB     00:03
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Running scriptlet: selinux-policy-targeted-38.1.11-2.el9_2.3.noarch       1/1
+  Preparing        :                                                        1/1
+  Upgrading        : openssl-libs-1:3.0.7-17.el9_2.x86_64                 1/132
+  Upgrading        : systemd-libs-252-14.el9_2.3.x86_64                   2/132
+  Running scriptlet: systemd-libs-252-14.el9_2.3.x86_64                   2/132
+  Upgrading        : krb5-libs-1.20.1-9.el9_2.x86_64                      3/132
+  Upgrading        : grub2-common-1:2.06-61.el9_2.1.noarch                4/132
+  Upgrading        : libcurl-7.76.1-23.el9_2.2.x86_64                     5/132
+  Upgrading        : NetworkManager-libnm-1:1.42.2-6.el9_2.x86_64         6/132
+  Running scriptlet: NetworkManager-libnm-1:1.42.2-6.el9_2.x86_64         6/132
+  Upgrading        : grub2-tools-minimal-1:2.06-61.el9_2.1.x86_64         7/132
+  Upgrading        : dbus-libs-1:1.12.20-7.el9_2.1.x86_64                 8/132
+  Running scriptlet: openssh-8.7p1-30.el9_2.x86_64                        9/132
+  Upgrading        : openssh-8.7p1-30.el9_2.x86_64                        9/132
+  Upgrading        : dbus-1:1.12.20-7.el9_2.1.x86_64                     10/132
+  Upgrading        : libsss_idmap-2.8.2-3.el9_2.x86_64                   11/132
+  Upgrading        : grub2-pc-modules-1:2.06-61.el9_2.1.noarch           12/132
+  Upgrading        : python3-libs-3.9.16-1.el9_2.1.x86_64                13/132
+  Upgrading        : python3-3.9.16-1.el9_2.1.x86_64                     14/132
+  Upgrading        : python-unversioned-command-3.9.16-1.el9_2.1.noar    15/132
+  Upgrading        : python3-requests-2.25.1-7.el9_2.noarch              16/132
+  Upgrading        : python3-cloud-what-1.29.33.1-2.el9_2.x86_64         17/132
+  Upgrading        : python3-subscription-manager-rhsm-1.29.33.1-2.el    18/132
+  Upgrading        : libsss_certmap-2.8.2-3.el9_2.x86_64                 19/132
+  Upgrading        : openssl-1:3.0.7-17.el9_2.x86_64                     20/132
+  Upgrading        : libdnf-plugin-subscription-manager-1.29.33.1-2.e    21/132
+  Upgrading        : selinux-policy-38.1.11-2.el9_2.3.noarch             22/132
+  Running scriptlet: selinux-policy-38.1.11-2.el9_2.3.noarch             22/132
+  Running scriptlet: selinux-policy-targeted-38.1.11-2.el9_2.3.noarch    23/132
+  Upgrading        : selinux-policy-targeted-38.1.11-2.el9_2.3.noarch    23/132
+  Running scriptlet: selinux-policy-targeted-38.1.11-2.el9_2.3.noarch    23/132
+  Upgrading        : kernel-tools-libs-5.14.0-284.25.1.el9_2.x86_64      24/132
+  Running scriptlet: kernel-tools-libs-5.14.0-284.25.1.el9_2.x86_64      24/132
+  Upgrading        : systemd-rpm-macros-252-14.el9_2.3.noarch            25/132
+  Upgrading        : systemd-pam-252-14.el9_2.3.x86_64                   26/132
+  Running scriptlet: systemd-252-14.el9_2.3.x86_64                       27/132
+  Upgrading        : systemd-252-14.el9_2.3.x86_64                       27/132
+  Running scriptlet: systemd-252-14.el9_2.3.x86_64                       27/132
+  Upgrading        : systemd-udev-252-14.el9_2.3.x86_64                  28/132
+  Running scriptlet: systemd-udev-252-14.el9_2.3.x86_64                  28/132
+  Installing       : kernel-modules-core-5.14.0-284.25.1.el9_2.x86_64    29/132
+  Installing       : kernel-core-5.14.0-284.25.1.el9_2.x86_64            30/132
+  Running scriptlet: kernel-core-5.14.0-284.25.1.el9_2.x86_64            30/132
+  Running scriptlet: NetworkManager-1:1.42.2-6.el9_2.x86_64              31/132
+  Upgrading        : NetworkManager-1:1.42.2-6.el9_2.x86_64              31/132
+  Running scriptlet: NetworkManager-1:1.42.2-6.el9_2.x86_64              31/132
+  Installing       : kernel-modules-5.14.0-284.25.1.el9_2.x86_64         32/132
+  Running scriptlet: kernel-modules-5.14.0-284.25.1.el9_2.x86_64         32/132
+  Running scriptlet: subscription-manager-1.29.33.1-2.el9_2.x86_64       33/132
+  Upgrading        : subscription-manager-1.29.33.1-2.el9_2.x86_64       33/132
+  Running scriptlet: subscription-manager-1.29.33.1-2.el9_2.x86_64       33/132
+  Upgrading        : libsss_sudo-2.8.2-3.el9_2.x86_64                    34/132
+  Upgrading        : file-libs-5.39-12.1.el9_2.x86_64                    35/132
+  Upgrading        : file-5.39-12.1.el9_2.x86_64                         36/132
+  Upgrading        : python3-file-magic-5.39-12.1.el9_2.noarch           37/132
+  Upgrading        : insights-client-3.1.7-12.1.el9_2.noarch             38/132
+  Running scriptlet: insights-client-3.1.7-12.1.el9_2.noarch             38/132
+  Running scriptlet: grub2-tools-1:2.06-61.el9_2.1.x86_64                39/132
+  Upgrading        : grub2-tools-1:2.06-61.el9_2.1.x86_64                39/132
+  Upgrading        : libsss_nss_idmap-2.8.2-3.el9_2.x86_64               40/132
+  Upgrading        : sssd-client-2.8.2-3.el9_2.x86_64                    41/132
+  Running scriptlet: sssd-client-2.8.2-3.el9_2.x86_64                    41/132
+  Upgrading        : c-ares-1.17.1-5.el9_2.1.x86_64                      42/132
+  Running scriptlet: sssd-common-2.8.2-3.el9_2.x86_64                    43/132
+  Upgrading        : sssd-common-2.8.2-3.el9_2.x86_64                    43/132
+  Running scriptlet: sssd-common-2.8.2-3.el9_2.x86_64                    43/132
+  Installing       : libpng-2:1.6.37-12.el9.x86_64                       44/132
+  Installing       : graphite2-1.3.14-9.el9.x86_64                       45/132
+  Installing       : freetype-2.10.4-9.el9.x86_64                        46/132
+  Installing       : harfbuzz-2.7.4-8.el9.x86_64                         47/132
+  Installing       : grub2-tools-extra-1:2.06-61.el9_2.1.x86_64          48/132
+  Upgrading        : sssd-kcm-2.8.2-3.el9_2.x86_64                       49/132
+  Running scriptlet: sssd-kcm-2.8.2-3.el9_2.x86_64                       49/132
+  Upgrading        : grub2-pc-1:2.06-61.el9_2.1.x86_64                   50/132
+  Upgrading        : redhat-cloud-client-configuration-1-10.el9_0.noa    51/132
+  Running scriptlet: redhat-cloud-client-configuration-1-10.el9_0.noa    51/132
+  Installing       : grub2-tools-efi-1:2.06-61.el9_2.1.x86_64            52/132
+  Installing       : kernel-5.14.0-284.25.1.el9_2.x86_64                 53/132
+  Upgrading        : NetworkManager-cloud-setup-1:1.42.2-6.el9_2.x86_    54/132
+  Running scriptlet: NetworkManager-cloud-setup-1:1.42.2-6.el9_2.x86_    54/132
+  Upgrading        : NetworkManager-tui-1:1.42.2-6.el9_2.x86_64          55/132
+  Upgrading        : NetworkManager-team-1:1.42.2-6.el9_2.x86_64         56/132
+  Running scriptlet: kexec-tools-2.0.25-13.el9_2.1.x86_64                57/132
+  Upgrading        : kexec-tools-2.0.25-13.el9_2.1.x86_64                57/132
+  Running scriptlet: kexec-tools-2.0.25-13.el9_2.1.x86_64                57/132
+  Upgrading        : cloud-init-22.1-10.el9_2.noarch                     58/132
+  Running scriptlet: cloud-init-22.1-10.el9_2.noarch                     58/132
+  Upgrading        : iputils-20210202-8.el9_1.1.x86_64                   59/132
+  Running scriptlet: iputils-20210202-8.el9_1.1.x86_64                   59/132
+  Running scriptlet: openssh-server-8.7p1-30.el9_2.x86_64                60/132
+  Upgrading        : openssh-server-8.7p1-30.el9_2.x86_64                60/132
+  Running scriptlet: openssh-server-8.7p1-30.el9_2.x86_64                60/132
+  Upgrading        : dbus-common-1:1.12.20-7.el9_2.1.noarch              61/132
+  Running scriptlet: dbus-common-1:1.12.20-7.el9_2.1.noarch              61/132
+  Upgrading        : microcode_ctl-4:20220809-2.20230808.2.el9_2.noar    62/132
+  Running scriptlet: microcode_ctl-4:20220809-2.20230808.2.el9_2.noar    62/132
+  Upgrading        : kernel-tools-5.14.0-284.25.1.el9_2.x86_64           63/132
+  Running scriptlet: kernel-tools-5.14.0-284.25.1.el9_2.x86_64           63/132
+  Upgrading        : rh-amazon-rhui-client-4.0.10-1.el9.noarch           64/132
+  Running scriptlet: rh-amazon-rhui-client-4.0.10-1.el9.noarch           64/132
+[INFO:choose_repo] choose_repo:33 2023-09-09 12:48:16,801: Enabling binary repos in redhat-rhui.repo
+[INFO:choose_repo] choose_repo:56 2023-09-09 12:48:16,802: Enabling client config repo
+[INFO:choose_repo] choose_repo:64 2023-09-09 12:48:16,802: Executing [sed -i 's/enabled=0/enabled=1/' /etc/yum.repos.d/redhat-rhui-client-config.repo]
+
+  Upgrading        : python3-perf-5.14.0-284.25.1.el9_2.x86_64           65/132
+  Upgrading        : openssh-clients-8.7p1-30.el9_2.x86_64               66/132
+  Running scriptlet: openssh-clients-8.7p1-30.el9_2.x86_64               66/132
+  Upgrading        : dbus-tools-1:1.12.20-7.el9_2.1.x86_64               67/132
+  Upgrading        : curl-7.76.1-23.el9_2.2.x86_64                       68/132
+  Upgrading        : libeconf-0.4.1-3.el9_2.x86_64                       69/132
+  Upgrading        : libxml2-2.9.13-3.el9_2.1.x86_64                     70/132
+  Upgrading        : less-590-2.el9_2.x86_64                             71/132
+  Running scriptlet: cloud-init-22.1-9.el9.noarch                        72/132
+  Cleanup          : cloud-init-22.1-9.el9.noarch                        72/132
+  Running scriptlet: cloud-init-22.1-9.el9.noarch                        72/132
+  Cleanup          : grub2-pc-1:2.06-61.el9.x86_64                       73/132
+  Running scriptlet: dbus-common-1:1.12.20-7.el9_1.noarch                74/132
+  Cleanup          : dbus-common-1:1.12.20-7.el9_1.noarch                74/132
+  Running scriptlet: dbus-common-1:1.12.20-7.el9_1.noarch                74/132
+  Running scriptlet: microcode_ctl-4:20220809-2.el9.noarch               75/132
+  Cleanup          : microcode_ctl-4:20220809-2.el9.noarch               75/132
+  Running scriptlet: microcode_ctl-4:20220809-2.el9.noarch               75/132
+  Cleanup          : selinux-policy-targeted-38.1.11-2.el9_2.2.noarch    76/132
+  Running scriptlet: selinux-policy-targeted-38.1.11-2.el9_2.2.noarch    76/132
+  Running scriptlet: redhat-cloud-client-configuration-1-10.el9.noarc    77/132
+  Cleanup          : redhat-cloud-client-configuration-1-10.el9.noarc    77/132
+  Running scriptlet: redhat-cloud-client-configuration-1-10.el9.noarc    77/132
+  Cleanup          : NetworkManager-tui-1:1.42.2-1.el9.x86_64            78/132
+  Running scriptlet: sssd-kcm-2.8.2-2.el9.x86_64                         79/132
+  Cleanup          : sssd-kcm-2.8.2-2.el9.x86_64                         79/132
+  Running scriptlet: sssd-kcm-2.8.2-2.el9.x86_64                         79/132
+  Running scriptlet: sssd-common-2.8.2-2.el9.x86_64                      80/132
+  Cleanup          : sssd-common-2.8.2-2.el9.x86_64                      80/132
+  Running scriptlet: sssd-common-2.8.2-2.el9.x86_64                      80/132
+  Running scriptlet: openssh-server-8.7p1-29.el9_2.x86_64                81/132
+  Cleanup          : openssh-server-8.7p1-29.el9_2.x86_64                81/132
+  Running scriptlet: openssh-server-8.7p1-29.el9_2.x86_64                81/132
+  Running scriptlet: NetworkManager-cloud-setup-1:1.42.2-1.el9.x86_64    82/132
+  Cleanup          : NetworkManager-cloud-setup-1:1.42.2-1.el9.x86_64    82/132
+  Running scriptlet: NetworkManager-cloud-setup-1:1.42.2-1.el9.x86_64    82/132
+  Running scriptlet: insights-client-3.1.7-12.el9.noarch                 83/132
+  Cleanup          : insights-client-3.1.7-12.el9.noarch                 83/132
+  Running scriptlet: insights-client-3.1.7-12.el9.noarch                 83/132
+  Running scriptlet: sssd-client-2.8.2-2.el9.x86_64                      84/132
+  Cleanup          : sssd-client-2.8.2-2.el9.x86_64                      84/132
+  Running scriptlet: subscription-manager-1.29.33.1-1.el9_2.x86_64       85/132
+  Cleanup          : subscription-manager-1.29.33.1-1.el9_2.x86_64       85/132
+  Running scriptlet: subscription-manager-1.29.33.1-1.el9_2.x86_64       85/132
+  Cleanup          : openssl-1:3.0.7-6.el9_2.x86_64                      86/132
+  Running scriptlet: openssh-clients-8.7p1-29.el9_2.x86_64               87/132
+  Cleanup          : openssh-clients-8.7p1-29.el9_2.x86_64               87/132
+  Cleanup          : python3-subscription-manager-rhsm-1.29.33.1-1.el    88/132
+  Cleanup          : dbus-tools-1:1.12.20-7.el9_1.x86_64                 89/132
+  Running scriptlet: kernel-tools-5.14.0-284.11.1.el9_2.x86_64           90/132
+  Cleanup          : kernel-tools-5.14.0-284.11.1.el9_2.x86_64           90/132
+  Running scriptlet: kernel-tools-5.14.0-284.11.1.el9_2.x86_64           90/132
+  Cleanup          : python3-cloud-what-1.29.33.1-1.el9_2.x86_64         91/132
+  Cleanup          : python3-file-magic-5.39-12.el9.noarch               92/132
+  Cleanup          : dbus-libs-1:1.12.20-7.el9_1.x86_64                  93/132
+  Cleanup          : openssh-8.7p1-29.el9_2.x86_64                       94/132
+  Cleanup          : libdnf-plugin-subscription-manager-1.29.33.1-1.e    95/132
+  Cleanup          : libsss_certmap-2.8.2-2.el9.x86_64                   96/132
+  Cleanup          : grub2-tools-1:2.06-61.el9.x86_64                    97/132
+  Cleanup          : file-5.39-12.el9.x86_64                             98/132
+  Cleanup          : curl-7.76.1-23.el9_2.1.x86_64                       99/132
+  Cleanup          : python3-requests-2.25.1-6.el9.noarch               100/132
+  Cleanup          : grub2-pc-modules-1:2.06-61.el9.noarch              101/132
+  Running scriptlet: rh-amazon-rhui-client-4.0.6-1.el9.noarch           102/132
+  Cleanup          : rh-amazon-rhui-client-4.0.6-1.el9.noarch           102/132
+  Cleanup          : grub2-tools-minimal-1:2.06-61.el9.x86_64           103/132
+  Cleanup          : python3-perf-5.14.0-284.11.1.el9_2.x86_64          104/132
+  Cleanup          : python-unversioned-command-3.9.16-1.el9.noarch     105/132
+  Cleanup          : python3-3.9.16-1.el9.x86_64                        106/132
+  Cleanup          : python3-libs-3.9.16-1.el9.x86_64                   107/132
+  Cleanup          : NetworkManager-team-1:1.42.2-1.el9.x86_64          108/132
+  Running scriptlet: NetworkManager-1:1.42.2-1.el9.x86_64               109/132
+  Cleanup          : NetworkManager-1:1.42.2-1.el9.x86_64               109/132
+  Running scriptlet: NetworkManager-1:1.42.2-1.el9.x86_64               109/132
+  Cleanup          : libcurl-7.76.1-23.el9_2.1.x86_64                   110/132
+  Cleanup          : krb5-libs-1.20.1-8.el9.x86_64                      111/132
+  Cleanup          : NetworkManager-libnm-1:1.42.2-1.el9.x86_64         112/132
+  Running scriptlet: NetworkManager-libnm-1:1.42.2-1.el9.x86_64         112/132
+  Running scriptlet: kexec-tools-2.0.25-13.el9_2.x86_64                 113/132
+  Cleanup          : kexec-tools-2.0.25-13.el9_2.x86_64                 113/132
+  Running scriptlet: kexec-tools-2.0.25-13.el9_2.x86_64                 113/132
+  Running scriptlet: systemd-udev-252-13.el9_2.x86_64                   114/132
+  Cleanup          : systemd-udev-252-13.el9_2.x86_64                   114/132
+  Running scriptlet: systemd-udev-252-13.el9_2.x86_64                   114/132
+  Running scriptlet: iputils-20210202-8.el9.x86_64                      115/132
+  Cleanup          : iputils-20210202-8.el9.x86_64                      115/132
+  Running scriptlet: iputils-20210202-8.el9.x86_64                      115/132
+  Cleanup          : grub2-common-1:2.06-61.el9.noarch                  116/132
+  Running scriptlet: selinux-policy-38.1.11-2.el9_2.2.noarch            117/132
+  Cleanup          : selinux-policy-38.1.11-2.el9_2.2.noarch            117/132
+  Running scriptlet: selinux-policy-38.1.11-2.el9_2.2.noarch            117/132
+  Cleanup          : systemd-252-13.el9_2.x86_64                        118/132
+  Running scriptlet: systemd-252-13.el9_2.x86_64                        118/132
+  Cleanup          : dbus-1:1.12.20-7.el9_1.x86_64                      119/132
+  Cleanup          : systemd-rpm-macros-252-13.el9_2.noarch             120/132
+  Cleanup          : systemd-libs-252-13.el9_2.x86_64                   121/132
+  Cleanup          : systemd-pam-252-13.el9_2.x86_64                    122/132
+  Cleanup          : openssl-libs-1:3.0.7-6.el9_2.x86_64                123/132
+  Cleanup          : file-libs-5.39-12.el9.x86_64                       124/132
+  Cleanup          : kernel-tools-libs-5.14.0-284.11.1.el9_2.x86_64     125/132
+  Running scriptlet: kernel-tools-libs-5.14.0-284.11.1.el9_2.x86_64     125/132
+  Cleanup          : libsss_idmap-2.8.2-2.el9.x86_64                    126/132
+  Cleanup          : libsss_nss_idmap-2.8.2-2.el9.x86_64                127/132
+  Cleanup          : libsss_sudo-2.8.2-2.el9.x86_64                     128/132
+  Cleanup          : c-ares-1.17.1-5.el9.x86_64                         129/132
+  Cleanup          : libeconf-0.4.1-2.el9.x86_64                        130/132
+  Cleanup          : libxml2-2.9.13-3.el9_1.x86_64                      131/132
+  Cleanup          : less-590-1.el9_0.x86_64                            132/132
+  Running scriptlet: grub2-common-1:2.06-61.el9_2.1.noarch              132/132
+Generating grub configuration file ...
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+
+  Running scriptlet: selinux-policy-targeted-38.1.11-2.el9_2.3.noarch   132/132
+  Running scriptlet: kernel-modules-core-5.14.0-284.25.1.el9_2.x86_64   132/132
+  Running scriptlet: kernel-core-5.14.0-284.25.1.el9_2.x86_64           132/132
+  Running scriptlet: kernel-modules-5.14.0-284.25.1.el9_2.x86_64        132/132
+  Running scriptlet: subscription-manager-1.29.33.1-2.el9_2.x86_64      132/132
+  Running scriptlet: sssd-common-2.8.2-3.el9_2.x86_64                   132/132
+  Running scriptlet: kexec-tools-2.0.25-13.el9_2.1.x86_64               132/132
+  Running scriptlet: microcode_ctl-4:20220809-2.20230808.2.el9_2.noar   132/132
+  Running scriptlet: less-590-1.el9_0.x86_64                            132/132
+  Verifying        : graphite2-1.3.14-9.el9.x86_64                        1/132
+  Verifying        : libpng-2:1.6.37-12.el9.x86_64                        2/132
+  Verifying        : freetype-2.10.4-9.el9.x86_64                         3/132
+  Verifying        : harfbuzz-2.7.4-8.el9.x86_64                          4/132
+  Verifying        : grub2-tools-extra-1:2.06-61.el9_2.1.x86_64           5/132
+  Verifying        : grub2-tools-efi-1:2.06-61.el9_2.1.x86_64             6/132
+  Verifying        : kernel-modules-5.14.0-284.25.1.el9_2.x86_64          7/132
+  Verifying        : kernel-core-5.14.0-284.25.1.el9_2.x86_64             8/132
+  Verifying        : kernel-modules-core-5.14.0-284.25.1.el9_2.x86_64     9/132
+  Verifying        : kernel-5.14.0-284.25.1.el9_2.x86_64                 10/132
+  Verifying        : redhat-cloud-client-configuration-1-10.el9_0.noa    11/132
+  Verifying        : redhat-cloud-client-configuration-1-10.el9.noarc    12/132
+  Verifying        : python-unversioned-command-3.9.16-1.el9_2.1.noar    13/132
+  Verifying        : python-unversioned-command-3.9.16-1.el9.noarch      14/132
+  Verifying        : insights-client-3.1.7-12.1.el9_2.noarch             15/132
+  Verifying        : insights-client-3.1.7-12.el9.noarch                 16/132
+  Verifying        : NetworkManager-cloud-setup-1:1.42.2-6.el9_2.x86_    17/132
+  Verifying        : NetworkManager-cloud-setup-1:1.42.2-1.el9.x86_64    18/132
+  Verifying        : python3-file-magic-5.39-12.1.el9_2.noarch           19/132
+  Verifying        : python3-file-magic-5.39-12.el9.noarch               20/132
+  Verifying        : cloud-init-22.1-10.el9_2.noarch                     21/132
+  Verifying        : cloud-init-22.1-9.el9.noarch                        22/132
+  Verifying        : iputils-20210202-8.el9_1.1.x86_64                   23/132
+  Verifying        : iputils-20210202-8.el9.x86_64                       24/132
+  Verifying        : c-ares-1.17.1-5.el9_2.1.x86_64                      25/132
+  Verifying        : c-ares-1.17.1-5.el9.x86_64                          26/132
+  Verifying        : python3-3.9.16-1.el9_2.1.x86_64                     27/132
+  Verifying        : python3-3.9.16-1.el9.x86_64                         28/132
+  Verifying        : python3-libs-3.9.16-1.el9_2.1.x86_64                29/132
+  Verifying        : python3-libs-3.9.16-1.el9.x86_64                    30/132
+  Verifying        : selinux-policy-targeted-38.1.11-2.el9_2.3.noarch    31/132
+  Verifying        : selinux-policy-targeted-38.1.11-2.el9_2.2.noarch    32/132
+  Verifying        : selinux-policy-38.1.11-2.el9_2.3.noarch             33/132
+  Verifying        : selinux-policy-38.1.11-2.el9_2.2.noarch             34/132
+  Verifying        : krb5-libs-1.20.1-9.el9_2.x86_64                     35/132
+  Verifying        : krb5-libs-1.20.1-8.el9.x86_64                       36/132
+  Verifying        : less-590-2.el9_2.x86_64                             37/132
+  Verifying        : less-590-1.el9_0.x86_64                             38/132
+  Verifying        : kexec-tools-2.0.25-13.el9_2.1.x86_64                39/132
+  Verifying        : kexec-tools-2.0.25-13.el9_2.x86_64                  40/132
+  Verifying        : libsss_nss_idmap-2.8.2-3.el9_2.x86_64               41/132
+  Verifying        : libsss_nss_idmap-2.8.2-2.el9.x86_64                 42/132
+  Verifying        : NetworkManager-tui-1:1.42.2-6.el9_2.x86_64          43/132
+  Verifying        : NetworkManager-tui-1:1.42.2-1.el9.x86_64            44/132
+  Verifying        : grub2-common-1:2.06-61.el9_2.1.noarch               45/132
+  Verifying        : grub2-common-1:2.06-61.el9.noarch                   46/132
+  Verifying        : file-5.39-12.1.el9_2.x86_64                         47/132
+  Verifying        : file-5.39-12.el9.x86_64                             48/132
+  Verifying        : libsss_idmap-2.8.2-3.el9_2.x86_64                   49/132
+  Verifying        : libsss_idmap-2.8.2-2.el9.x86_64                     50/132
+  Verifying        : libsss_certmap-2.8.2-3.el9_2.x86_64                 51/132
+  Verifying        : libsss_certmap-2.8.2-2.el9.x86_64                   52/132
+  Verifying        : libxml2-2.9.13-3.el9_2.1.x86_64                     53/132
+  Verifying        : libxml2-2.9.13-3.el9_1.x86_64                       54/132
+  Verifying        : sssd-client-2.8.2-3.el9_2.x86_64                    55/132
+  Verifying        : sssd-client-2.8.2-2.el9.x86_64                      56/132
+  Verifying        : file-libs-5.39-12.1.el9_2.x86_64                    57/132
+  Verifying        : file-libs-5.39-12.el9.x86_64                        58/132
+  Verifying        : systemd-udev-252-14.el9_2.3.x86_64                  59/132
+  Verifying        : systemd-udev-252-13.el9_2.x86_64                    60/132
+  Verifying        : NetworkManager-1:1.42.2-6.el9_2.x86_64              61/132
+  Verifying        : NetworkManager-1:1.42.2-1.el9.x86_64                62/132
+  Verifying        : systemd-libs-252-14.el9_2.3.x86_64                  63/132
+  Verifying        : systemd-libs-252-13.el9_2.x86_64                    64/132
+  Verifying        : curl-7.76.1-23.el9_2.2.x86_64                       65/132
+  Verifying        : curl-7.76.1-23.el9_2.1.x86_64                       66/132
+  Verifying        : NetworkManager-libnm-1:1.42.2-6.el9_2.x86_64        67/132
+  Verifying        : NetworkManager-libnm-1:1.42.2-1.el9.x86_64          68/132
+  Verifying        : NetworkManager-team-1:1.42.2-6.el9_2.x86_64         69/132
+  Verifying        : NetworkManager-team-1:1.42.2-1.el9.x86_64           70/132
+  Verifying        : grub2-tools-minimal-1:2.06-61.el9_2.1.x86_64        71/132
+  Verifying        : grub2-tools-minimal-1:2.06-61.el9.x86_64            72/132
+  Verifying        : sssd-common-2.8.2-3.el9_2.x86_64                    73/132
+  Verifying        : sssd-common-2.8.2-2.el9.x86_64                      74/132
+  Verifying        : libsss_sudo-2.8.2-3.el9_2.x86_64                    75/132
+  Verifying        : libsss_sudo-2.8.2-2.el9.x86_64                      76/132
+  Verifying        : libcurl-7.76.1-23.el9_2.2.x86_64                    77/132
+  Verifying        : libcurl-7.76.1-23.el9_2.1.x86_64                    78/132
+  Verifying        : systemd-252-14.el9_2.3.x86_64                       79/132
+  Verifying        : systemd-252-13.el9_2.x86_64                         80/132
+  Verifying        : systemd-pam-252-14.el9_2.3.x86_64                   81/132
+  Verifying        : systemd-pam-252-13.el9_2.x86_64                     82/132
+  Verifying        : systemd-rpm-macros-252-14.el9_2.3.noarch            83/132
+  Verifying        : systemd-rpm-macros-252-13.el9_2.noarch              84/132
+  Verifying        : python3-requests-2.25.1-7.el9_2.noarch              85/132
+  Verifying        : python3-requests-2.25.1-6.el9.noarch                86/132
+  Verifying        : grub2-pc-1:2.06-61.el9_2.1.x86_64                   87/132
+  Verifying        : grub2-pc-1:2.06-61.el9.x86_64                       88/132
+  Verifying        : grub2-pc-modules-1:2.06-61.el9_2.1.noarch           89/132
+  Verifying        : grub2-pc-modules-1:2.06-61.el9.noarch               90/132
+  Verifying        : sssd-kcm-2.8.2-3.el9_2.x86_64                       91/132
+  Verifying        : sssd-kcm-2.8.2-2.el9.x86_64                         92/132
+  Verifying        : openssl-1:3.0.7-17.el9_2.x86_64                     93/132
+  Verifying        : openssl-1:3.0.7-6.el9_2.x86_64                      94/132
+  Verifying        : grub2-tools-1:2.06-61.el9_2.1.x86_64                95/132
+  Verifying        : grub2-tools-1:2.06-61.el9.x86_64                    96/132
+  Verifying        : libeconf-0.4.1-3.el9_2.x86_64                       97/132
+  Verifying        : libeconf-0.4.1-2.el9.x86_64                         98/132
+  Verifying        : openssl-libs-1:3.0.7-17.el9_2.x86_64                99/132
+  Verifying        : openssl-libs-1:3.0.7-6.el9_2.x86_64                100/132
+  Verifying        : kernel-tools-5.14.0-284.25.1.el9_2.x86_64          101/132
+  Verifying        : kernel-tools-5.14.0-284.11.1.el9_2.x86_64          102/132
+  Verifying        : python3-perf-5.14.0-284.25.1.el9_2.x86_64          103/132
+  Verifying        : python3-perf-5.14.0-284.11.1.el9_2.x86_64          104/132
+  Verifying        : kernel-tools-libs-5.14.0-284.25.1.el9_2.x86_64     105/132
+  Verifying        : kernel-tools-libs-5.14.0-284.11.1.el9_2.x86_64     106/132
+  Verifying        : openssh-8.7p1-30.el9_2.x86_64                      107/132
+  Verifying        : openssh-8.7p1-29.el9_2.x86_64                      108/132
+  Verifying        : openssh-server-8.7p1-30.el9_2.x86_64               109/132
+  Verifying        : openssh-server-8.7p1-29.el9_2.x86_64               110/132
+  Verifying        : openssh-clients-8.7p1-30.el9_2.x86_64              111/132
+  Verifying        : openssh-clients-8.7p1-29.el9_2.x86_64              112/132
+  Verifying        : dbus-common-1:1.12.20-7.el9_2.1.noarch             113/132
+  Verifying        : dbus-common-1:1.12.20-7.el9_1.noarch               114/132
+  Verifying        : dbus-1:1.12.20-7.el9_2.1.x86_64                    115/132
+  Verifying        : dbus-1:1.12.20-7.el9_1.x86_64                      116/132
+  Verifying        : dbus-libs-1:1.12.20-7.el9_2.1.x86_64               117/132
+  Verifying        : dbus-libs-1:1.12.20-7.el9_1.x86_64                 118/132
+  Verifying        : dbus-tools-1:1.12.20-7.el9_2.1.x86_64              119/132
+  Verifying        : dbus-tools-1:1.12.20-7.el9_1.x86_64                120/132
+  Verifying        : libdnf-plugin-subscription-manager-1.29.33.1-2.e   121/132
+  Verifying        : libdnf-plugin-subscription-manager-1.29.33.1-1.e   122/132
+  Verifying        : python3-cloud-what-1.29.33.1-2.el9_2.x86_64        123/132
+  Verifying        : python3-cloud-what-1.29.33.1-1.el9_2.x86_64        124/132
+  Verifying        : python3-subscription-manager-rhsm-1.29.33.1-2.el   125/132
+  Verifying        : python3-subscription-manager-rhsm-1.29.33.1-1.el   126/132
+  Verifying        : subscription-manager-1.29.33.1-2.el9_2.x86_64      127/132
+  Verifying        : subscription-manager-1.29.33.1-1.el9_2.x86_64      128/132
+  Verifying        : microcode_ctl-4:20220809-2.20230808.2.el9_2.noar   129/132
+  Verifying        : microcode_ctl-4:20220809-2.el9.noarch              130/132
+  Verifying        : rh-amazon-rhui-client-4.0.10-1.el9.noarch          131/132
+  Verifying        : rh-amazon-rhui-client-4.0.6-1.el9.noarch           132/132
+Installed products updated.
+
+Upgraded:
+  NetworkManager-1:1.42.2-6.el9_2.x86_64
+  NetworkManager-cloud-setup-1:1.42.2-6.el9_2.x86_64
+  NetworkManager-libnm-1:1.42.2-6.el9_2.x86_64
+  NetworkManager-team-1:1.42.2-6.el9_2.x86_64
+  NetworkManager-tui-1:1.42.2-6.el9_2.x86_64
+  c-ares-1.17.1-5.el9_2.1.x86_64
+  cloud-init-22.1-10.el9_2.noarch
+  curl-7.76.1-23.el9_2.2.x86_64
+  dbus-1:1.12.20-7.el9_2.1.x86_64
+  dbus-common-1:1.12.20-7.el9_2.1.noarch
+  dbus-libs-1:1.12.20-7.el9_2.1.x86_64
+  dbus-tools-1:1.12.20-7.el9_2.1.x86_64
+  file-5.39-12.1.el9_2.x86_64
+  file-libs-5.39-12.1.el9_2.x86_64
+  grub2-common-1:2.06-61.el9_2.1.noarch
+  grub2-pc-1:2.06-61.el9_2.1.x86_64
+  grub2-pc-modules-1:2.06-61.el9_2.1.noarch
+  grub2-tools-1:2.06-61.el9_2.1.x86_64
+  grub2-tools-minimal-1:2.06-61.el9_2.1.x86_64
+  insights-client-3.1.7-12.1.el9_2.noarch
+  iputils-20210202-8.el9_1.1.x86_64
+  kernel-tools-5.14.0-284.25.1.el9_2.x86_64
+  kernel-tools-libs-5.14.0-284.25.1.el9_2.x86_64
+  kexec-tools-2.0.25-13.el9_2.1.x86_64
+  krb5-libs-1.20.1-9.el9_2.x86_64
+  less-590-2.el9_2.x86_64
+  libcurl-7.76.1-23.el9_2.2.x86_64
+  libdnf-plugin-subscription-manager-1.29.33.1-2.el9_2.x86_64
+  libeconf-0.4.1-3.el9_2.x86_64
+  libsss_certmap-2.8.2-3.el9_2.x86_64
+  libsss_idmap-2.8.2-3.el9_2.x86_64
+  libsss_nss_idmap-2.8.2-3.el9_2.x86_64
+  libsss_sudo-2.8.2-3.el9_2.x86_64
+  libxml2-2.9.13-3.el9_2.1.x86_64
+  microcode_ctl-4:20220809-2.20230808.2.el9_2.noarch
+  openssh-8.7p1-30.el9_2.x86_64
+  openssh-clients-8.7p1-30.el9_2.x86_64
+  openssh-server-8.7p1-30.el9_2.x86_64
+  openssl-1:3.0.7-17.el9_2.x86_64
+  openssl-libs-1:3.0.7-17.el9_2.x86_64
+  python-unversioned-command-3.9.16-1.el9_2.1.noarch
+  python3-3.9.16-1.el9_2.1.x86_64
+  python3-cloud-what-1.29.33.1-2.el9_2.x86_64
+  python3-file-magic-5.39-12.1.el9_2.noarch
+  python3-libs-3.9.16-1.el9_2.1.x86_64
+  python3-perf-5.14.0-284.25.1.el9_2.x86_64
+  python3-requests-2.25.1-7.el9_2.noarch
+  python3-subscription-manager-rhsm-1.29.33.1-2.el9_2.x86_64
+  redhat-cloud-client-configuration-1-10.el9_0.noarch
+  rh-amazon-rhui-client-4.0.10-1.el9.noarch
+  selinux-policy-38.1.11-2.el9_2.3.noarch
+  selinux-policy-targeted-38.1.11-2.el9_2.3.noarch
+  sssd-client-2.8.2-3.el9_2.x86_64
+  sssd-common-2.8.2-3.el9_2.x86_64
+  sssd-kcm-2.8.2-3.el9_2.x86_64
+  subscription-manager-1.29.33.1-2.el9_2.x86_64
+  systemd-252-14.el9_2.3.x86_64
+  systemd-libs-252-14.el9_2.3.x86_64
+  systemd-pam-252-14.el9_2.3.x86_64
+  systemd-rpm-macros-252-14.el9_2.3.noarch
+  systemd-udev-252-14.el9_2.3.x86_64
+Installed:
+  freetype-2.10.4-9.el9.x86_64
+  graphite2-1.3.14-9.el9.x86_64
+  grub2-tools-efi-1:2.06-61.el9_2.1.x86_64
+  grub2-tools-extra-1:2.06-61.el9_2.1.x86_64
+  harfbuzz-2.7.4-8.el9.x86_64
+  kernel-5.14.0-284.25.1.el9_2.x86_64
+  kernel-core-5.14.0-284.25.1.el9_2.x86_64
+  kernel-modules-5.14.0-284.25.1.el9_2.x86_64
+  kernel-modules-core-5.14.0-284.25.1.el9_2.x86_64
+  libpng-2:1.6.37-12.el9.x86_64
+
+Complete!
+[root@ip-172-31-23-222 ~]# sudo yum install java-1.8.0-openjdk
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Red Hat Enterprise Linux 9 for x86_64 - AppStre  69 kB/s | 4.5 kB     00:00
+Red Hat Enterprise Linux 9 for x86_64 - BaseOS   67 kB/s | 4.1 kB     00:00
+Red Hat Enterprise Linux 9 Client Configuration  36 kB/s | 2.0 kB     00:00
+Dependencies resolved.
+================================================================================
+ Package                Arch   Version         Repository                  Size
+================================================================================
+Installing:
+ java-1.8.0-openjdk     x86_64 1:1.8.0.382.b05-2.el9
+                                               rhel-9-appstream-rhui-rpms 462 k
+Installing dependencies:
+ ModemManager-glib      x86_64 1.20.2-1.el9    rhel-9-baseos-rhui-rpms    337 k
+ adobe-source-code-pro-fonts
+                        noarch 2.030.1.050-12.el9.1
+                                               rhel-9-appstream-rhui-rpms 836 k
+ adwaita-cursor-theme   noarch 40.1.1-3.el9    rhel-9-appstream-rhui-rpms 655 k
+ adwaita-icon-theme     noarch 40.1.1-3.el9    rhel-9-appstream-rhui-rpms  12 M
+ alsa-lib               x86_64 1.2.8-3.el9     rhel-9-appstream-rhui-rpms 521 k
+ at-spi2-atk            x86_64 2.38.0-4.el9    rhel-9-appstream-rhui-rpms  90 k
+ at-spi2-core           x86_64 2.40.3-1.el9    rhel-9-appstream-rhui-rpms 199 k
+ atk                    x86_64 2.36.0-5.el9    rhel-9-appstream-rhui-rpms 296 k
+ avahi-glib             x86_64 0.8-12.el9_2.1  rhel-9-appstream-rhui-rpms  15 k
+ avahi-libs             x86_64 0.8-12.el9_2.1  rhel-9-baseos-rhui-rpms     71 k
+ bluez-libs             x86_64 5.64-2.el9      rhel-9-baseos-rhui-rpms     85 k
+ bubblewrap             x86_64 0.4.1-6.el9     rhel-9-baseos-rhui-rpms     52 k
+ cairo                  x86_64 1.17.4-7.el9    rhel-9-appstream-rhui-rpms 664 k
+ cairo-gobject          x86_64 1.17.4-7.el9    rhel-9-appstream-rhui-rpms  20 k
+ colord-libs            x86_64 1.4.5-4.el9     rhel-9-appstream-rhui-rpms 233 k
+ copy-jdk-configs       noarch 4.0-3.el9       rhel-9-appstream-rhui-rpms  29 k
+ cups-libs              x86_64 1:2.3.3op2-16.el9_2.1
+                                               rhel-9-baseos-rhui-rpms    264 k
+ exempi                 x86_64 2.6.0-0.2.20211007gite23c213.el9
+                                               rhel-9-appstream-rhui-rpms 528 k
+ exiv2-libs             x86_64 0.27.5-2.el9    rhel-9-appstream-rhui-rpms 782 k
+ fdk-aac-free           x86_64 2.0.0-8.el9     rhel-9-appstream-rhui-rpms 327 k
+ flac-libs              x86_64 1.3.3-10.el9    rhel-9-appstream-rhui-rpms 223 k
+ flatpak-selinux        noarch 1.12.7-2.el9    rhel-9-appstream-rhui-rpms  23 k
+ flatpak-session-helper x86_64 1.12.7-2.el9    rhel-9-appstream-rhui-rpms  78 k
+ fontconfig             x86_64 2.14.0-2.el9_1  rhel-9-appstream-rhui-rpms 301 k
+ fribidi                x86_64 1.0.10-6.el9.2  rhel-9-appstream-rhui-rpms  89 k
+ fuse                   x86_64 2.9.9-15.el9    rhel-9-baseos-rhui-rpms     84 k
+ fuse-common            x86_64 3.10.2-5.el9    rhel-9-baseos-rhui-rpms    9.3 k
+ gdk-pixbuf2            x86_64 2.42.6-3.el9    rhel-9-appstream-rhui-rpms 496 k
+ gdk-pixbuf2-modules    x86_64 2.42.6-3.el9    rhel-9-appstream-rhui-rpms  93 k
+ geoclue2               x86_64 2.6.0-7.el9     rhel-9-appstream-rhui-rpms 128 k
+ giflib                 x86_64 5.2.1-9.el9     rhel-9-appstream-rhui-rpms  51 k
+ glib-networking        x86_64 2.68.3-3.el9    rhel-9-baseos-rhui-rpms    190 k
+ graphene               x86_64 1.10.6-2.el9    rhel-9-appstream-rhui-rpms  67 k
+ gsettings-desktop-schemas
+                        x86_64 40.0-6.el9      rhel-9-baseos-rhui-rpms    688 k
+ gsm                    x86_64 1.0.19-6.el9    rhel-9-appstream-rhui-rpms  36 k
+ gstreamer1             x86_64 1.18.4-4.el9    rhel-9-appstream-rhui-rpms 1.4 M
+ gstreamer1-plugins-base
+                        x86_64 1.18.4-5.el9    rhel-9-appstream-rhui-rpms 2.1 M
+ gtk-update-icon-cache  x86_64 3.24.31-2.el9   rhel-9-appstream-rhui-rpms  37 k
+ gtk3                   x86_64 3.24.31-2.el9   rhel-9-appstream-rhui-rpms 4.9 M
+ hicolor-icon-theme     noarch 0.17-13.el9     rhel-9-appstream-rhui-rpms 223 k
+ iso-codes              noarch 4.6.0-3.el9     rhel-9-appstream-rhui-rpms 3.5 M
+ java-1.8.0-openjdk-headless
+                        x86_64 1:1.8.0.382.b05-2.el9
+                                               rhel-9-appstream-rhui-rpms  33 M
+ javapackages-filesystem
+                        noarch 6.0.0-4.el9     rhel-9-appstream-rhui-rpms  17 k
+ jbigkit-libs           x86_64 2.1-23.el9      rhel-9-appstream-rhui-rpms  56 k
+ lcms2                  x86_64 2.12-3.el9      rhel-9-appstream-rhui-rpms 169 k
+ libX11                 x86_64 1.7.0-7.el9     rhel-9-appstream-rhui-rpms 648 k
+ libX11-common          noarch 1.7.0-7.el9     rhel-9-appstream-rhui-rpms 210 k
+ libX11-xcb             x86_64 1.7.0-7.el9     rhel-9-appstream-rhui-rpms  14 k
+ libXau                 x86_64 1.0.9-8.el9     rhel-9-appstream-rhui-rpms  34 k
+ libXcomposite          x86_64 0.4.5-7.el9     rhel-9-appstream-rhui-rpms  26 k
+ libXcursor             x86_64 1.2.0-7.el9     rhel-9-appstream-rhui-rpms  33 k
+ libXdamage             x86_64 1.1.5-7.el9     rhel-9-appstream-rhui-rpms  25 k
+ libXext                x86_64 1.3.4-8.el9     rhel-9-appstream-rhui-rpms  42 k
+ libXfixes              x86_64 5.0.3-16.el9    rhel-9-appstream-rhui-rpms  22 k
+ libXft                 x86_64 2.3.3-8.el9     rhel-9-appstream-rhui-rpms  64 k
+ libXi                  x86_64 1.7.10-8.el9    rhel-9-appstream-rhui-rpms  41 k
+ libXinerama            x86_64 1.1.4-10.el9    rhel-9-appstream-rhui-rpms  17 k
+ libXrandr              x86_64 1.5.2-8.el9     rhel-9-appstream-rhui-rpms  30 k
+ libXrender             x86_64 0.9.10-16.el9   rhel-9-appstream-rhui-rpms  30 k
+ libXtst                x86_64 1.2.3-16.el9    rhel-9-appstream-rhui-rpms  23 k
+ libXv                  x86_64 1.0.11-16.el9   rhel-9-appstream-rhui-rpms  21 k
+ libXxf86vm             x86_64 1.1.4-18.el9    rhel-9-appstream-rhui-rpms  21 k
+ libappstream-glib      x86_64 0.7.18-4.el9    rhel-9-appstream-rhui-rpms 400 k
+ libasyncns             x86_64 0.8-22.el9      rhel-9-appstream-rhui-rpms  32 k
+ libatomic              x86_64 11.3.1-4.3.el9  rhel-9-baseos-rhui-rpms     53 k
+ libcanberra            x86_64 0.30-26.el9     rhel-9-appstream-rhui-rpms  94 k
+ libcanberra-gtk3       x86_64 0.30-26.el9     rhel-9-appstream-rhui-rpms  37 k
+ libdatrie              x86_64 0.2.13-4.el9    rhel-9-appstream-rhui-rpms  34 k
+ libdrm                 x86_64 2.4.114-1.el9   rhel-9-appstream-rhui-rpms 164 k
+ libepoxy               x86_64 1.5.5-4.el9     rhel-9-appstream-rhui-rpms 244 k
+ libexif                x86_64 0.6.22-6.el9    rhel-9-appstream-rhui-rpms 439 k
+ libfontenc             x86_64 1.1.3-17.el9    rhel-9-appstream-rhui-rpms  33 k
+ libgexiv2              x86_64 0.12.3-1.el9    rhel-9-appstream-rhui-rpms  86 k
+ libglvnd               x86_64 1:1.3.4-1.el9   rhel-9-appstream-rhui-rpms 137 k
+ libglvnd-egl           x86_64 1:1.3.4-1.el9   rhel-9-appstream-rhui-rpms  39 k
+ libglvnd-glx           x86_64 1:1.3.4-1.el9   rhel-9-appstream-rhui-rpms 147 k
+ libgsf                 x86_64 1.14.47-5.el9   rhel-9-appstream-rhui-rpms 260 k
+ libgudev               x86_64 237-1.el9       rhel-9-baseos-rhui-rpms     38 k
+ libgusb                x86_64 0.3.8-1.el9     rhel-9-baseos-rhui-rpms     55 k
+ libgxps                x86_64 0.3.2-3.el9     rhel-9-appstream-rhui-rpms  82 k
+ libicu                 x86_64 67.1-9.el9      rhel-9-baseos-rhui-rpms    9.6 M
+ libiptcdata            x86_64 1.0.5-9.el9     rhel-9-appstream-rhui-rpms  66 k
+ libjpeg-turbo          x86_64 2.0.90-6.el9_1  rhel-9-appstream-rhui-rpms 178 k
+ libldac                x86_64 2.0.2.3-10.el9  rhel-9-appstream-rhui-rpms  44 k
+ libnotify              x86_64 0.7.9-8.el9     rhel-9-appstream-rhui-rpms  47 k
+ libogg                 x86_64 2:1.3.4-6.el9   rhel-9-appstream-rhui-rpms  36 k
+ libosinfo              x86_64 1.10.0-1.el9    rhel-9-appstream-rhui-rpms 323 k
+ libpciaccess           x86_64 0.16-6.el9      rhel-9-baseos-rhui-rpms     30 k
+ libproxy               x86_64 0.4.15-35.el9   rhel-9-baseos-rhui-rpms     78 k
+ librsvg2               x86_64 2.50.7-1.el9    rhel-9-appstream-rhui-rpms 3.4 M
+ libsbc                 x86_64 1.4-9.el9       rhel-9-appstream-rhui-rpms  46 k
+ libsndfile             x86_64 1.0.31-7.el9    rhel-9-appstream-rhui-rpms 209 k
+ libsoup                x86_64 2.72.0-8.el9    rhel-9-appstream-rhui-rpms 409 k
+ libstemmer             x86_64 0-18.585svn.el9 rhel-9-appstream-rhui-rpms  85 k
+ libthai                x86_64 0.1.28-8.el9    rhel-9-appstream-rhui-rpms 211 k
+ libtheora              x86_64 1:1.1.1-31.el9  rhel-9-appstream-rhui-rpms 167 k
+ libtiff                x86_64 4.4.0-8.el9_2   rhel-9-appstream-rhui-rpms 200 k
+ libtool-ltdl           x86_64 2.4.6-45.el9    rhel-9-appstream-rhui-rpms  39 k
+ libtracker-sparql      x86_64 3.1.2-3.el9_1   rhel-9-appstream-rhui-rpms 328 k
+ libusbx                x86_64 1.0.26-1.el9    rhel-9-baseos-rhui-rpms     78 k
+ libvisual              x86_64 1:0.4.0-34.el9  rhel-9-appstream-rhui-rpms 147 k
+ libvorbis              x86_64 1:1.3.7-5.el9   rhel-9-appstream-rhui-rpms 197 k
+ libwayland-client      x86_64 1.21.0-1.el9    rhel-9-appstream-rhui-rpms  35 k
+ libwayland-cursor      x86_64 1.21.0-1.el9    rhel-9-appstream-rhui-rpms  21 k
+ libwayland-egl         x86_64 1.21.0-1.el9    rhel-9-appstream-rhui-rpms  14 k
+ libwayland-server      x86_64 1.21.0-1.el9    rhel-9-appstream-rhui-rpms  43 k
+ libwebp                x86_64 1.2.0-6.el9_1   rhel-9-appstream-rhui-rpms 281 k
+ libxcb                 x86_64 1.13.1-9.el9    rhel-9-appstream-rhui-rpms 247 k
+ libxkbcommon           x86_64 1.0.3-4.el9     rhel-9-appstream-rhui-rpms 136 k
+ libxshmfence           x86_64 1.3-10.el9      rhel-9-appstream-rhui-rpms  14 k
+ libxslt                x86_64 1.1.34-9.el9    rhel-9-appstream-rhui-rpms 247 k
+ lksctp-tools           x86_64 1.0.19-2.el9    rhel-9-baseos-rhui-rpms     98 k
+ llvm-libs              x86_64 15.0.7-1.el9    rhel-9-appstream-rhui-rpms  21 M
+ low-memory-monitor     x86_64 2.1-4.el9       rhel-9-appstream-rhui-rpms  38 k
+ lua                    x86_64 5.4.4-3.el9     rhel-9-appstream-rhui-rpms 192 k
+ lua-posix              x86_64 35.0-8.el9      rhel-9-appstream-rhui-rpms 155 k
+ mesa-libEGL            x86_64 22.3.0-2.el9    rhel-9-appstream-rhui-rpms 126 k
+ mesa-libGL             x86_64 22.3.0-2.el9    rhel-9-appstream-rhui-rpms 170 k
+ mesa-libgbm            x86_64 22.3.0-2.el9    rhel-9-appstream-rhui-rpms  40 k
+ mesa-libglapi          x86_64 22.3.0-2.el9    rhel-9-appstream-rhui-rpms  51 k
+ mesa-vulkan-drivers    x86_64 22.3.0-2.el9    rhel-9-appstream-rhui-rpms 7.4 M
+ mkfontscale            x86_64 1.2.1-3.el9     rhel-9-appstream-rhui-rpms  34 k
+ nspr                   x86_64 4.34.0-18.el9_1 rhel-9-appstream-rhui-rpms 138 k
+ nss                    x86_64 3.79.0-18.el9_1 rhel-9-appstream-rhui-rpms 708 k
+ nss-softokn            x86_64 3.79.0-18.el9_1 rhel-9-appstream-rhui-rpms 386 k
+ nss-softokn-freebl     x86_64 3.79.0-18.el9_1 rhel-9-appstream-rhui-rpms 334 k
+ nss-sysinit            x86_64 3.79.0-18.el9_1 rhel-9-appstream-rhui-rpms  22 k
+ nss-util               x86_64 3.79.0-18.el9_1 rhel-9-appstream-rhui-rpms  91 k
+ openjpeg2              x86_64 2.4.0-7.el9     rhel-9-appstream-rhui-rpms 166 k
+ opus                   x86_64 1.3.1-10.el9    rhel-9-appstream-rhui-rpms 201 k
+ orc                    x86_64 0.4.31-6.el9    rhel-9-appstream-rhui-rpms 187 k
+ osinfo-db              noarch 20221130-1.el9  rhel-9-appstream-rhui-rpms 494 k
+ osinfo-db-tools        x86_64 1.10.0-1.el9    rhel-9-appstream-rhui-rpms  78 k
+ ostree-libs            x86_64 2023.1-6.el9_2  rhel-9-appstream-rhui-rpms 444 k
+ pango                  x86_64 1.48.7-3.el9    rhel-9-appstream-rhui-rpms 306 k
+ pipewire-libs          x86_64 0.3.47-3.el9_2  rhel-9-appstream-rhui-rpms 1.5 M
+ pixman                 x86_64 0.40.0-5.el9    rhel-9-appstream-rhui-rpms 272 k
+ poppler                x86_64 21.01.0-14.el9  rhel-9-appstream-rhui-rpms 1.1 M
+ poppler-data           noarch 0.4.9-9.el9     rhel-9-appstream-rhui-rpms 1.9 M
+ poppler-glib           x86_64 21.01.0-14.el9  rhel-9-appstream-rhui-rpms 155 k
+ pulseaudio-libs        x86_64 15.0-2.el9      rhel-9-appstream-rhui-rpms 683 k
+ pulseaudio-utils       x86_64 15.0-2.el9      rhel-9-appstream-rhui-rpms  80 k
+ rtkit                  x86_64 0.11-28.el9     rhel-9-appstream-rhui-rpms  60 k
+ shared-mime-info       x86_64 2.1-5.el9       rhel-9-baseos-rhui-rpms    561 k
+ sound-theme-freedesktop
+                        noarch 0.8-17.el9      rhel-9-appstream-rhui-rpms 387 k
+ totem-pl-parser        x86_64 3.26.6-2.el9    rhel-9-appstream-rhui-rpms 157 k
+ tracker                x86_64 3.1.2-3.el9_1   rhel-9-appstream-rhui-rpms 559 k
+ ttmkfdir               x86_64 3.0.9-65.el9    rhel-9-appstream-rhui-rpms  55 k
+ tzdata-java            noarch 2023c-1.el9     rhel-9-appstream-rhui-rpms 234 k
+ upower                 x86_64 0.99.13-2.el9   rhel-9-appstream-rhui-rpms 173 k
+ vulkan-loader          x86_64 1.3.239.0-1.el9 rhel-9-appstream-rhui-rpms 143 k
+ webkit2gtk3-jsc        x86_64 2.38.5-1.el9_2.3
+                                               rhel-9-appstream-rhui-rpms 3.2 M
+ webrtc-audio-processing
+                        x86_64 0.3.1-8.el9     rhel-9-appstream-rhui-rpms 308 k
+ wireplumber            x86_64 0.4.8-1.el9     rhel-9-appstream-rhui-rpms  89 k
+ wireplumber-libs       x86_64 0.4.8-1.el9     rhel-9-appstream-rhui-rpms 329 k
+ xdg-dbus-proxy         x86_64 0.1.3-1.el9     rhel-9-appstream-rhui-rpms  44 k
+ xdg-desktop-portal     x86_64 1.12.4-1.el9    rhel-9-appstream-rhui-rpms 388 k
+ xkeyboard-config       noarch 2.33-2.el9      rhel-9-appstream-rhui-rpms 866 k
+ xml-common             noarch 0.6.3-58.el9    rhel-9-appstream-rhui-rpms  36 k
+ xorg-x11-fonts-Type1   noarch 7.5-33.el9      rhel-9-appstream-rhui-rpms 509 k
+Installing weak dependencies:
+ abattis-cantarell-fonts
+                        noarch 0.301-4.el9     rhel-9-appstream-rhui-rpms 368 k
+ dconf                  x86_64 0.40.0-6.el9    rhel-9-appstream-rhui-rpms 117 k
+ exiv2                  x86_64 0.27.5-2.el9    rhel-9-appstream-rhui-rpms 984 k
+ flatpak                x86_64 1.12.7-2.el9    rhel-9-appstream-rhui-rpms 1.7 M
+ gtk2                   x86_64 2.24.33-8.el9   rhel-9-appstream-rhui-rpms 3.5 M
+ libcanberra-gtk2       x86_64 0.30-26.el9     rhel-9-appstream-rhui-rpms  28 k
+ libproxy-webkitgtk4    x86_64 0.4.15-35.el9   rhel-9-appstream-rhui-rpms  22 k
+ p11-kit-server         x86_64 0.24.1-2.el9    rhel-9-appstream-rhui-rpms 200 k
+ pipewire               x86_64 0.3.47-3.el9_2  rhel-9-appstream-rhui-rpms  36 k
+ pipewire-alsa          x86_64 0.3.47-3.el9_2  rhel-9-appstream-rhui-rpms  56 k
+ pipewire-jack-audio-connection-kit
+                        x86_64 0.3.47-3.el9_2  rhel-9-appstream-rhui-rpms 130 k
+ pipewire-pulseaudio    x86_64 0.3.47-3.el9_2  rhel-9-appstream-rhui-rpms  21 k
+ tracker-miners         x86_64 3.1.2-3.el9     rhel-9-appstream-rhui-rpms 943 k
+ xdg-desktop-portal-gtk x86_64 1.12.0-3.el9    rhel-9-appstream-rhui-rpms 139 k
+
+Transaction Summary
+================================================================================
+Install  175 Packages
+
+Total download size: 142 M
+Installed size: 511 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/175): libldac-2.0.2.3-10.el9.x86_64.rpm      712 kB/s |  44 kB     00:00
+(2/175): libogg-1.3.4-6.el9.x86_64.rpm          550 kB/s |  36 kB     00:00
+(3/175): libvorbis-1.3.7-5.el9.x86_64.rpm       2.6 MB/s | 197 kB     00:00
+(4/175): libXtst-1.2.3-16.el9.x86_64.rpm        1.8 MB/s |  23 kB     00:00
+(5/175): copy-jdk-configs-4.0-3.el9.noarch.rpm  1.5 MB/s |  29 kB     00:00
+(6/175): libXv-1.0.11-16.el9.x86_64.rpm         1.0 MB/s |  21 kB     00:00
+(7/175): exiv2-libs-0.27.5-2.el9.x86_64.rpm      17 MB/s | 782 kB     00:00
+(8/175): libXext-1.3.4-8.el9.x86_64.rpm         2.4 MB/s |  42 kB     00:00
+(9/175): libXcursor-1.2.0-7.el9.x86_64.rpm      2.3 MB/s |  33 kB     00:00
+(10/175): exiv2-0.27.5-2.el9.x86_64.rpm          22 MB/s | 984 kB     00:00
+(11/175): libasyncns-0.8-22.el9.x86_64.rpm      2.5 MB/s |  32 kB     00:00
+(12/175): xkeyboard-config-2.33-2.el9.noarch.rp  19 MB/s | 866 kB     00:00
+(13/175): libxkbcommon-1.0.3-4.el9.x86_64.rpm   8.1 MB/s | 136 kB     00:00
+(14/175): libthai-0.1.28-8.el9.x86_64.rpm       9.6 MB/s | 211 kB     00:00
+(15/175): libstemmer-0-18.585svn.el9.x86_64.rpm 4.9 MB/s |  85 kB     00:00
+(16/175): gtk-update-icon-cache-3.24.31-2.el9.x 2.5 MB/s |  37 kB     00:00
+(17/175): lua-posix-35.0-8.el9.x86_64.rpm       9.9 MB/s | 155 kB     00:00
+(18/175): fdk-aac-free-2.0.0-8.el9.x86_64.rpm    12 MB/s | 327 kB     00:00
+(19/175): libXrandr-1.5.2-8.el9.x86_64.rpm      953 kB/s |  30 kB     00:00
+(20/175): libglvnd-1.3.4-1.el9.x86_64.rpm       5.7 MB/s | 137 kB     00:00
+(21/175): rtkit-0.11-28.el9.x86_64.rpm          4.4 MB/s |  60 kB     00:00
+(22/175): libsndfile-1.0.31-7.el9.x86_64.rpm    9.9 MB/s | 209 kB     00:00
+(23/175): pixman-0.40.0-5.el9.x86_64.rpm         13 MB/s | 272 kB     00:00
+(24/175): mkfontscale-1.2.1-3.el9.x86_64.rpm    2.3 MB/s |  34 kB     00:00
+(25/175): libX11-common-1.7.0-7.el9.noarch.rpm   13 MB/s | 210 kB     00:00
+(26/175): abattis-cantarell-fonts-0.301-4.el9.n  16 MB/s | 368 kB     00:00
+(27/175): pulseaudio-libs-15.0-2.el9.x86_64.rpm  15 MB/s | 683 kB     00:00
+(28/175): libglvnd-glx-1.3.4-1.el9.x86_64.rpm   7.5 MB/s | 147 kB     00:00
+(29/175): libsbc-1.4-9.el9.x86_64.rpm           3.9 MB/s |  46 kB     00:00
+(30/175): libXft-2.3.3-8.el9.x86_64.rpm         5.3 MB/s |  64 kB     00:00
+(31/175): libnotify-0.7.9-8.el9.x86_64.rpm      3.6 MB/s |  47 kB     00:00
+(32/175): libglvnd-egl-1.3.4-1.el9.x86_64.rpm   3.5 MB/s |  39 kB     00:00
+(33/175): libdatrie-0.2.13-4.el9.x86_64.rpm     2.7 MB/s |  34 kB     00:00
+(34/175): cairo-gobject-1.17.4-7.el9.x86_64.rpm 1.6 MB/s |  20 kB     00:00
+(35/175): pulseaudio-utils-15.0-2.el9.x86_64.rp 5.2 MB/s |  80 kB     00:00
+(36/175): libgsf-1.14.47-5.el9.x86_64.rpm        11 MB/s | 260 kB     00:00
+(37/175): lcms2-2.12-3.el9.x86_64.rpm            11 MB/s | 169 kB     00:00
+(38/175): libappstream-glib-0.7.18-4.el9.x86_64  13 MB/s | 400 kB     00:00
+(39/175): gtk3-3.24.31-2.el9.x86_64.rpm          48 MB/s | 4.9 MB     00:00
+(40/175): libgxps-0.3.2-3.el9.x86_64.rpm        6.2 MB/s |  82 kB     00:00
+(41/175): adwaita-icon-theme-40.1.1-3.el9.noarc  36 MB/s |  12 MB     00:00
+(42/175): gstreamer1-1.18.4-4.el9.x86_64.rpm    7.3 MB/s | 1.4 MB     00:00
+(43/175): exempi-2.6.0-0.2.20211007gite23c213.e 3.8 MB/s | 528 kB     00:00
+(44/175): ttmkfdir-3.0.9-65.el9.x86_64.rpm      2.1 MB/s |  55 kB     00:00
+(45/175): libX11-xcb-1.7.0-7.el9.x86_64.rpm     1.1 MB/s |  14 kB     00:00
+(46/175): adwaita-cursor-theme-40.1.1-3.el9.noa  23 MB/s | 655 kB     00:00
+(47/175): libtool-ltdl-2.4.6-45.el9.x86_64.rpm  3.0 MB/s |  39 kB     00:00
+(48/175): poppler-data-0.4.9-9.el9.noarch.rpm    31 MB/s | 1.9 MB     00:00
+(49/175): libXi-1.7.10-8.el9.x86_64.rpm         1.6 MB/s |  41 kB     00:00
+(50/175): libvisual-0.4.0-34.el9.x86_64.rpm      10 MB/s | 147 kB     00:00
+(51/175): libxslt-1.1.34-9.el9.x86_64.rpm        13 MB/s | 247 kB     00:00
+(52/175): librsvg2-2.50.7-1.el9.x86_64.rpm       28 MB/s | 3.4 MB     00:00
+(53/175): low-memory-monitor-2.1-4.el9.x86_64.r 854 kB/s |  38 kB     00:00
+(54/175): p11-kit-server-0.24.1-2.el9.x86_64.rp 4.6 MB/s | 200 kB     00:00
+(55/175): libxshmfence-1.3-10.el9.x86_64.rpm    1.3 MB/s |  14 kB     00:00
+(56/175): totem-pl-parser-3.26.6-2.el9.x86_64.r 9.1 MB/s | 157 kB     00:00
+(57/175): libcanberra-gtk2-0.30-26.el9.x86_64.r 2.0 MB/s |  28 kB     00:00
+(58/175): libX11-1.7.0-7.el9.x86_64.rpm          25 MB/s | 648 kB     00:00
+(59/175): libproxy-webkitgtk4-0.4.15-35.el9.x86 1.4 MB/s |  22 kB     00:00
+(60/175): libiptcdata-1.0.5-9.el9.x86_64.rpm    4.3 MB/s |  66 kB     00:00
+(61/175): at-spi2-atk-2.38.0-4.el9.x86_64.rpm   6.0 MB/s |  90 kB     00:00
+(62/175): libsoup-2.72.0-8.el9.x86_64.rpm        17 MB/s | 409 kB     00:00
+(63/175): libXcomposite-0.4.5-7.el9.x86_64.rpm  2.2 MB/s |  26 kB     00:00
+(64/175): colord-libs-1.4.5-4.el9.x86_64.rpm     12 MB/s | 233 kB     00:00
+(65/175): jbigkit-libs-2.1-23.el9.x86_64.rpm    3.4 MB/s |  56 kB     00:00
+(66/175): libfontenc-1.1.3-17.el9.x86_64.rpm    2.8 MB/s |  33 kB     00:00
+(67/175): wireplumber-libs-0.4.8-1.el9.x86_64.r  16 MB/s | 329 kB     00:00
+(68/175): iso-codes-4.6.0-3.el9.noarch.rpm       35 MB/s | 3.5 MB     00:00
+(69/175): libcanberra-0.30-26.el9.x86_64.rpm    2.1 MB/s |  94 kB     00:00
+(70/175): opus-1.3.1-10.el9.x86_64.rpm          4.7 MB/s | 201 kB     00:00
+(71/175): xml-common-0.6.3-58.el9.noarch.rpm    2.9 MB/s |  36 kB     00:00
+(72/175): libcanberra-gtk3-0.30-26.el9.x86_64.r 3.0 MB/s |  37 kB     00:00
+(73/175): giflib-5.2.1-9.el9.x86_64.rpm         4.2 MB/s |  51 kB     00:00
+(74/175): libXxf86vm-1.1.4-18.el9.x86_64.rpm    1.9 MB/s |  21 kB     00:00
+(75/175): orc-0.4.31-6.el9.x86_64.rpm            13 MB/s | 187 kB     00:00
+(76/175): libXrender-0.9.10-16.el9.x86_64.rpm   2.2 MB/s |  30 kB     00:00
+(77/175): libepoxy-1.5.5-4.el9.x86_64.rpm        14 MB/s | 244 kB     00:00
+(78/175): dconf-0.40.0-6.el9.x86_64.rpm         7.8 MB/s | 117 kB     00:00
+(79/175): cairo-1.17.4-7.el9.x86_64.rpm          21 MB/s | 664 kB     00:00
+(80/175): webrtc-audio-processing-0.3.1-8.el9.x 8.9 MB/s | 308 kB     00:00
+(81/175): gsm-1.0.19-6.el9.x86_64.rpm           2.4 MB/s |  36 kB     00:00
+(82/175): sound-theme-freedesktop-0.8-17.el9.no  10 MB/s | 387 kB     00:00
+(83/175): libXinerama-1.1.4-10.el9.x86_64.rpm   1.4 MB/s |  17 kB     00:00
+(84/175): libxcb-1.13.1-9.el9.x86_64.rpm         12 MB/s | 247 kB     00:00
+(85/175): libXfixes-5.0.3-16.el9.x86_64.rpm     1.8 MB/s |  22 kB     00:00
+(86/175): atk-2.36.0-5.el9.x86_64.rpm            15 MB/s | 296 kB     00:00
+(87/175): wireplumber-0.4.8-1.el9.x86_64.rpm    6.5 MB/s |  89 kB     00:00
+(88/175): at-spi2-core-2.40.3-1.el9.x86_64.rpm  8.8 MB/s | 199 kB     00:00
+(89/175): graphene-1.10.6-2.el9.x86_64.rpm      5.6 MB/s |  67 kB     00:00
+(90/175): libXau-1.0.9-8.el9.x86_64.rpm         2.8 MB/s |  34 kB     00:00
+(91/175): libexif-0.6.22-6.el9.x86_64.rpm        19 MB/s | 439 kB     00:00
+(92/175): libtheora-1.1.1-31.el9.x86_64.rpm     7.1 MB/s | 167 kB     00:00
+(93/175): libXdamage-1.1.5-7.el9.x86_64.rpm     2.0 MB/s |  25 kB     00:00
+(94/175): xorg-x11-fonts-Type1-7.5-33.el9.noarc  20 MB/s | 509 kB     00:00
+(95/175): libgexiv2-0.12.3-1.el9.x86_64.rpm     3.6 MB/s |  86 kB     00:00
+(96/175): gstreamer1-plugins-base-1.18.4-5.el9.  26 MB/s | 2.1 MB     00:00
+(97/175): upower-0.99.13-2.el9.x86_64.rpm       4.1 MB/s | 173 kB     00:00
+(98/175): fribidi-1.0.10-6.el9.2.x86_64.rpm     7.4 MB/s |  89 kB     00:00
+(99/175): xdg-dbus-proxy-0.1.3-1.el9.x86_64.rpm 3.1 MB/s |  44 kB     00:00
+(100/175): flatpak-session-helper-1.12.7-2.el9. 6.0 MB/s |  78 kB     00:00
+(101/175): flatpak-1.12.7-2.el9.x86_64.rpm       21 MB/s | 1.7 MB     00:00
+(102/175): openjpeg2-2.4.0-7.el9.x86_64.rpm     4.0 MB/s | 166 kB     00:00
+(103/175): flatpak-selinux-1.12.7-2.el9.noarch. 1.8 MB/s |  23 kB     00:00
+(104/175): xdg-desktop-portal-1.12.4-1.el9.x86_ 7.7 MB/s | 388 kB     00:00
+(105/175): flac-libs-1.3.3-10.el9.x86_64.rpm    9.8 MB/s | 223 kB     00:00
+(106/175): hicolor-icon-theme-0.17-13.el9.noarc  14 MB/s | 223 kB     00:00
+(107/175): adobe-source-code-pro-fonts-2.030.1.  21 MB/s | 836 kB     00:00
+(108/175): nss-sysinit-3.79.0-18.el9_1.x86_64.r 1.3 MB/s |  22 kB     00:00
+(109/175): xdg-desktop-portal-gtk-1.12.0-3.el9. 5.0 MB/s | 139 kB     00:00
+(110/175): nss-softokn-3.79.0-18.el9_1.x86_64.r  18 MB/s | 386 kB     00:00
+(111/175): nss-3.79.0-18.el9_1.x86_64.rpm        20 MB/s | 708 kB     00:00
+(112/175): nss-util-3.79.0-18.el9_1.x86_64.rpm  2.8 MB/s |  91 kB     00:00
+(113/175): libwebp-1.2.0-6.el9_1.x86_64.rpm      13 MB/s | 281 kB     00:00
+(114/175): tzdata-java-2023c-1.el9.noarch.rpm    11 MB/s | 234 kB     00:00
+(115/175): libjpeg-turbo-2.0.90-6.el9_1.x86_64. 7.1 MB/s | 178 kB     00:00
+(116/175): tracker-3.1.2-3.el9_1.x86_64.rpm      18 MB/s | 559 kB     00:00
+(117/175): nspr-4.34.0-18.el9_1.x86_64.rpm      6.9 MB/s | 138 kB     00:00
+(118/175): fontconfig-2.14.0-2.el9_1.x86_64.rpm 8.6 MB/s | 301 kB     00:00
+(119/175): libtracker-sparql-3.1.2-3.el9_1.x86_  12 MB/s | 328 kB     00:00
+(120/175): lua-5.4.4-3.el9.x86_64.rpm            11 MB/s | 192 kB     00:00
+(121/175): nss-softokn-freebl-3.79.0-18.el9_1.x 9.9 MB/s | 334 kB     00:00
+(122/175): mesa-libglapi-22.3.0-2.el9.x86_64.rp 3.9 MB/s |  51 kB     00:00
+(123/175): tracker-miners-3.1.2-3.el9.x86_64.rp  27 MB/s | 943 kB     00:00
+(124/175): libwayland-server-1.21.0-1.el9.x86_6 2.3 MB/s |  43 kB     00:00
+(125/175): geoclue2-2.6.0-7.el9.x86_64.rpm      9.0 MB/s | 128 kB     00:00
+(126/175): poppler-21.01.0-14.el9.x86_64.rpm     21 MB/s | 1.1 MB     00:00
+(127/175): vulkan-loader-1.3.239.0-1.el9.x86_64 4.3 MB/s | 143 kB     00:00
+(128/175): alsa-lib-1.2.8-3.el9.x86_64.rpm       16 MB/s | 521 kB     00:00
+(129/175): mesa-libgbm-22.3.0-2.el9.x86_64.rpm  2.0 MB/s |  40 kB     00:00
+(130/175): mesa-libEGL-22.3.0-2.el9.x86_64.rpm  8.6 MB/s | 126 kB     00:00
+(131/175): osinfo-db-20221130-1.el9.noarch.rpm   17 MB/s | 494 kB     00:00
+(132/175): libwayland-egl-1.21.0-1.el9.x86_64.r 1.1 MB/s |  14 kB     00:00
+(133/175): poppler-glib-21.01.0-14.el9.x86_64.r  10 MB/s | 155 kB     00:00
+(134/175): gdk-pixbuf2-2.42.6-3.el9.x86_64.rpm   18 MB/s | 496 kB     00:00
+(135/175): gdk-pixbuf2-modules-2.42.6-3.el9.x86 5.8 MB/s |  93 kB     00:00
+(136/175): pango-1.48.7-3.el9.x86_64.rpm         17 MB/s | 306 kB     00:00
+(137/175): libosinfo-1.10.0-1.el9.x86_64.rpm     14 MB/s | 323 kB     00:00
+(138/175): libwayland-cursor-1.21.0-1.el9.x86_6 1.6 MB/s |  21 kB     00:00
+(139/175): libdrm-2.4.114-1.el9.x86_64.rpm       10 MB/s | 164 kB     00:00
+(140/175): osinfo-db-tools-1.10.0-1.el9.x86_64. 5.7 MB/s |  78 kB     00:00
+(141/175): libwayland-client-1.21.0-1.el9.x86_6 3.0 MB/s |  35 kB     00:00
+(142/175): mesa-libGL-22.3.0-2.el9.x86_64.rpm   7.9 MB/s | 170 kB     00:00
+(143/175): gtk2-2.24.33-8.el9.x86_64.rpm         35 MB/s | 3.5 MB     00:00
+(144/175): javapackages-filesystem-6.0.0-4.el9. 484 kB/s |  17 kB     00:00
+(145/175): pipewire-0.3.47-3.el9_2.x86_64.rpm   2.7 MB/s |  36 kB     00:00
+(146/175): pipewire-jack-audio-connection-kit-0 3.9 MB/s | 130 kB     00:00
+(147/175): pipewire-pulseaudio-0.3.47-3.el9_2.x 588 kB/s |  21 kB     00:00
+(148/175): pipewire-alsa-0.3.47-3.el9_2.x86_64. 2.2 MB/s |  56 kB     00:00
+(149/175): pipewire-libs-0.3.47-3.el9_2.x86_64.  25 MB/s | 1.5 MB     00:00
+(150/175): mesa-vulkan-drivers-22.3.0-2.el9.x86  30 MB/s | 7.4 MB     00:00
+(151/175): avahi-glib-0.8-12.el9_2.1.x86_64.rpm 201 kB/s |  15 kB     00:00
+(152/175): libtiff-4.4.0-8.el9_2.x86_64.rpm      12 MB/s | 200 kB     00:00
+(153/175): java-1.8.0-openjdk-1.8.0.382.b05-2.e  19 MB/s | 462 kB     00:00
+(154/175): llvm-libs-15.0.7-1.el9.x86_64.rpm     30 MB/s |  21 MB     00:00
+(155/175): ostree-libs-2023.1-6.el9_2.x86_64.rp  18 MB/s | 444 kB     00:00
+(156/175): webkit2gtk3-jsc-2.38.5-1.el9_2.3.x86  10 MB/s | 3.2 MB     00:00
+(157/175): libproxy-0.4.15-35.el9.x86_64.rpm    2.1 MB/s |  78 kB     00:00
+(158/175): fuse-common-3.10.2-5.el9.x86_64.rpm  764 kB/s | 9.3 kB     00:00
+(159/175): libgusb-0.3.8-1.el9.x86_64.rpm       4.1 MB/s |  55 kB     00:00
+(160/175): libgudev-237-1.el9.x86_64.rpm        3.3 MB/s |  38 kB     00:00
+(161/175): bubblewrap-0.4.1-6.el9.x86_64.rpm    3.8 MB/s |  52 kB     00:00
+(162/175): fuse-2.9.9-15.el9.x86_64.rpm         5.4 MB/s |  84 kB     00:00
+(163/175): libusbx-1.0.26-1.el9.x86_64.rpm      3.9 MB/s |  78 kB     00:00
+(164/175): lksctp-tools-1.0.19-2.el9.x86_64.rpm 6.4 MB/s |  98 kB     00:00
+(165/175): libpciaccess-0.16-6.el9.x86_64.rpm   2.4 MB/s |  30 kB     00:00
+(166/175): bluez-libs-5.64-2.el9.x86_64.rpm     6.2 MB/s |  85 kB     00:00
+(167/175): glib-networking-2.68.3-3.el9.x86_64.  11 MB/s | 190 kB     00:00
+(168/175): gsettings-desktop-schemas-40.0-6.el9  21 MB/s | 688 kB     00:00
+(169/175): libatomic-11.3.1-4.3.el9.x86_64.rpm  4.2 MB/s |  53 kB     00:00
+(170/175): libicu-67.1-9.el9.x86_64.rpm          43 MB/s | 9.6 MB     00:00
+(171/175): shared-mime-info-2.1-5.el9.x86_64.rp 6.7 MB/s | 561 kB     00:00
+(172/175): ModemManager-glib-1.20.2-1.el9.x86_6  19 MB/s | 337 kB     00:00
+(173/175): avahi-libs-0.8-12.el9_2.1.x86_64.rpm 4.8 MB/s |  71 kB     00:00
+(174/175): cups-libs-2.3.3op2-16.el9_2.1.x86_64  16 MB/s | 264 kB     00:00
+(175/175): java-1.8.0-openjdk-headless-1.8.0.38  34 MB/s |  33 MB     00:00
+--------------------------------------------------------------------------------
+Total                                            49 MB/s | 142 MB     00:02
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Running scriptlet: copy-jdk-configs-4.0-3.el9.noarch                      1/1
+  Running scriptlet: java-1.8.0-openjdk-headless-1:1.8.0.382.b05-2.el9.x8   1/1
+  Preparing        :                                                        1/1
+  Installing       : nspr-4.34.0-18.el9_1.x86_64                          1/175
+  Installing       : libjpeg-turbo-2.0.90-6.el9_1.x86_64                  2/175
+  Installing       : libwayland-client-1.21.0-1.el9.x86_64                3/175
+  Installing       : alsa-lib-1.2.8-3.el9.x86_64                          4/175
+  Installing       : atk-2.36.0-5.el9.x86_64                              5/175
+  Installing       : libogg-2:1.3.4-6.el9.x86_64                          6/175
+  Installing       : libvorbis-1:1.3.7-5.el9.x86_64                       7/175
+  Installing       : nss-util-3.79.0-18.el9_1.x86_64                      8/175
+  Installing       : avahi-libs-0.8-12.el9_2.1.x86_64                     9/175
+  Installing       : libicu-67.1-9.el9.x86_64                            10/175
+  Installing       : libX11-xcb-1.7.0-7.el9.x86_64                       11/175
+  Installing       : cups-libs-1:2.3.3op2-16.el9_2.1.x86_64              12/175
+  Installing       : libxshmfence-1.3-10.el9.x86_64                      13/175
+  Installing       : libtool-ltdl-2.4.6-45.el9.x86_64                    14/175
+  Installing       : gstreamer1-1.18.4-4.el9.x86_64                      15/175
+  Installing       : lcms2-2.12-3.el9.x86_64                             16/175
+  Installing       : libstemmer-0-18.585svn.el9.x86_64                   17/175
+  Installing       : libwayland-cursor-1.21.0-1.el9.x86_64               18/175
+  Installing       : exiv2-0.27.5-2.el9.x86_64                           19/175
+  Installing       : exiv2-libs-0.27.5-2.el9.x86_64                      20/175
+  Installing       : libusbx-1.0.26-1.el9.x86_64                         21/175
+  Installing       : libproxy-0.4.15-35.el9.x86_64                       22/175
+  Installing       : libwayland-egl-1.21.0-1.el9.x86_64                  23/175
+  Installing       : libwayland-server-1.21.0-1.el9.x86_64               24/175
+  Installing       : mesa-libglapi-22.3.0-2.el9.x86_64                   25/175
+  Installing       : hicolor-icon-theme-0.17-13.el9.noarch               26/175
+  Installing       : fribidi-1.0.10-6.el9.2.x86_64                       27/175
+  Installing       : libXau-1.0.9-8.el9.x86_64                           28/175
+  Installing       : libxcb-1.13.1-9.el9.x86_64                          29/175
+  Installing       : dconf-0.40.0-6.el9.x86_64                           30/175
+  Running scriptlet: dconf-0.40.0-6.el9.x86_64                           30/175
+  Running scriptlet: xml-common-0.6.3-58.el9.noarch                      31/175
+  Installing       : xml-common-0.6.3-58.el9.noarch                      31/175
+  Installing       : fontconfig-2.14.0-2.el9_1.x86_64                    32/175
+  Running scriptlet: fontconfig-2.14.0-2.el9_1.x86_64                    32/175
+  Installing       : opus-1.3.1-10.el9.x86_64                            33/175
+  Installing       : pixman-0.40.0-5.el9.x86_64                          34/175
+  Installing       : libglvnd-1:1.3.4-1.el9.x86_64                       35/175
+  Installing       : iso-codes-4.6.0-3.el9.noarch                        36/175
+  Installing       : libgusb-0.3.8-1.el9.x86_64                          37/175
+  Installing       : colord-libs-1.4.5-4.el9.x86_64                      38/175
+  Installing       : libgexiv2-0.12.3-1.el9.x86_64                       39/175
+  Installing       : avahi-glib-0.8-12.el9_2.1.x86_64                    40/175
+  Installing       : nss-softokn-freebl-3.79.0-18.el9_1.x86_64           41/175
+  Installing       : nss-softokn-3.79.0-18.el9_1.x86_64                  42/175
+  Installing       : nss-3.79.0-18.el9_1.x86_64                          43/175
+  Running scriptlet: nss-3.79.0-18.el9_1.x86_64                          43/175
+  Installing       : nss-sysinit-3.79.0-18.el9_1.x86_64                  44/175
+  Installing       : libtheora-1:1.1.1-31.el9.x86_64                     45/175
+  Installing       : flac-libs-1.3.3-10.el9.x86_64                       46/175
+  Installing       : ModemManager-glib-1.20.2-1.el9.x86_64               47/175
+  Installing       : shared-mime-info-2.1-5.el9.x86_64                   48/175
+  Running scriptlet: shared-mime-info-2.1-5.el9.x86_64                   48/175
+  Installing       : gdk-pixbuf2-2.42.6-3.el9.x86_64                     49/175
+  Installing       : gtk-update-icon-cache-3.24.31-2.el9.x86_64          50/175
+  Installing       : libnotify-0.7.9-8.el9.x86_64                        51/175
+  Installing       : libgsf-1.14.47-5.el9.x86_64                         52/175
+  Installing       : libatomic-11.3.1-4.3.el9.x86_64                     53/175
+  Installing       : webkit2gtk3-jsc-2.38.5-1.el9_2.3.x86_64             54/175
+  Installing       : libproxy-webkitgtk4-0.4.15-35.el9.x86_64            55/175
+  Installing       : bluez-libs-5.64-2.el9.x86_64                        56/175
+  Installing       : libpciaccess-0.16-6.el9.x86_64                      57/175
+  Installing       : libdrm-2.4.114-1.el9.x86_64                         58/175
+  Installing       : mesa-libgbm-22.3.0-2.el9.x86_64                     59/175
+  Installing       : mesa-libEGL-22.3.0-2.el9.x86_64                     60/175
+  Installing       : libglvnd-egl-1:1.3.4-1.el9.x86_64                   61/175
+  Installing       : lksctp-tools-1.0.19-2.el9.x86_64                    62/175
+  Installing       : bubblewrap-0.4.1-6.el9.x86_64                       63/175
+  Installing       : libgudev-237-1.el9.x86_64                           64/175
+  Installing       : upower-0.99.13-2.el9.x86_64                         65/175
+  Running scriptlet: upower-0.99.13-2.el9.x86_64                         65/175
+Created symlink /etc/systemd/system/graphical.target.wants/upower.service → /usr/lib/systemd/system/upower.service.
+
+  Installing       : fuse-common-3.10.2-5.el9.x86_64                     66/175
+  Installing       : fuse-2.9.9-15.el9.x86_64                            67/175
+  Installing       : ostree-libs-2023.1-6.el9_2.x86_64                   68/175
+  Installing       : javapackages-filesystem-6.0.0-4.el9.noarch          69/175
+  Installing       : osinfo-db-20221130-1.el9.noarch                     70/175
+  Installing       : llvm-libs-15.0.7-1.el9.x86_64                       71/175
+  Installing       : vulkan-loader-1.3.239.0-1.el9.x86_64                72/175
+  Installing       : mesa-vulkan-drivers-22.3.0-2.el9.x86_64             73/175
+  Installing       : lua-5.4.4-3.el9.x86_64                              74/175
+  Installing       : tzdata-java-2023c-1.el9.noarch                      75/175
+  Installing       : libwebp-1.2.0-6.el9_1.x86_64                        76/175
+  Installing       : adobe-source-code-pro-fonts-2.030.1.050-12.el9.1    77/175
+  Installing       : flatpak-selinux-1.12.7-2.el9.noarch                 78/175
+  Running scriptlet: flatpak-selinux-1.12.7-2.el9.noarch                 78/175
+  Installing       : openjpeg2-2.4.0-7.el9.x86_64                        79/175
+  Installing       : flatpak-session-helper-1.12.7-2.el9.x86_64          80/175
+  Installing       : xdg-dbus-proxy-0.1.3-1.el9.x86_64                   81/175
+  Installing       : libexif-0.6.22-6.el9.x86_64                         82/175
+  Installing       : graphene-1.10.6-2.el9.x86_64                        83/175
+  Installing       : gsm-1.0.19-6.el9.x86_64                             84/175
+  Installing       : libsndfile-1.0.31-7.el9.x86_64                      85/175
+  Installing       : sound-theme-freedesktop-0.8-17.el9.noarch           86/175
+  Running scriptlet: sound-theme-freedesktop-0.8-17.el9.noarch           86/175
+  Installing       : webrtc-audio-processing-0.3.1-8.el9.x86_64          87/175
+  Installing       : libepoxy-1.5.5-4.el9.x86_64                         88/175
+  Installing       : orc-0.4.31-6.el9.x86_64                             89/175
+  Installing       : giflib-5.2.1-9.el9.x86_64                           90/175
+  Installing       : libfontenc-1.1.3-17.el9.x86_64                      91/175
+  Installing       : mkfontscale-1.2.1-3.el9.x86_64                      92/175
+  Installing       : jbigkit-libs-2.1-23.el9.x86_64                      93/175
+  Installing       : libtiff-4.4.0-8.el9_2.x86_64                        94/175
+  Installing       : gdk-pixbuf2-modules-2.42.6-3.el9.x86_64             95/175
+  Installing       : libiptcdata-1.0.5-9.el9.x86_64                      96/175
+  Installing       : totem-pl-parser-3.26.6-2.el9.x86_64                 97/175
+  Installing       : p11-kit-server-0.24.1-2.el9.x86_64                  98/175
+  Installing       : low-memory-monitor-2.1-4.el9.x86_64                 99/175
+  Running scriptlet: low-memory-monitor-2.1-4.el9.x86_64                 99/175
+Created symlink /etc/systemd/system/basic.target.wants/low-memory-monitor.service → /usr/lib/systemd/system/low-memory-monitor.service.
+
+  Installing       : libxslt-1.1.34-9.el9.x86_64                        100/175
+  Installing       : libvisual-1:0.4.0-34.el9.x86_64                    101/175
+  Installing       : poppler-data-0.4.9-9.el9.noarch                    102/175
+  Installing       : poppler-21.01.0-14.el9.x86_64                      103/175
+  Installing       : adwaita-cursor-theme-40.1.1-3.el9.noarch           104/175
+  Installing       : adwaita-icon-theme-40.1.1-3.el9.noarch             105/175
+  Installing       : ttmkfdir-3.0.9-65.el9.x86_64                       106/175
+  Installing       : xorg-x11-fonts-Type1-7.5-33.el9.noarch             107/175
+  Running scriptlet: xorg-x11-fonts-Type1-7.5-33.el9.noarch             107/175
+  Installing       : exempi-2.6.0-0.2.20211007gite23c213.el9.x86_64     108/175
+  Installing       : libdatrie-0.2.13-4.el9.x86_64                      109/175
+  Installing       : libthai-0.1.28-8.el9.x86_64                        110/175
+  Installing       : libsbc-1.4-9.el9.x86_64                            111/175
+  Installing       : abattis-cantarell-fonts-0.301-4.el9.noarch         112/175
+  Installing       : gsettings-desktop-schemas-40.0-6.el9.x86_64        113/175
+  Installing       : glib-networking-2.68.3-3.el9.x86_64                114/175
+  Installing       : libsoup-2.72.0-8.el9.x86_64                        115/175
+  Installing       : libappstream-glib-0.7.18-4.el9.x86_64              116/175
+  Running scriptlet: geoclue2-2.6.0-7.el9.x86_64                        117/175
+  Installing       : geoclue2-2.6.0-7.el9.x86_64                        117/175
+  Running scriptlet: geoclue2-2.6.0-7.el9.x86_64                        117/175
+  Installing       : osinfo-db-tools-1.10.0-1.el9.x86_64                118/175
+  Installing       : libosinfo-1.10.0-1.el9.x86_64                      119/175
+  Installing       : libX11-common-1.7.0-7.el9.noarch                   120/175
+  Installing       : libX11-1.7.0-7.el9.x86_64                          121/175
+  Installing       : libXext-1.3.4-8.el9.x86_64                         122/175
+  Installing       : libXrender-0.9.10-16.el9.x86_64                    123/175
+  Installing       : cairo-1.17.4-7.el9.x86_64                          124/175
+  Installing       : libXi-1.7.10-8.el9.x86_64                          125/175
+  Installing       : libXfixes-5.0.3-16.el9.x86_64                      126/175
+  Installing       : cairo-gobject-1.17.4-7.el9.x86_64                  127/175
+  Installing       : libXcomposite-0.4.5-7.el9.x86_64                   128/175
+  Installing       : libXcursor-1.2.0-7.el9.x86_64                      129/175
+  Installing       : libXdamage-1.1.5-7.el9.x86_64                      130/175
+  Installing       : libXtst-1.2.3-16.el9.x86_64                        131/175
+  Installing       : libXrandr-1.5.2-8.el9.x86_64                       132/175
+  Installing       : libXinerama-1.1.4-10.el9.x86_64                    133/175
+  Installing       : at-spi2-core-2.40.3-1.el9.x86_64                   134/175
+  Installing       : at-spi2-atk-2.38.0-4.el9.x86_64                    135/175
+  Installing       : libgxps-0.3.2-3.el9.x86_64                         136/175
+  Installing       : poppler-glib-21.01.0-14.el9.x86_64                 137/175
+  Installing       : libXft-2.3.3-8.el9.x86_64                          138/175
+  Installing       : pango-1.48.7-3.el9.x86_64                          139/175
+  Installing       : librsvg2-2.50.7-1.el9.x86_64                       140/175
+  Installing       : libXv-1.0.11-16.el9.x86_64                         141/175
+  Installing       : libXxf86vm-1.1.4-18.el9.x86_64                     142/175
+  Installing       : libglvnd-glx-1:1.3.4-1.el9.x86_64                  143/175
+  Installing       : mesa-libGL-22.3.0-2.el9.x86_64                     144/175
+  Installing       : gstreamer1-plugins-base-1.18.4-5.el9.x86_64        145/175
+  Installing       : libtracker-sparql-3.1.2-3.el9_1.x86_64             146/175
+  Installing       : tracker-3.1.2-3.el9_1.x86_64                       147/175
+  Running scriptlet: tracker-3.1.2-3.el9_1.x86_64                       147/175
+  Installing       : tracker-miners-3.1.2-3.el9.x86_64                  148/175
+  Running scriptlet: tracker-miners-3.1.2-3.el9.x86_64                  148/175
+  Running scriptlet: rtkit-0.11-28.el9.x86_64                           149/175
+  Installing       : rtkit-0.11-28.el9.x86_64                           149/175
+  Running scriptlet: rtkit-0.11-28.el9.x86_64                           149/175
+Created symlink /etc/systemd/system/graphical.target.wants/rtkit-daemon.service → /usr/lib/systemd/system/rtkit-daemon.service.
+
+  Installing       : lua-posix-35.0-8.el9.x86_64                        150/175
+  Installing       : copy-jdk-configs-4.0-3.el9.noarch                  151/175
+  Installing       : java-1.8.0-openjdk-headless-1:1.8.0.382.b05-2.el   152/175
+  Running scriptlet: java-1.8.0-openjdk-headless-1:1.8.0.382.b05-2.el   152/175
+  Installing       : fdk-aac-free-2.0.0-8.el9.x86_64                    153/175
+  Installing       : libasyncns-0.8-22.el9.x86_64                       154/175
+  Installing       : pulseaudio-libs-15.0-2.el9.x86_64                  155/175
+  Installing       : libcanberra-0.30-26.el9.x86_64                     156/175
+  Running scriptlet: libcanberra-0.30-26.el9.x86_64                     156/175
+  Installing       : pulseaudio-utils-15.0-2.el9.x86_64                 157/175
+  Installing       : xkeyboard-config-2.33-2.el9.noarch                 158/175
+  Installing       : libxkbcommon-1.0.3-4.el9.x86_64                    159/175
+  Installing       : libldac-2.0.2.3-10.el9.x86_64                      160/175
+  Installing       : wireplumber-libs-0.4.8-1.el9.x86_64                161/175
+  Installing       : wireplumber-0.4.8-1.el9.x86_64                     162/175
+  Running scriptlet: wireplumber-0.4.8-1.el9.x86_64                     162/175
+Created symlink /etc/systemd/user/pipewire-session-manager.service → /usr/lib/systemd/user/wireplumber.service.
+Created symlink /etc/systemd/user/pipewire.service.wants/wireplumber.service → /usr/lib/systemd/user/wireplumber.service.
+Unit /usr/lib/systemd/user/wireplumber.service is added as a dependency to a non-existent unit pipewire.service.
+
+  Running scriptlet: pipewire-0.3.47-3.el9_2.x86_64                     163/175
+  Installing       : pipewire-0.3.47-3.el9_2.x86_64                     163/175
+  Running scriptlet: pipewire-0.3.47-3.el9_2.x86_64                     163/175
+Created symlink /etc/systemd/user/sockets.target.wants/pipewire.socket → /usr/lib/systemd/user/pipewire.socket.
+
+  Installing       : pipewire-libs-0.3.47-3.el9_2.x86_64                164/175
+  Running scriptlet: flatpak-1.12.7-2.el9.x86_64                        165/175
+  Installing       : flatpak-1.12.7-2.el9.x86_64                        165/175
+  Installing       : xdg-desktop-portal-1.12.4-1.el9.x86_64             166/175
+  Running scriptlet: xdg-desktop-portal-1.12.4-1.el9.x86_64             166/175
+  Installing       : libcanberra-gtk3-0.30-26.el9.x86_64                167/175
+  Installing       : gtk3-3.24.31-2.el9.x86_64                          168/175
+  Installing       : xdg-desktop-portal-gtk-1.12.0-3.el9.x86_64         169/175
+  Running scriptlet: xdg-desktop-portal-gtk-1.12.0-3.el9.x86_64         169/175
+  Installing       : gtk2-2.24.33-8.el9.x86_64                          170/175
+  Installing       : libcanberra-gtk2-0.30-26.el9.x86_64                171/175
+  Installing       : java-1.8.0-openjdk-1:1.8.0.382.b05-2.el9.x86_64    172/175
+  Running scriptlet: java-1.8.0-openjdk-1:1.8.0.382.b05-2.el9.x86_64    172/175
+  Installing       : pipewire-jack-audio-connection-kit-0.3.47-3.el9_   173/175
+  Installing       : pipewire-pulseaudio-0.3.47-3.el9_2.x86_64          174/175
+  Running scriptlet: pipewire-pulseaudio-0.3.47-3.el9_2.x86_64          174/175
+Created symlink /etc/systemd/user/sockets.target.wants/pipewire-pulse.socket → /usr/lib/systemd/user/pipewire-pulse.socket.
+
+  Installing       : pipewire-alsa-0.3.47-3.el9_2.x86_64                175/175
+  Running scriptlet: dconf-0.40.0-6.el9.x86_64                          175/175
+  Running scriptlet: fontconfig-2.14.0-2.el9_1.x86_64                   175/175
+  Running scriptlet: nss-3.79.0-18.el9_1.x86_64                         175/175
+  Running scriptlet: copy-jdk-configs-4.0-3.el9.noarch                  175/175
+  Running scriptlet: java-1.8.0-openjdk-headless-1:1.8.0.382.b05-2.el   175/175
+  Running scriptlet: java-1.8.0-openjdk-1:1.8.0.382.b05-2.el9.x86_64    175/175
+  Running scriptlet: pipewire-alsa-0.3.47-3.el9_2.x86_64                175/175
+  Verifying        : libldac-2.0.2.3-10.el9.x86_64                        1/175
+  Verifying        : libogg-2:1.3.4-6.el9.x86_64                          2/175
+  Verifying        : libvorbis-1:1.3.7-5.el9.x86_64                       3/175
+  Verifying        : exiv2-libs-0.27.5-2.el9.x86_64                       4/175
+  Verifying        : libXtst-1.2.3-16.el9.x86_64                          5/175
+  Verifying        : copy-jdk-configs-4.0-3.el9.noarch                    6/175
+  Verifying        : libXv-1.0.11-16.el9.x86_64                           7/175
+  Verifying        : exiv2-0.27.5-2.el9.x86_64                            8/175
+  Verifying        : libXext-1.3.4-8.el9.x86_64                           9/175
+  Verifying        : xkeyboard-config-2.33-2.el9.noarch                  10/175
+  Verifying        : libXcursor-1.2.0-7.el9.x86_64                       11/175
+  Verifying        : libasyncns-0.8-22.el9.x86_64                        12/175
+  Verifying        : libxkbcommon-1.0.3-4.el9.x86_64                     13/175
+  Verifying        : libthai-0.1.28-8.el9.x86_64                         14/175
+  Verifying        : libstemmer-0-18.585svn.el9.x86_64                   15/175
+  Verifying        : gtk-update-icon-cache-3.24.31-2.el9.x86_64          16/175
+  Verifying        : fdk-aac-free-2.0.0-8.el9.x86_64                     17/175
+  Verifying        : lua-posix-35.0-8.el9.x86_64                         18/175
+  Verifying        : libXrandr-1.5.2-8.el9.x86_64                        19/175
+  Verifying        : libglvnd-1:1.3.4-1.el9.x86_64                       20/175
+  Verifying        : rtkit-0.11-28.el9.x86_64                            21/175
+  Verifying        : libsndfile-1.0.31-7.el9.x86_64                      22/175
+  Verifying        : pixman-0.40.0-5.el9.x86_64                          23/175
+  Verifying        : mkfontscale-1.2.1-3.el9.x86_64                      24/175
+  Verifying        : libX11-common-1.7.0-7.el9.noarch                    25/175
+  Verifying        : adwaita-icon-theme-40.1.1-3.el9.noarch              26/175
+  Verifying        : pulseaudio-libs-15.0-2.el9.x86_64                   27/175
+  Verifying        : abattis-cantarell-fonts-0.301-4.el9.noarch          28/175
+  Verifying        : libglvnd-glx-1:1.3.4-1.el9.x86_64                   29/175
+  Verifying        : libsbc-1.4-9.el9.x86_64                             30/175
+  Verifying        : libXft-2.3.3-8.el9.x86_64                           31/175
+  Verifying        : libnotify-0.7.9-8.el9.x86_64                        32/175
+  Verifying        : libglvnd-egl-1:1.3.4-1.el9.x86_64                   33/175
+  Verifying        : libdatrie-0.2.13-4.el9.x86_64                       34/175
+  Verifying        : cairo-gobject-1.17.4-7.el9.x86_64                   35/175
+  Verifying        : libgsf-1.14.47-5.el9.x86_64                         36/175
+  Verifying        : pulseaudio-utils-15.0-2.el9.x86_64                  37/175
+  Verifying        : gtk3-3.24.31-2.el9.x86_64                           38/175
+  Verifying        : lcms2-2.12-3.el9.x86_64                             39/175
+  Verifying        : libappstream-glib-0.7.18-4.el9.x86_64               40/175
+  Verifying        : gstreamer1-1.18.4-4.el9.x86_64                      41/175
+  Verifying        : libgxps-0.3.2-3.el9.x86_64                          42/175
+  Verifying        : exempi-2.6.0-0.2.20211007gite23c213.el9.x86_64      43/175
+  Verifying        : ttmkfdir-3.0.9-65.el9.x86_64                        44/175
+  Verifying        : libX11-xcb-1.7.0-7.el9.x86_64                       45/175
+  Verifying        : adwaita-cursor-theme-40.1.1-3.el9.noarch            46/175
+  Verifying        : librsvg2-2.50.7-1.el9.x86_64                        47/175
+  Verifying        : poppler-data-0.4.9-9.el9.noarch                     48/175
+  Verifying        : libtool-ltdl-2.4.6-45.el9.x86_64                    49/175
+  Verifying        : libXi-1.7.10-8.el9.x86_64                           50/175
+  Verifying        : libvisual-1:0.4.0-34.el9.x86_64                     51/175
+  Verifying        : libxslt-1.1.34-9.el9.x86_64                         52/175
+  Verifying        : low-memory-monitor-2.1-4.el9.x86_64                 53/175
+  Verifying        : p11-kit-server-0.24.1-2.el9.x86_64                  54/175
+  Verifying        : libxshmfence-1.3-10.el9.x86_64                      55/175
+  Verifying        : totem-pl-parser-3.26.6-2.el9.x86_64                 56/175
+  Verifying        : libX11-1.7.0-7.el9.x86_64                           57/175
+  Verifying        : libcanberra-gtk2-0.30-26.el9.x86_64                 58/175
+  Verifying        : libproxy-webkitgtk4-0.4.15-35.el9.x86_64            59/175
+  Verifying        : libiptcdata-1.0.5-9.el9.x86_64                      60/175
+  Verifying        : iso-codes-4.6.0-3.el9.noarch                        61/175
+  Verifying        : libsoup-2.72.0-8.el9.x86_64                         62/175
+  Verifying        : at-spi2-atk-2.38.0-4.el9.x86_64                     63/175
+  Verifying        : libXcomposite-0.4.5-7.el9.x86_64                    64/175
+  Verifying        : colord-libs-1.4.5-4.el9.x86_64                      65/175
+  Verifying        : jbigkit-libs-2.1-23.el9.x86_64                      66/175
+  Verifying        : wireplumber-libs-0.4.8-1.el9.x86_64                 67/175
+  Verifying        : libfontenc-1.1.3-17.el9.x86_64                      68/175
+  Verifying        : libcanberra-0.30-26.el9.x86_64                      69/175
+  Verifying        : opus-1.3.1-10.el9.x86_64                            70/175
+  Verifying        : xml-common-0.6.3-58.el9.noarch                      71/175
+  Verifying        : libcanberra-gtk3-0.30-26.el9.x86_64                 72/175
+  Verifying        : giflib-5.2.1-9.el9.x86_64                           73/175
+  Verifying        : libXxf86vm-1.1.4-18.el9.x86_64                      74/175
+  Verifying        : orc-0.4.31-6.el9.x86_64                             75/175
+  Verifying        : libXrender-0.9.10-16.el9.x86_64                     76/175
+  Verifying        : libepoxy-1.5.5-4.el9.x86_64                         77/175
+  Verifying        : cairo-1.17.4-7.el9.x86_64                           78/175
+  Verifying        : dconf-0.40.0-6.el9.x86_64                           79/175
+  Verifying        : webrtc-audio-processing-0.3.1-8.el9.x86_64          80/175
+  Verifying        : sound-theme-freedesktop-0.8-17.el9.noarch           81/175
+  Verifying        : gsm-1.0.19-6.el9.x86_64                             82/175
+  Verifying        : libxcb-1.13.1-9.el9.x86_64                          83/175
+  Verifying        : libXinerama-1.1.4-10.el9.x86_64                     84/175
+  Verifying        : libXfixes-5.0.3-16.el9.x86_64                       85/175
+  Verifying        : atk-2.36.0-5.el9.x86_64                             86/175
+  Verifying        : at-spi2-core-2.40.3-1.el9.x86_64                    87/175
+  Verifying        : wireplumber-0.4.8-1.el9.x86_64                      88/175
+  Verifying        : graphene-1.10.6-2.el9.x86_64                        89/175
+  Verifying        : libXau-1.0.9-8.el9.x86_64                           90/175
+  Verifying        : libexif-0.6.22-6.el9.x86_64                         91/175
+  Verifying        : libtheora-1:1.1.1-31.el9.x86_64                     92/175
+  Verifying        : gstreamer1-plugins-base-1.18.4-5.el9.x86_64         93/175
+  Verifying        : libXdamage-1.1.5-7.el9.x86_64                       94/175
+  Verifying        : xorg-x11-fonts-Type1-7.5-33.el9.noarch              95/175
+  Verifying        : libgexiv2-0.12.3-1.el9.x86_64                       96/175
+  Verifying        : upower-0.99.13-2.el9.x86_64                         97/175
+  Verifying        : flatpak-1.12.7-2.el9.x86_64                         98/175
+  Verifying        : fribidi-1.0.10-6.el9.2.x86_64                       99/175
+  Verifying        : xdg-dbus-proxy-0.1.3-1.el9.x86_64                  100/175
+  Verifying        : flatpak-session-helper-1.12.7-2.el9.x86_64         101/175
+  Verifying        : openjpeg2-2.4.0-7.el9.x86_64                       102/175
+  Verifying        : xdg-desktop-portal-1.12.4-1.el9.x86_64             103/175
+  Verifying        : flatpak-selinux-1.12.7-2.el9.noarch                104/175
+  Verifying        : flac-libs-1.3.3-10.el9.x86_64                      105/175
+  Verifying        : adobe-source-code-pro-fonts-2.030.1.050-12.el9.1   106/175
+  Verifying        : hicolor-icon-theme-0.17-13.el9.noarch              107/175
+  Verifying        : xdg-desktop-portal-gtk-1.12.0-3.el9.x86_64         108/175
+  Verifying        : nss-sysinit-3.79.0-18.el9_1.x86_64                 109/175
+  Verifying        : nss-3.79.0-18.el9_1.x86_64                         110/175
+  Verifying        : nss-softokn-3.79.0-18.el9_1.x86_64                 111/175
+  Verifying        : nss-util-3.79.0-18.el9_1.x86_64                    112/175
+  Verifying        : libwebp-1.2.0-6.el9_1.x86_64                       113/175
+  Verifying        : tzdata-java-2023c-1.el9.noarch                     114/175
+  Verifying        : libjpeg-turbo-2.0.90-6.el9_1.x86_64                115/175
+  Verifying        : tracker-3.1.2-3.el9_1.x86_64                       116/175
+  Verifying        : fontconfig-2.14.0-2.el9_1.x86_64                   117/175
+  Verifying        : nspr-4.34.0-18.el9_1.x86_64                        118/175
+  Verifying        : libtracker-sparql-3.1.2-3.el9_1.x86_64             119/175
+  Verifying        : nss-softokn-freebl-3.79.0-18.el9_1.x86_64          120/175
+  Verifying        : lua-5.4.4-3.el9.x86_64                             121/175
+  Verifying        : tracker-miners-3.1.2-3.el9.x86_64                  122/175
+  Verifying        : mesa-libglapi-22.3.0-2.el9.x86_64                  123/175
+  Verifying        : poppler-21.01.0-14.el9.x86_64                      124/175
+  Verifying        : libwayland-server-1.21.0-1.el9.x86_64              125/175
+  Verifying        : geoclue2-2.6.0-7.el9.x86_64                        126/175
+  Verifying        : vulkan-loader-1.3.239.0-1.el9.x86_64               127/175
+  Verifying        : alsa-lib-1.2.8-3.el9.x86_64                        128/175
+  Verifying        : mesa-libgbm-22.3.0-2.el9.x86_64                    129/175
+  Verifying        : llvm-libs-15.0.7-1.el9.x86_64                      130/175
+  Verifying        : osinfo-db-20221130-1.el9.noarch                    131/175
+  Verifying        : mesa-libEGL-22.3.0-2.el9.x86_64                    132/175
+  Verifying        : libwayland-egl-1.21.0-1.el9.x86_64                 133/175
+  Verifying        : gdk-pixbuf2-2.42.6-3.el9.x86_64                    134/175
+  Verifying        : poppler-glib-21.01.0-14.el9.x86_64                 135/175
+  Verifying        : gdk-pixbuf2-modules-2.42.6-3.el9.x86_64            136/175
+  Verifying        : pango-1.48.7-3.el9.x86_64                          137/175
+  Verifying        : libosinfo-1.10.0-1.el9.x86_64                      138/175
+  Verifying        : libwayland-cursor-1.21.0-1.el9.x86_64              139/175
+  Verifying        : gtk2-2.24.33-8.el9.x86_64                          140/175
+  Verifying        : libdrm-2.4.114-1.el9.x86_64                        141/175
+  Verifying        : osinfo-db-tools-1.10.0-1.el9.x86_64                142/175
+  Verifying        : libwayland-client-1.21.0-1.el9.x86_64              143/175
+  Verifying        : mesa-libGL-22.3.0-2.el9.x86_64                     144/175
+  Verifying        : javapackages-filesystem-6.0.0-4.el9.noarch         145/175
+  Verifying        : mesa-vulkan-drivers-22.3.0-2.el9.x86_64            146/175
+  Verifying        : pipewire-0.3.47-3.el9_2.x86_64                     147/175
+  Verifying        : pipewire-jack-audio-connection-kit-0.3.47-3.el9_   148/175
+  Verifying        : pipewire-pulseaudio-0.3.47-3.el9_2.x86_64          149/175
+  Verifying        : pipewire-alsa-0.3.47-3.el9_2.x86_64                150/175
+  Verifying        : pipewire-libs-0.3.47-3.el9_2.x86_64                151/175
+  Verifying        : avahi-glib-0.8-12.el9_2.1.x86_64                   152/175
+  Verifying        : libtiff-4.4.0-8.el9_2.x86_64                       153/175
+  Verifying        : webkit2gtk3-jsc-2.38.5-1.el9_2.3.x86_64            154/175
+  Verifying        : java-1.8.0-openjdk-1:1.8.0.382.b05-2.el9.x86_64    155/175
+  Verifying        : java-1.8.0-openjdk-headless-1:1.8.0.382.b05-2.el   156/175
+  Verifying        : ostree-libs-2023.1-6.el9_2.x86_64                  157/175
+  Verifying        : libproxy-0.4.15-35.el9.x86_64                      158/175
+  Verifying        : fuse-common-3.10.2-5.el9.x86_64                    159/175
+  Verifying        : libgusb-0.3.8-1.el9.x86_64                         160/175
+  Verifying        : libgudev-237-1.el9.x86_64                          161/175
+  Verifying        : bubblewrap-0.4.1-6.el9.x86_64                      162/175
+  Verifying        : libicu-67.1-9.el9.x86_64                           163/175
+  Verifying        : fuse-2.9.9-15.el9.x86_64                           164/175
+  Verifying        : libusbx-1.0.26-1.el9.x86_64                        165/175
+  Verifying        : lksctp-tools-1.0.19-2.el9.x86_64                   166/175
+  Verifying        : libpciaccess-0.16-6.el9.x86_64                     167/175
+  Verifying        : bluez-libs-5.64-2.el9.x86_64                       168/175
+  Verifying        : glib-networking-2.68.3-3.el9.x86_64                169/175
+  Verifying        : gsettings-desktop-schemas-40.0-6.el9.x86_64        170/175
+  Verifying        : libatomic-11.3.1-4.3.el9.x86_64                    171/175
+  Verifying        : shared-mime-info-2.1-5.el9.x86_64                  172/175
+  Verifying        : ModemManager-glib-1.20.2-1.el9.x86_64              173/175
+  Verifying        : avahi-libs-0.8-12.el9_2.1.x86_64                   174/175
+  Verifying        : cups-libs-1:2.3.3op2-16.el9_2.1.x86_64             175/175
+Installed products updated.
+
+Installed:
+  ModemManager-glib-1.20.2-1.el9.x86_64
+  abattis-cantarell-fonts-0.301-4.el9.noarch
+  adobe-source-code-pro-fonts-2.030.1.050-12.el9.1.noarch
+  adwaita-cursor-theme-40.1.1-3.el9.noarch
+  adwaita-icon-theme-40.1.1-3.el9.noarch
+  alsa-lib-1.2.8-3.el9.x86_64
+  at-spi2-atk-2.38.0-4.el9.x86_64
+  at-spi2-core-2.40.3-1.el9.x86_64
+  atk-2.36.0-5.el9.x86_64
+  avahi-glib-0.8-12.el9_2.1.x86_64
+  avahi-libs-0.8-12.el9_2.1.x86_64
+  bluez-libs-5.64-2.el9.x86_64
+  bubblewrap-0.4.1-6.el9.x86_64
+  cairo-1.17.4-7.el9.x86_64
+  cairo-gobject-1.17.4-7.el9.x86_64
+  colord-libs-1.4.5-4.el9.x86_64
+  copy-jdk-configs-4.0-3.el9.noarch
+  cups-libs-1:2.3.3op2-16.el9_2.1.x86_64
+  dconf-0.40.0-6.el9.x86_64
+  exempi-2.6.0-0.2.20211007gite23c213.el9.x86_64
+  exiv2-0.27.5-2.el9.x86_64
+  exiv2-libs-0.27.5-2.el9.x86_64
+  fdk-aac-free-2.0.0-8.el9.x86_64
+  flac-libs-1.3.3-10.el9.x86_64
+  flatpak-1.12.7-2.el9.x86_64
+  flatpak-selinux-1.12.7-2.el9.noarch
+  flatpak-session-helper-1.12.7-2.el9.x86_64
+  fontconfig-2.14.0-2.el9_1.x86_64
+  fribidi-1.0.10-6.el9.2.x86_64
+  fuse-2.9.9-15.el9.x86_64
+  fuse-common-3.10.2-5.el9.x86_64
+  gdk-pixbuf2-2.42.6-3.el9.x86_64
+  gdk-pixbuf2-modules-2.42.6-3.el9.x86_64
+  geoclue2-2.6.0-7.el9.x86_64
+  giflib-5.2.1-9.el9.x86_64
+  glib-networking-2.68.3-3.el9.x86_64
+  graphene-1.10.6-2.el9.x86_64
+  gsettings-desktop-schemas-40.0-6.el9.x86_64
+  gsm-1.0.19-6.el9.x86_64
+  gstreamer1-1.18.4-4.el9.x86_64
+  gstreamer1-plugins-base-1.18.4-5.el9.x86_64
+  gtk-update-icon-cache-3.24.31-2.el9.x86_64
+  gtk2-2.24.33-8.el9.x86_64
+  gtk3-3.24.31-2.el9.x86_64
+  hicolor-icon-theme-0.17-13.el9.noarch
+  iso-codes-4.6.0-3.el9.noarch
+  java-1.8.0-openjdk-1:1.8.0.382.b05-2.el9.x86_64
+  java-1.8.0-openjdk-headless-1:1.8.0.382.b05-2.el9.x86_64
+  javapackages-filesystem-6.0.0-4.el9.noarch
+  jbigkit-libs-2.1-23.el9.x86_64
+  lcms2-2.12-3.el9.x86_64
+  libX11-1.7.0-7.el9.x86_64
+  libX11-common-1.7.0-7.el9.noarch
+  libX11-xcb-1.7.0-7.el9.x86_64
+  libXau-1.0.9-8.el9.x86_64
+  libXcomposite-0.4.5-7.el9.x86_64
+  libXcursor-1.2.0-7.el9.x86_64
+  libXdamage-1.1.5-7.el9.x86_64
+  libXext-1.3.4-8.el9.x86_64
+  libXfixes-5.0.3-16.el9.x86_64
+  libXft-2.3.3-8.el9.x86_64
+  libXi-1.7.10-8.el9.x86_64
+  libXinerama-1.1.4-10.el9.x86_64
+  libXrandr-1.5.2-8.el9.x86_64
+  libXrender-0.9.10-16.el9.x86_64
+  libXtst-1.2.3-16.el9.x86_64
+  libXv-1.0.11-16.el9.x86_64
+  libXxf86vm-1.1.4-18.el9.x86_64
+  libappstream-glib-0.7.18-4.el9.x86_64
+  libasyncns-0.8-22.el9.x86_64
+  libatomic-11.3.1-4.3.el9.x86_64
+  libcanberra-0.30-26.el9.x86_64
+  libcanberra-gtk2-0.30-26.el9.x86_64
+  libcanberra-gtk3-0.30-26.el9.x86_64
+  libdatrie-0.2.13-4.el9.x86_64
+  libdrm-2.4.114-1.el9.x86_64
+  libepoxy-1.5.5-4.el9.x86_64
+  libexif-0.6.22-6.el9.x86_64
+  libfontenc-1.1.3-17.el9.x86_64
+  libgexiv2-0.12.3-1.el9.x86_64
+  libglvnd-1:1.3.4-1.el9.x86_64
+  libglvnd-egl-1:1.3.4-1.el9.x86_64
+  libglvnd-glx-1:1.3.4-1.el9.x86_64
+  libgsf-1.14.47-5.el9.x86_64
+  libgudev-237-1.el9.x86_64
+  libgusb-0.3.8-1.el9.x86_64
+  libgxps-0.3.2-3.el9.x86_64
+  libicu-67.1-9.el9.x86_64
+  libiptcdata-1.0.5-9.el9.x86_64
+  libjpeg-turbo-2.0.90-6.el9_1.x86_64
+  libldac-2.0.2.3-10.el9.x86_64
+  libnotify-0.7.9-8.el9.x86_64
+  libogg-2:1.3.4-6.el9.x86_64
+  libosinfo-1.10.0-1.el9.x86_64
+  libpciaccess-0.16-6.el9.x86_64
+  libproxy-0.4.15-35.el9.x86_64
+  libproxy-webkitgtk4-0.4.15-35.el9.x86_64
+  librsvg2-2.50.7-1.el9.x86_64
+  libsbc-1.4-9.el9.x86_64
+  libsndfile-1.0.31-7.el9.x86_64
+  libsoup-2.72.0-8.el9.x86_64
+  libstemmer-0-18.585svn.el9.x86_64
+  libthai-0.1.28-8.el9.x86_64
+  libtheora-1:1.1.1-31.el9.x86_64
+  libtiff-4.4.0-8.el9_2.x86_64
+  libtool-ltdl-2.4.6-45.el9.x86_64
+  libtracker-sparql-3.1.2-3.el9_1.x86_64
+  libusbx-1.0.26-1.el9.x86_64
+  libvisual-1:0.4.0-34.el9.x86_64
+  libvorbis-1:1.3.7-5.el9.x86_64
+  libwayland-client-1.21.0-1.el9.x86_64
+  libwayland-cursor-1.21.0-1.el9.x86_64
+  libwayland-egl-1.21.0-1.el9.x86_64
+  libwayland-server-1.21.0-1.el9.x86_64
+  libwebp-1.2.0-6.el9_1.x86_64
+  libxcb-1.13.1-9.el9.x86_64
+  libxkbcommon-1.0.3-4.el9.x86_64
+  libxshmfence-1.3-10.el9.x86_64
+  libxslt-1.1.34-9.el9.x86_64
+  lksctp-tools-1.0.19-2.el9.x86_64
+  llvm-libs-15.0.7-1.el9.x86_64
+  low-memory-monitor-2.1-4.el9.x86_64
+  lua-5.4.4-3.el9.x86_64
+  lua-posix-35.0-8.el9.x86_64
+  mesa-libEGL-22.3.0-2.el9.x86_64
+  mesa-libGL-22.3.0-2.el9.x86_64
+  mesa-libgbm-22.3.0-2.el9.x86_64
+  mesa-libglapi-22.3.0-2.el9.x86_64
+  mesa-vulkan-drivers-22.3.0-2.el9.x86_64
+  mkfontscale-1.2.1-3.el9.x86_64
+  nspr-4.34.0-18.el9_1.x86_64
+  nss-3.79.0-18.el9_1.x86_64
+  nss-softokn-3.79.0-18.el9_1.x86_64
+  nss-softokn-freebl-3.79.0-18.el9_1.x86_64
+  nss-sysinit-3.79.0-18.el9_1.x86_64
+  nss-util-3.79.0-18.el9_1.x86_64
+  openjpeg2-2.4.0-7.el9.x86_64
+  opus-1.3.1-10.el9.x86_64
+  orc-0.4.31-6.el9.x86_64
+  osinfo-db-20221130-1.el9.noarch
+  osinfo-db-tools-1.10.0-1.el9.x86_64
+  ostree-libs-2023.1-6.el9_2.x86_64
+  p11-kit-server-0.24.1-2.el9.x86_64
+  pango-1.48.7-3.el9.x86_64
+  pipewire-0.3.47-3.el9_2.x86_64
+  pipewire-alsa-0.3.47-3.el9_2.x86_64
+  pipewire-jack-audio-connection-kit-0.3.47-3.el9_2.x86_64
+  pipewire-libs-0.3.47-3.el9_2.x86_64
+  pipewire-pulseaudio-0.3.47-3.el9_2.x86_64
+  pixman-0.40.0-5.el9.x86_64
+  poppler-21.01.0-14.el9.x86_64
+  poppler-data-0.4.9-9.el9.noarch
+  poppler-glib-21.01.0-14.el9.x86_64
+  pulseaudio-libs-15.0-2.el9.x86_64
+  pulseaudio-utils-15.0-2.el9.x86_64
+  rtkit-0.11-28.el9.x86_64
+  shared-mime-info-2.1-5.el9.x86_64
+  sound-theme-freedesktop-0.8-17.el9.noarch
+  totem-pl-parser-3.26.6-2.el9.x86_64
+  tracker-3.1.2-3.el9_1.x86_64
+  tracker-miners-3.1.2-3.el9.x86_64
+  ttmkfdir-3.0.9-65.el9.x86_64
+  tzdata-java-2023c-1.el9.noarch
+  upower-0.99.13-2.el9.x86_64
+  vulkan-loader-1.3.239.0-1.el9.x86_64
+  webkit2gtk3-jsc-2.38.5-1.el9_2.3.x86_64
+  webrtc-audio-processing-0.3.1-8.el9.x86_64
+  wireplumber-0.4.8-1.el9.x86_64
+  wireplumber-libs-0.4.8-1.el9.x86_64
+  xdg-dbus-proxy-0.1.3-1.el9.x86_64
+  xdg-desktop-portal-1.12.4-1.el9.x86_64
+  xdg-desktop-portal-gtk-1.12.0-3.el9.x86_64
+  xkeyboard-config-2.33-2.el9.noarch
+  xml-common-0.6.3-58.el9.noarch
+  xorg-x11-fonts-Type1-7.5-33.el9.noarch
+
+Complete!
+[root@ip-172-31-23-222 ~]# sudo yum install java-11-openjdk
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Last metadata expiration check: 0:02:11 ago on Sat 09 Sep 2023 12:51:20 PM UTC.
+Dependencies resolved.
+================================================================================
+ Package            Arch   Version             Repository                  Size
+================================================================================
+Installing:
+ java-11-openjdk    x86_64 1:11.0.20.0.8-3.el9 rhel-9-appstream-rhui-rpms 441 k
+Installing dependencies:
+ java-11-openjdk-headless
+                    x86_64 1:11.0.20.0.8-3.el9 rhel-9-appstream-rhui-rpms  40 M
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 40 M
+Installed size: 179 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/2): java-11-openjdk-11.0.20.0.8-3.el9.x86_64 6.7 MB/s | 441 kB     00:00
+(2/2): java-11-openjdk-headless-11.0.20.0.8-3.e  57 MB/s |  40 MB     00:00
+--------------------------------------------------------------------------------
+Total                                            55 MB/s |  40 MB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Running scriptlet: java-11-openjdk-headless-1:11.0.20.0.8-3.el9.x86_64    1/1
+  Preparing        :                                                        1/1
+  Installing       : java-11-openjdk-headless-1:11.0.20.0.8-3.el9.x86_64    1/2
+  Running scriptlet: java-11-openjdk-headless-1:11.0.20.0.8-3.el9.x86_64    1/2
+  Installing       : java-11-openjdk-1:11.0.20.0.8-3.el9.x86_64             2/2
+  Running scriptlet: java-11-openjdk-1:11.0.20.0.8-3.el9.x86_64             2/2
+  Running scriptlet: java-11-openjdk-headless-1:11.0.20.0.8-3.el9.x86_64    2/2
+  Running scriptlet: java-11-openjdk-1:11.0.20.0.8-3.el9.x86_64             2/2
+  Verifying        : java-11-openjdk-1:11.0.20.0.8-3.el9.x86_64             1/2
+  Verifying        : java-11-openjdk-headless-1:11.0.20.0.8-3.el9.x86_64    2/2
+Installed products updated.
+
+Installed:
+  java-11-openjdk-1:11.0.20.0.8-3.el9.x86_64
+  java-11-openjdk-headless-1:11.0.20.0.8-3.el9.x86_64
+
+Complete!
+[root@ip-172-31-23-222 ~]# sudo yum install java-17-openjdk
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Last metadata expiration check: 0:02:31 ago on Sat 09 Sep 2023 12:51:20 PM UTC.
+Dependencies resolved.
+================================================================================
+ Package             Arch   Version            Repository                  Size
+================================================================================
+Installing:
+ java-17-openjdk     x86_64 1:17.0.8.0.7-2.el9 rhel-9-appstream-rhui-rpms 437 k
+Installing dependencies:
+ java-17-openjdk-headless
+                     x86_64 1:17.0.8.0.7-2.el9 rhel-9-appstream-rhui-rpms  45 M
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 46 M
+Installed size: 198 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/2): java-17-openjdk-17.0.8.0.7-2.el9.x86_64. 6.2 MB/s | 437 kB     00:00
+(2/2): java-17-openjdk-headless-17.0.8.0.7-2.el  61 MB/s |  45 MB     00:00
+--------------------------------------------------------------------------------
+Total                                            59 MB/s |  46 MB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Running scriptlet: java-17-openjdk-headless-1:17.0.8.0.7-2.el9.x86_64     1/1
+  Preparing        :                                                        1/1
+  Installing       : java-17-openjdk-headless-1:17.0.8.0.7-2.el9.x86_64     1/2
+  Running scriptlet: java-17-openjdk-headless-1:17.0.8.0.7-2.el9.x86_64     1/2
+  Installing       : java-17-openjdk-1:17.0.8.0.7-2.el9.x86_64              2/2
+  Running scriptlet: java-17-openjdk-1:17.0.8.0.7-2.el9.x86_64              2/2
+  Running scriptlet: java-17-openjdk-headless-1:17.0.8.0.7-2.el9.x86_64     2/2
+  Running scriptlet: java-17-openjdk-1:17.0.8.0.7-2.el9.x86_64              2/2
+  Verifying        : java-17-openjdk-headless-1:17.0.8.0.7-2.el9.x86_64     1/2
+  Verifying        : java-17-openjdk-1:17.0.8.0.7-2.el9.x86_64              2/2
+Installed products updated.
+
+Installed:
+  java-17-openjdk-1:17.0.8.0.7-2.el9.x86_64
+  java-17-openjdk-headless-1:17.0.8.0.7-2.el9.x86_64
+
+Complete!
+[root@ip-172-31-23-222 ~]# yum install wget
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Last metadata expiration check: 0:03:24 ago on Sat 09 Sep 2023 12:51:20 PM UTC.
+Dependencies resolved.
+================================================================================
+ Package   Arch        Version            Repository                       Size
+================================================================================
+Installing:
+ wget      x86_64      1.21.1-7.el9       rhel-9-appstream-rhui-rpms      794 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 794 k
+Installed size: 3.1 M
+Is this ok [y/N]: y
+Downloading Packages:
+wget-1.21.1-7.el9.x86_64.rpm                     12 MB/s | 794 kB     00:00
+--------------------------------------------------------------------------------
+Total                                           7.9 MB/s | 794 kB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1
+  Installing       : wget-1.21.1-7.el9.x86_64                               1/1
+  Running scriptlet: wget-1.21.1-7.el9.x86_64                               1/1
+  Verifying        : wget-1.21.1-7.el9.x86_64                               1/1
+Installed products updated.
+
+Installed:
+  wget-1.21.1-7.el9.x86_64
+
+Complete!
+[root@ip-172-31-23-222 ~]# wget https://releases.jfrog.io/artifactory/artifactory-pro-rpms/artifactory-pro-rpms.repo -O jfrog-artifactory-pro-rpms.repo;
+--2023-09-09 12:55:20--  https://releases.jfrog.io/artifactory/artifactory-pro-rpms/artifactory-pro-rpms.repo
+Resolving releases.jfrog.io (releases.jfrog.io)... 54.221.82.220, 3.221.179.99, 50.17.28.229
+Connecting to releases.jfrog.io (releases.jfrog.io)|54.221.82.220|:443... connected.
+HTTP request sent, awaiting response... 200
+Length: 234 [application/octet-stream]
+Saving to: ‘jfrog-artifactory-pro-rpms.repo’
+
+jfrog-artifactory-p 100%[===================>]     234  --.-KB/s    in 0s
+
+2023-09-09 12:55:20 (4.19 MB/s) - ‘jfrog-artifactory-pro-rpms.repo’ saved [234/234]
+
+[root@ip-172-31-23-222 ~]# sudo mv jfrog-artifactory-pro-rpms.repo /etc/yum.repos.d/;
+[root@ip-172-31-23-222 ~]# sudo yum update
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Artifactory-pro                                 746  B/s | 183  B     00:00
+Artifactory-pro                                  17 kB/s | 1.6 kB     00:00
+Importing GPG key 0xD7639232:
+ Userid     : "JFrog Inc. <info@jfrog.com>"
+ Fingerprint: A3D0 85F5 42F7 40BB D7E3 A284 6B21 9DCC D763 9232
+ From       : https://releases.jfrog.io/artifactory/artifactory-pro-rpms/repodata/repomd.xml.key
+Is this ok [y/N]: y
+Artifactory-pro                                  28 MB/s |  21 MB     00:00
+Last metadata expiration check: 0:00:06 ago on Sat 09 Sep 2023 12:56:06 PM UTC.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ip-172-31-23-222 ~]# sudo yum install jfrog-artifactory-pro
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Last metadata expiration check: 0:00:13 ago on Sat 09 Sep 2023 12:56:06 PM UTC.
+Dependencies resolved.
+================================================================================
+ Package          Arch   Version                  Repository               Size
+================================================================================
+Installing:
+ jfrog-artifactory-pro
+                  x86_64 7.63.14-76314900         Artifactory-pro         1.0 G
+Installing dependencies:
+ net-tools        x86_64 2.0-0.62.20160912git.el9 rhel-9-baseos-rhui-rpms 309 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 1.0 G
+Installed size: 1.6 G
+Is this ok [y/N]: y
+Downloading Packages:
+(1/2): net-tools-2.0-0.62.20160912git.el9.x86_6 3.6 MB/s | 309 kB     00:00
+(2/2): jfrog-artifactory-pro-7.63.14.rpm         55 MB/s | 1.0 GB     00:19
+--------------------------------------------------------------------------------
+Total                                            55 MB/s | 1.0 GB     00:19
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1
+  Installing       : net-tools-2.0-0.62.20160912git.el9.x86_64              1/2
+  Running scriptlet: net-tools-2.0-0.62.20160912git.el9.x86_64              1/2
+  Running scriptlet: jfrog-artifactory-pro-7.63.14-76314900.x86_64          2/2
+Checking if group artifactory exists...
+Group artifactory doesn't exist. Creating ...
+Checking if user artifactory exists...
+User artifactory doesn't exist. Creating ...
+Removing tomcat work directory
+
+  Installing       : jfrog-artifactory-pro-7.63.14-76314900.x86_64          2/2
+  Running scriptlet: jfrog-artifactory-pro-7.63.14-76314900.x86_64          2/2
+Adding the artifactory service to auto-start... DONE
+
+NOTE: Updating the ownership of files and directories. This may take several minutes. Do not stop the installation/upgrade process.
+
+The installation of Artifactory has completed successfully.
+
+NOTE: It is highly recommended to use Artifactory with an external database (MySQL, Oracle, Microsoft SQL Server, PostgreSQL, MariaDB).
+      For details about how to configure the database, refer to https://service.jfrog.org/installer/Configuring+the+Database
+
+Start Artifactory with:
+> systemctl start artifactory.service
+
+Check Artifactory status with:
+> systemctl status artifactory.service
+
+Installation directory was set to /opt/jfrog/artifactory
+You can find more information in the log directory /opt/jfrog/artifactory/var/log
+System configuration templates can be found under /opt/jfrog/artifactory/var/etc
+Copy any configuration you want to modify from the template to /opt/jfrog/artifactory/var/etc/system.yaml
+
+
+  Verifying        : jfrog-artifactory-pro-7.63.14-76314900.x86_64          1/2
+  Verifying        : net-tools-2.0-0.62.20160912git.el9.x86_64              2/2
+Installed products updated.
+
+Installed:
+  jfrog-artifactory-pro-7.63.14-76314900.x86_64
+  net-tools-2.0-0.62.20160912git.el9.x86_64
+
+Complete!
+[root@ip-172-31-23-222 ~]# systemctl start artifactory.service
+[root@ip-172-31-23-222 ~]# systemctl status artifactory.service
+● artifactory.service - Artifactory service
+     Loaded: loaded (/usr/lib/systemd/system/artifactory.service; enabled; pres>
+     Active: active (running) since Sat 2023-09-09 12:58:18 UTC; 31s ago
+    Process: 52032 ExecStart=/opt/jfrog/artifactory/app/bin/artifactoryManage.s>
+   Main PID: 55486 (java)
+      Tasks: 0 (limit: 22922)
+     Memory: 10.2M
+        CPU: 4.619s
+     CGroup: /system.slice/artifactory.service
+             ‣ 55486 /opt/jfrog/artifactory/app/third-party/java/bin/java -Djav>
+
+Sep 09 12:58:15 ip-172-31-23-222.us-east-2.compute.internal su[56329]: (to arti>
+Sep 09 12:58:15 ip-172-31-23-222.us-east-2.compute.internal su[56329]: pam_unix>
+Sep 09 12:58:16 ip-172-31-23-222.us-east-2.compute.internal su[56329]: pam_unix>
+Sep 09 12:58:16 ip-172-31-23-222.us-east-2.compute.internal su[56446]: (to arti>
+Sep 09 12:58:16 ip-172-31-23-222.us-east-2.compute.internal su[56446]: pam_unix>
+Sep 09 12:58:17 ip-172-31-23-222.us-east-2.compute.internal su[56446]: pam_unix>
+Sep 09 12:58:17 ip-172-31-23-222.us-east-2.compute.internal su[56558]: (to arti>
+Sep 09 12:58:17 ip-172-31-23-222.us-east-2.compute.internal su[56558]: pam_unix>
+Sep 09 12:58:18 ip-172-31-23-222.us-east-2.compute.internal su[56558]: pam_unix>
+Sep 09 12:58:18 ip-172-31-23-222.us-east-2.compute.internal systemd[1]: Started>
+lines 1-21/21 (END)
+[1]+  Stopped                 systemctl status artifactory.service
+[root@ip-172-31-23-222 ~]#
+Broadcast message from root@localhost (Sat 2023-09-09 15:45:59 UTC):
+
+The system will power off now!
+
+Connection to ec2-18-118-111-159.us-east-2.compute.amazonaws.com closed by remote host.
+Connection to ec2-18-118-111-159.us-east-2.compute.amazonaws.com closed.

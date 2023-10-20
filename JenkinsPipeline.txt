@@ -1,0 +1,54 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Connect to EC2') {
+            steps {
+                // Use SSH or another method to connect to your EC2 instance
+                // Example: sshagent(['your-ssh-credentials-id']) {
+                //              sh "ssh ec2-user@your-ec2-instance-ip 'cd /path/to/repo && git pull'"
+                //          }
+            }
+        }
+
+        stage('Checkout') {
+            steps {
+                // Checkout code from your Git repository on the EC2 instance
+                // Example: sh "ssh ec2-user@your-ec2-instance-ip 'cd /path/to/repo && git checkout master'"
+            }
+        }
+
+        stage('Build and Package') {
+            steps {
+                // Build your Java project and create a JAR file
+                // Example: sh "ssh ec2-user@your-ec2-instance-ip 'cd /path/to/repo && mvn clean package'"
+            }
+        }
+
+        stage('Code Analysis with SonarQube') {
+            steps {
+                // Analyze your code using SonarQube
+                // Example: withSonarQubeEnv('your-sonarqube-server-id') {
+                //              sh "mvn sonar:sonar"
+                //          }
+            }
+        }
+
+        stage('Publish to JFrog Artifactory') {
+            steps {
+                // Publish your JAR file to JFrog Artifactory
+                // Example: rtUpload (
+                //             serverId: 'your-artifactory-server-id',
+                //             spec: """{
+                //                 "files": [
+                //                     {
+                //                         "pattern": "target/*.jar",
+                //                         "target": "your-artifactory-repo/path/"
+                //                     }
+                //                 ]
+                //             }"""
+                //         )
+            }
+        }
+    }
+}

@@ -1,0 +1,228 @@
+echo "# DevOpsRepo4-9-2023" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git config --global user.name "DikshaTarte"
+git config --global user.email "tartediksha23@gmail.com"
+git branch -M main
+git remote add origin https://github.com/DikshaTarte/DevOpsRepo4-9-2023.git
+git push -u origin main
+
+
+
+
+
+touch "myUATfile"
+git add -A
+git commit -m "UAT branch commit"
+git push 
+git push origin UAT
+
+			git chechout -b "MySITBranch"
+			touch "mySITfile"
+			git add -A
+			git commit -m "SIT branch commit"
+			git push 
+			git push origin SIT
+							git chechout -b "Sprint01"
+							touch "user.java"
+							git add -A
+							git commit -m "add user functionality"
+							git push 
+							git push origin Sprint01
+							
+
+							git chechout -b "Sprint02"
+							touch "user.java"
+							git add -A
+							git commit -m "Payment gateway functionality"
+							git push 
+							git push origin Sprint02
+
+
+
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (main)
+$ git checkout -b myUATbranch01
+Switched to a new branch 'myUATbranch01'
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (myUATbranch01)
+$ touch UATfile01
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (myUATbranch01)
+$ ls
+README.md  UATfile01
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (myUATbranch01)
+$  git add -A
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (myUATbranch01)
+$ git commit -m "UAT Commit"
+[myUATbranch01 6a0788e] UAT Commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 UATfile01
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (myUATbranch01)
+$ git push
+fatal: The current branch myUATbranch01 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin myUATbranch01
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (myUATbranch01)
+$ git push origin myUATbranch01
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 277 bytes | 138.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'myUATbranch01' on GitHub by visiting:
+remote:      https://github.com/DikshaSTarte/Practice02/pull/new/myUATbranch01
+remote:
+To https://github.com/DikshaSTarte/Practice02.git
+ * [new branch]      myUATbranch01 -> myUATbranch01
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (myUATbranch01)
+$ git checkout -b mySITbranch01
+Switched to a new branch 'mySITbranch01'
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (mySITbranch01)
+$ touch mySITfile
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (mySITbranch01)
+$ git add -A
+g
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (mySITbranch01)
+$ git commit -m "my sit file added"
+[mySITbranch01 efe7952] my sit file added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 mySITfile
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (mySITbranch01)
+$ git push
+fatal: The current branch mySITbranch01 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin mySITbranch01
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (mySITbranch01)
+$ git push origin mySITbranch01
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 284 bytes | 94.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'mySITbranch01' on GitHub by visiting:
+remote:      https://github.com/DikshaSTarte/Practice02/pull/new/mySITbranch01
+remote:
+To https://github.com/DikshaSTarte/Practice02.git
+ * [new branch]      mySITbranch01 -> mySITbranch01
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (mySITbranch01)
+$ git checkout -b Sprint01
+Switched to a new branch 'Sprint01'
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (Sprint01)
+$ touch myjavafile
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (Sprint01)
+$ git add -A
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (Sprint01)
+$ git commit -m "my Sprint one branch and java code file added"
+[Sprint01 a3a56e6] my Sprint one branch and java code file added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 myjavafile
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (Sprint01)
+$ git push
+fatal: The current branch Sprint01 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin Sprint01
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (Sprint01)
+$ git push origin Sprint01
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 289 bytes | 289.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'Sprint01' on GitHub by visiting:
+remote:      https://github.com/DikshaSTarte/Practice02/pull/new/Sprint01
+remote:
+To https://github.com/DikshaSTarte/Practice02.git
+ * [new branch]      Sprint01 -> Sprint01
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (Sprint01)
+$ git checkout mySITbranch01
+Switched to branch 'mySITbranch01'
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (mySITbranch01)
+$ git checkout -b Sprint02
+Switched to a new branch 'Sprint02'
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (Sprint02)
+$ touch SprintTwoJavaFile
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (Sprint02)
+$ git add -A
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (Sprint02)
+$ git commit -m "Sprint Two java file"
+[Sprint02 04f89c5] Sprint Two java file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 SprintTwoJavaFile
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (Sprint02)
+$ git push
+fatal: The current branch Sprint02 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin Sprint02
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+g
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (Sprint02)
+$ git push origin Sprint02
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 307 bytes | 102.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'Sprint02' on GitHub by visiting:
+remote:      https://github.com/DikshaSTarte/Practice02/pull/new/Sprint02
+remote:
+To https://github.com/DikshaSTarte/Practice02.git
+ * [new branch]      Sprint02 -> Sprint02
+
+MFS088@DESKTOP-J5NRSS1 MINGW64 ~/OneDrive/Desktop/PracticeTwo (Sprint02)
+
+
+
+$
+
+
