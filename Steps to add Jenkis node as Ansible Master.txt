@@ -1,0 +1,392 @@
+MFS088@MFS088 MINGW64 ~/Downloads (main)
+$ ssh -i "9OctKey.pem" ubuntu@ec2-3-17-67-216.us-east-2.compute.amazonaws.com
+The authenticity of host 'ec2-3-17-67-216.us-east-2.compute.amazonaws.com (3.17.67.216)' can't be established.
+ED25519 key fingerprint is SHA256:HRjaZVqioZPJHRdJieBs8BV9WwoPQNzESrhI60ImA/A.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:342: ec2-3-138-194-70.us-east-2.compute.amazonaws.com
+    ~/.ssh/known_hosts:345: ec2-13-58-175-17.us-east-2.compute.amazonaws.com
+    ~/.ssh/known_hosts:348: ec2-3-144-194-87.us-east-2.compute.amazonaws.com
+    ~/.ssh/known_hosts:351: ec2-18-216-107-89.us-east-2.compute.amazonaws.com
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-3-17-67-216.us-east-2.compute.amazonaws.com' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1047-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Wed Oct 11 06:48:31 UTC 2023
+
+  System load:  0.03              Processes:             102
+  Usage of /:   42.5% of 7.57GB   Users logged in:       0
+  Memory usage: 25%               IPv4 address for eth0: 172.31.36.47
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+50 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+2 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+New release '22.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Tue Oct 10 10:38:36 2023 from 49.248.69.154
+ubuntu@ip-172-31-36-47:~$ sudo -i
+root@ip-172-31-36-47:~# apt-get updae
+E: Invalid operation updae
+root@ip-172-31-36-47:~# apt-get update
+Hit:1 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Get:2 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:3 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:4 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:5 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [2888 kB]
+Get:6 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 c-n-f Metadata [17.1 kB]
+Get:7 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1123 kB]
+Get:8 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-updates/universe amd64 c-n-f Metadata [25.6 kB]
+Get:9 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [2500 kB]
+Get:10 http://security.ubuntu.com/ubuntu focal-security/main amd64 c-n-f Metadata [13.2 kB]
+Get:11 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [891 kB]
+Get:12 http://security.ubuntu.com/ubuntu focal-security/universe amd64 c-n-f Metadata [19.2 kB]
+Fetched 7813 kB in 2s (3721 kB/s)
+Reading package lists... Done
+root@ip-172-31-36-47:~# service ssh restart
+root@ip-172-31-36-47:~# ls
+snap
+root@ip-172-31-36-47:~# pwd
+/root
+root@ip-172-31-36-47:~# sudo apt-add-repository ppa:ansible/ansible
+Traceback (most recent call last):
+  File "/usr/bin/apt-add-repository", line 137, in <module>
+    shortcut = shortcut_handler(line)
+  File "/usr/lib/python3/dist-packages/softwareproperties/SoftwareProperties.py", line 885, in shortcut_handler
+    ret = factory(shortcut)
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 469, in shortcut_handler
+    return PPAShortcutHandler(shortcut)
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 426, in __init__
+    info = get_ppa_info(self.shortcut)
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 392, in get_ppa_info
+    _get_suggested_ppa_message(user, ppa))
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 349, in _get_suggested_ppa_message
+    lp_user = get_info_from_lp(LAUNCHPAD_USER_API % user)
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 104, in get_info_from_lp
+    return get_info_from_https(lp_url, True)
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 98, in get_info_from_https
+    return json.loads(data)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+root@ip-172-31-36-47:~# sudo apt update
+Hit:1 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+50 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@ip-172-31-36-47:~# sudo apt install ansible
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  ieee-data python3-argcomplete python3-crypto python3-dnspython
+  python3-jmespath python3-kerberos python3-libcloud python3-lockfile
+  python3-netaddr python3-ntlm-auth python3-requests-kerberos
+  python3-requests-ntlm python3-selinux python3-winrm python3-xmltodict
+Suggested packages:
+  cowsay sshpass python-lockfile-doc ipython3 python-netaddr-docs
+The following NEW packages will be installed:
+  ansible ieee-data python3-argcomplete python3-crypto python3-dnspython
+  python3-jmespath python3-kerberos python3-libcloud python3-lockfile
+  python3-netaddr python3-ntlm-auth python3-requests-kerberos
+  python3-requests-ntlm python3-selinux python3-winrm python3-xmltodict
+0 upgraded, 16 newly installed, 0 to remove and 50 not upgraded.
+Need to get 9644 kB of archives.
+After this operation, 90.2 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal/main amd64 python3-crypto amd64 2.6.1-13ubuntu2 [237 kB]
+Get:2 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-dnspython all 1.16.0-1ubuntu1 [89.2 kB]
+Get:3 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal/main amd64 ieee-data all 20180805.1 [1589 kB]
+Get:4 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-netaddr all 0.7.19-3ubuntu1 [236 kB]
+Get:5 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 ansible all 2.9.6+dfsg-1 [5794 kB]
+Get:6 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 python3-argcomplete all 1.8.1-1.3ubuntu1 [27.2 kB]
+Get:7 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-jmespath all 0.9.4-2ubuntu1 [21.5 kB]
+Get:8 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 python3-kerberos amd64 1.1.14-3.1build1 [22.6 kB]
+Get:9 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal/main amd64 python3-lockfile all 1:0.12.2-2ubuntu2 [14.6 kB]
+Get:10 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 python3-libcloud all 2.8.0-1 [1403 kB]
+Get:11 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 python3-ntlm-auth all 1.1.0-1 [19.6 kB]
+Get:12 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 python3-requests-kerberos all 0.12.0-2 [11.9 kB]
+Get:13 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 python3-requests-ntlm all 1.1.0-1 [6004 B]
+Get:14 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 python3-selinux amd64 3.0-1build2 [139 kB]
+Get:15 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 python3-xmltodict all 0.12.0-1 [12.6 kB]
+Get:16 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 python3-winrm all 0.3.0-2 [21.7 kB]
+Fetched 9644 kB in 0s (51.0 MB/s)
+Selecting previously unselected package python3-crypto.
+(Reading database ... 93418 files and directories currently installed.)
+Preparing to unpack .../00-python3-crypto_2.6.1-13ubuntu2_amd64.deb ...
+Unpacking python3-crypto (2.6.1-13ubuntu2) ...
+Selecting previously unselected package python3-dnspython.
+Preparing to unpack .../01-python3-dnspython_1.16.0-1ubuntu1_all.deb ...
+Unpacking python3-dnspython (1.16.0-1ubuntu1) ...
+Selecting previously unselected package ieee-data.
+Preparing to unpack .../02-ieee-data_20180805.1_all.deb ...
+Unpacking ieee-data (20180805.1) ...
+Selecting previously unselected package python3-netaddr.
+Preparing to unpack .../03-python3-netaddr_0.7.19-3ubuntu1_all.deb ...
+Unpacking python3-netaddr (0.7.19-3ubuntu1) ...
+Selecting previously unselected package ansible.
+Preparing to unpack .../04-ansible_2.9.6+dfsg-1_all.deb ...
+Unpacking ansible (2.9.6+dfsg-1) ...
+Selecting previously unselected package python3-argcomplete.
+Preparing to unpack .../05-python3-argcomplete_1.8.1-1.3ubuntu1_all.deb ...
+Unpacking python3-argcomplete (1.8.1-1.3ubuntu1) ...
+Selecting previously unselected package python3-jmespath.
+Preparing to unpack .../06-python3-jmespath_0.9.4-2ubuntu1_all.deb ...
+Unpacking python3-jmespath (0.9.4-2ubuntu1) ...
+Selecting previously unselected package python3-kerberos.
+Preparing to unpack .../07-python3-kerberos_1.1.14-3.1build1_amd64.deb ...
+Unpacking python3-kerberos (1.1.14-3.1build1) ...
+Selecting previously unselected package python3-lockfile.
+Preparing to unpack .../08-python3-lockfile_1%3a0.12.2-2ubuntu2_all.deb ...
+Unpacking python3-lockfile (1:0.12.2-2ubuntu2) ...
+Selecting previously unselected package python3-libcloud.
+Preparing to unpack .../09-python3-libcloud_2.8.0-1_all.deb ...
+Unpacking python3-libcloud (2.8.0-1) ...
+Selecting previously unselected package python3-ntlm-auth.
+Preparing to unpack .../10-python3-ntlm-auth_1.1.0-1_all.deb ...
+Unpacking python3-ntlm-auth (1.1.0-1) ...
+Selecting previously unselected package python3-requests-kerberos.
+Preparing to unpack .../11-python3-requests-kerberos_0.12.0-2_all.deb ...
+Unpacking python3-requests-kerberos (0.12.0-2) ...
+Selecting previously unselected package python3-requests-ntlm.
+Preparing to unpack .../12-python3-requests-ntlm_1.1.0-1_all.deb ...
+Unpacking python3-requests-ntlm (1.1.0-1) ...
+Selecting previously unselected package python3-selinux.
+Preparing to unpack .../13-python3-selinux_3.0-1build2_amd64.deb ...
+Unpacking python3-selinux (3.0-1build2) ...
+Selecting previously unselected package python3-xmltodict.
+Preparing to unpack .../14-python3-xmltodict_0.12.0-1_all.deb ...
+Unpacking python3-xmltodict (0.12.0-1) ...
+Selecting previously unselected package python3-winrm.
+Preparing to unpack .../15-python3-winrm_0.3.0-2_all.deb ...
+Unpacking python3-winrm (0.3.0-2) ...
+Setting up python3-lockfile (1:0.12.2-2ubuntu2) ...
+Setting up python3-ntlm-auth (1.1.0-1) ...
+Setting up python3-kerberos (1.1.14-3.1build1) ...
+Setting up python3-xmltodict (0.12.0-1) ...
+Setting up python3-jmespath (0.9.4-2ubuntu1) ...
+Setting up python3-requests-kerberos (0.12.0-2) ...
+Setting up ieee-data (20180805.1) ...
+Setting up python3-dnspython (1.16.0-1ubuntu1) ...
+Setting up python3-selinux (3.0-1build2) ...
+Setting up python3-crypto (2.6.1-13ubuntu2) ...
+Setting up python3-argcomplete (1.8.1-1.3ubuntu1) ...
+Setting up python3-requests-ntlm (1.1.0-1) ...
+Setting up python3-libcloud (2.8.0-1) ...
+Setting up python3-netaddr (0.7.19-3ubuntu1) ...
+Setting up python3-winrm (0.3.0-2) ...
+Setting up ansible (2.9.6+dfsg-1) ...
+Processing triggers for man-db (2.9.1-1) ...
+root@ip-172-31-36-47:~# su jenkins
+jenkins@ip-172-31-36-47:/root$ cd ..
+jenkins@ip-172-31-36-47:/$ su_jenkins
+su_jenkins: command not found
+jenkins@ip-172-31-36-47:/$ su jenkins
+Password:
+jenkins@ip-172-31-36-47:/$ ssh_keygen
+
+Command 'ssh_keygen' not found, did you mean:
+
+  command 'ssh-keygen' from deb openssh-client (1:8.2p1-4ubuntu0.9)
+
+Try: apt install <deb name>
+
+jenkins@ip-172-31-36-47:/$ sshkeygen
+
+Command 'sshkeygen' not found, did you mean:
+
+  command 'ssh-keygen' from deb openssh-client (1:8.2p1-4ubuntu0.9)
+
+Try: apt install <deb name>
+
+jenkins@ip-172-31-36-47:/$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/jenkins/.ssh/id_rsa):
+/home/jenkins/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/jenkins/.ssh/id_rsa
+Your public key has been saved in /home/jenkins/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:4Dl7g+p5Nq2THVYV0q/RgvZ3kFjEstxp1Zj11nKARvI jenkins@ip-172-31-36-47
+The key's randomart image is:
++---[RSA 3072]----+
+|          ooo=o+o|
+|           +* =.=|
+|      .    =EO.+=|
+|     . o  + * O+ |
+|      + So . = . |
+|       +o   o . .|
+|      o=o.   . . |
+|     o*.o.       |
+|   .+o.+         |
++----[SHA256]-----+
+jenkins@ip-172-31-36-47:/$
+jenkins@ip-172-31-36-47:/$ ssh-copy-id
+Usage: /usr/bin/ssh-copy-id [-h|-?|-f|-n] [-i [identity_file]] [-p port] [[-o <ssh -o options>] ...] [user@]hostname
+        -f: force mode -- copy keys without trying to check if they are already installed
+        -n: dry run    -- no keys are actually copied
+        -h|-?: print this help
+jenkins@ip-172-31-36-47:/$ service ssh restart
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+Authentication is required to restart 'ssh.service'.
+Authenticating as: Ubuntu (ubuntu)
+Password:
+polkit-agent-helper-1: pam_authenticate failed: Authentication failure
+==== AUTHENTICATION FAILED ===
+Failed to restart ssh.service: Access denied
+See system logs and 'systemctl status ssh.service' for details.
+jenkins@ip-172-31-36-47:/$ ssh-copy-id 3.19.232.221
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/jenkins/.ssh/id_rsa.pub"
+The authenticity of host '3.19.232.221 (3.19.232.221)' can't be established.
+ECDSA key fingerprint is SHA256:BFryBHT1C2klXM0J6NrA8WbOMAZNom0bdW/irLpGT2Y.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+jenkins@3.19.232.221's password:
+\
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh '3.19.232.221'"
+and check to make sure that only the key(s) you wanted were added.
+
+jenkins@ip-172-31-36-47:/$ git clone https://github.com/maha4dsvc/myAnsible_Ds_8AM_25may23.git
+fatal: could not create work tree dir 'myAnsible_Ds_8AM_25may23': Permission denied
+jenkins@ip-172-31-36-47:/$ su jenkins
+Password:
+jenkins@ip-172-31-36-47:/$ cd
+jenkins@ip-172-31-36-47:~$ ss-keygen
+
+Command 'ss-keygen' not found, did you mean:
+
+  command 'ssh-keygen' from deb openssh-client (1:8.2p1-4ubuntu0.9)
+
+Try: apt install <deb name>
+
+jenkins@ip-172-31-36-47:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/jenkins/.ssh/id_rsa):
+/home/jenkins/.ssh/id_rsa already exists.
+Overwrite (y/n)?
+jenkins@ip-172-31-36-47:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/jenkins/.ssh/id_rsa):
+/home/jenkins/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/jenkins/.ssh/id_rsa
+Your public key has been saved in /home/jenkins/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:kB/0lQ5fGmEcAhp8SCFEKuOtU6JZyDvSG6h50pXOjfE jenkins@ip-172-31-36-47
+The key's randomart image is:
++---[RSA 3072]----+
+|   o+o+oo...=+   |
+|   . .o=...++ .  |
+|o .   +.. .+ +   |
+|o+.    o .  +    |
+|.+.o .  S        |
+|.== +            |
+|=*o+ =           |
+|+.=o+ E          |
+|oo.              |
++----[SHA256]-----+
+jenkins@ip-172-31-36-47:~$ ssh-copy-id 3.19.232.221
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/jenkins/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+jenkins@3.19.232.221's password:
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh '3.19.232.221'"
+and check to make sure that only the key(s) you wanted were added.
+
+jenkins@ip-172-31-36-47:~$ git clone https://github.com/maha4dsvc/myAnsible_Ds_8AM_25may23.git
+Cloning into 'myAnsible_Ds_8AM_25may23'...
+remote: Enumerating objects: 224, done.
+remote: Counting objects: 100% (224/224), done.
+remote: Compressing objects: 100% (149/149), done.
+remote: Total 224 (delta 97), reused 166 (delta 39), pack-reused 0
+Receiving objects: 100% (224/224), 21.88 KiB | 4.38 MiB/s, done.
+Resolving deltas: 100% (97/97), done.
+jenkins@ip-172-31-36-47:~$ ls
+jenkins_node  myAnsible_Ds_8AM_25may23  remoting  remoting.jar  tools  workspace
+jenkins@ip-172-31-36-47:~$ cd myAnsible_Ds_8AM_25may23
+jenkins@ip-172-31-36-47:~/myAnsible_Ds_8AM_25may23$ ls
+README.md            myfile.yml          myplaybookvars.yml  mywebrole.yml
+group_vars           myfilehandling.yml  mystudents.yml      mywebserver.yml
+host_vars            myfruits.yml        mytags.yml          test
+installjava.yml      myhosts             mytomplaybook.yml
+myFirstplaybook.yml  myindefile          mytomrole
+mydebug.yml          myindex.j2          mywebrole
+jenkins@ip-172-31-36-47:~/myAnsible_Ds_8AM_25may23$ vi myhosts
+jenkins@ip-172-31-36-47:~/myAnsible_Ds_8AM_25may23$ ansible all -i myhosts ping
+usage: ansible [-h] [--version] [-v] [-b] [--become-method BECOME_METHOD]
+               [--become-user BECOME_USER] [-K] [-i INVENTORY] [--list-hosts]
+               [-l SUBSET] [-P POLL_INTERVAL] [-B SECONDS] [-o] [-t TREE] [-k]
+               [--private-key PRIVATE_KEY_FILE] [-u REMOTE_USER]
+               [-c CONNECTION] [-T TIMEOUT]
+               [--ssh-common-args SSH_COMMON_ARGS]
+               [--sftp-extra-args SFTP_EXTRA_ARGS]
+               [--scp-extra-args SCP_EXTRA_ARGS]
+               [--ssh-extra-args SSH_EXTRA_ARGS] [-C] [--syntax-check] [-D]
+               [-e EXTRA_VARS] [--vault-id VAULT_IDS]
+               [--ask-vault-pass | --vault-password-file VAULT_PASSWORD_FILES]
+               [-f FORKS] [-M MODULE_PATH] [--playbook-dir BASEDIR]
+               [-a MODULE_ARGS] [-m MODULE_NAME]
+               pattern
+ansible: error: unrecognized arguments: ping
+jenkins@ip-172-31-36-47:~/myAnsible_Ds_8AM_25may23$ ansible all -i myhosts -m ping
+3.19.232.221 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+172.31.23.189 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 172.31.23.189 port 22: Connection timed out",
+    "unreachable": true
+}
+172.31.16.32 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 172.31.16.32 port 22: Connection timed out",
+    "unreachable": true
+}
+172.31.23.9 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 172.31.23.9 port 22: Connection timed out",
+    "unreachable": true
+}
+172.31.16.3 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 172.31.16.3 port 22: Connection timed out",
+    "unreachable": true
+}
+jenkins@ip-172-31-36-47:~/myAnsible_Ds_8AM_25may23$

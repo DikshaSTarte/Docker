@@ -1,0 +1,29 @@
+ssh 
+sudo -i
+apt-get update
+
+//install docker from get.docker.com
+curl -fsSL https://get.docker.com -o install-docker.sh
+
+sh install-docker.sh 
+
+//create a container
+docker run --name myc1 -d -p 8081:80 nginx
+docker run --name myc2 -d -p 8082:8080 jenkins:2.60.3
+docker run --name myc3 -d -p 8083:8080 maha4iac/mahalogin:1
+
+//Access your websites with the help of public ip 
+ 18.216.71.31:8081  ==> nginx
+ 18.216.71.31:8082  ==> Jenkins
+ 18.216.71.31:8083  ==> Apache Tomcat
+ 18.216.71.31:8083/mahaLogin/login ==> Your Application from repository
+docker images
+docker run --name mycruddemo -d -p 8084:8080 dikshastarte/cruddemo
+docker images
+
+// to get running state containers
+docker ps -a 
+
+//To delete docker images
+docker rmi nginx:latest
+

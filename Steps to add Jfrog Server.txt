@@ -1,0 +1,77 @@
+$ ssh -i "3Oct2023-key.pem" ec2-user@ec2-18-117-180-98.us-east-2.compute.amazonaws.com
+
+[ec2-user@ip-172-31-27-147 ~]$ sudo -i
+[root@ip-172-31-27-147 ~]# sudo yum update
+
+
+
+Triggering migration script, this will migrate if needed
+Start Artifactory with:
+> systemctl start artifactory.service
+
+Check Artifactory status with:
+> systemctl status artifactory.service
+
+Installation directory was set to /opt/jfrog/artifactory
+You can find more information in the log directory /opt/jfrog/artifactory/var/log
+System configuration templates can be found under /opt/jfrog/artifactory/var/etc
+Copy any configuration you want to modify from the template to /opt/jfrog/artifactory/var/etc/system.yaml
+
+
+NOTE: Updating the ownership of files and directories. This may take several minutes. Do not stop the installation/upgrade process.
+
+
+  Running scriptlet: jfrog-artifactory-pro-7.68.13-76813900.x86_64                                                    2/2
+  Cleanup          : jfrog-artifactory-pro-7.68.13-76813900.x86_64                                                    2/2
+  Running scriptlet: jfrog-artifactory-pro-7.68.13-76813900.x86_64                                                    2/2
+  Running scriptlet: jfrog-artifactory-pro-7.68.14-76814900.x86_64                                                    2/2
+  Running scriptlet: jfrog-artifactory-pro-7.68.13-76813900.x86_64                                                    2/2
+  Verifying        : jfrog-artifactory-pro-7.68.14-76814900.x86_64                                                    1/2
+  Verifying        : jfrog-artifactory-pro-7.68.13-76813900.x86_64                                                    2/2
+Installed products updated.
+
+Upgraded:
+  jfrog-artifactory-pro-7.68.14-76814900.x86_64
+
+Complete!
+[root@ip-172-31-27-147 ~]#
+[root@ip-172-31-27-147 ~]# sudo yum install jfrog-artifactory-pro
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Red Hat Enterprise Linux 9 for x86_64 - AppStream from RHUI (RPMs)                         63 kB/s | 4.5 kB     00:00
+Package jfrog-artifactory-pro-7.68.14-76814900.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ip-172-31-27-147 ~]# systemctl start artifactory.service
+
+[root@ip-172-31-27-147 ~]#
+[root@ip-172-31-27-147 ~]# systemctl start artifactory.service
+[root@ip-172-31-27-147 ~]# systemctl status artifactory.service
+● artifactory.service - Artifactory service
+     Loaded: loaded (/usr/lib/systemd/system/artifactory.service; enabled; preset: disabled)
+     Active: active (running) since Wed 2023-10-11 07:01:28 UTC; 29s ago
+    Process: 7532 ExecStart=/opt/jfrog/artifactory/app/bin/artifactoryManage.sh start (code=exited, status=0/SUCCESS)
+   Main PID: 10776 (java)
+      Tasks: 0 (limit: 24475)
+     Memory: 1.6M
+        CPU: 4.608s
+     CGroup: /system.slice/artifactory.service
+             ‣ 10776 /opt/jfrog/artifactory/app/third-party/java/bin/java -Djava.util.logging.config.file=/opt/jfrog/arti>
+
+Oct 11 07:01:25 ip-172-31-27-147.us-east-2.compute.internal su[11525]: pam_unix(su:session): session closed for user arti>
+Oct 11 07:01:25 ip-172-31-27-147.us-east-2.compute.internal su[11638]: (to artifactory) root on none
+Oct 11 07:01:25 ip-172-31-27-147.us-east-2.compute.internal su[11638]: pam_unix(su:session): session opened for user arti>
+Oct 11 07:01:26 ip-172-31-27-147.us-east-2.compute.internal su[11757]: (to artifactory) root on none
+Oct 11 07:01:26 ip-172-31-27-147.us-east-2.compute.internal su[11757]: pam_unix(su:session): session opened for user arti>
+Oct 11 07:01:27 ip-172-31-27-147.us-east-2.compute.internal su[11757]: pam_unix(su:session): session closed for user arti>
+Oct 11 07:01:27 ip-172-31-27-147.us-east-2.compute.internal su[11873]: (to artifactory) root on none
+Oct 11 07:01:27 ip-172-31-27-147.us-east-2.compute.internal su[11873]: pam_unix(su:session): session opened for user arti>
+Oct 11 07:01:27 ip-172-31-27-147.us-east-2.compute.internal su[11873]: pam_unix(su:session): session closed for user arti>
+Oct 11 07:01:28 ip-172-31-27-147.us-east-2.compute.internal systemd[1]: Started Artifactory service.
+lines 1-21/21 (END)client_loop: send disconnect: Connection reset by peer
+
+MFS088@MFS088 MINGW64 ~/Downloads (main)
