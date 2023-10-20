@@ -1,0 +1,3 @@
+create 2 instances UAT and PROD
+open git bash at pem file location
+copy and paste instance connect copy and paste ssh

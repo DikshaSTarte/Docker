@@ -1,0 +1,13 @@
+knife bootstrap 13.58.170.72 --ssh-user ubuntu --sudo --identity-file "C:\Users\MFS088\Downloads\All.pem" -N InstanceNode0607
+
+  
+knife bootstrap 43.204.19.205 --ssh-user ubutu --sudo --identity-file "C:\Users\MFS088\Downloads\Ubuntu20.pem" -N Node22
+
+knife bootstrap 54.167.196.229 --ssh-user ubutu --sudo --identity-file "C:\Users\MFS088\Downloads\WebServer30.6.2023.pem"-N WebServer30.6.23
+
+chef-repo/environments> knife environment from file myuat.rb
+
+chef-repo/environments> knife environment from file myprod.rb
+
+knife bootstrap 3.140.1.147 --ssh-user ubuntu --sudo --identity-file "C:\Users\MFS088\Downloads\All.pem" -N MyChefNode00000000001
+knife bootstrap 3.138.190.41 --ssh-user ubuntu --sudo --identity-file "C:\Users\MFS088\Downloads\mykeypair.pem" -N MyNode

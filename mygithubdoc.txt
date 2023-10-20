@@ -1,0 +1,13 @@
+echo "# MyDevOpsClassMaterial" >> README.md
+git init
+git add README.md
+
+
+Set your username: git config --global user.name "Diksha"
+
+Set your email address: git config --global user.email "dikshatarte@gmail.com"
+
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/DikshaSTarte/MyDevOpsClassMaterial.git
+git push -u origin main
