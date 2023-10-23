@@ -1,0 +1,166 @@
+MFS088@MFS088 MINGW64 ~/Downloads (main)
+$ ssh -i "MyDockerKey13Oct2023.pem" ubuntu@ec2-52-14-39-168.us-east-2.compute.amazonaws.com
+The authenticity of host 'ec2-52-14-39-168.us-east-2.compute.amazonaws.com (52.14.39.168)' can't be established.
+ED25519 key fingerprint is SHA256:xqA7EdvL2AWK3bfPYDkDTAdnNajW++Ruw+O5Y+KBTbw.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:364: ec2-18-216-71-31.us-east-2.compute.amazonaws.com
+    ~/.ssh/known_hosts:366: ec2-18-223-115-38.us-east-2.compute.amazonaws.com
+    ~/.ssh/known_hosts:367: ec2-18-222-194-89.us-east-2.compute.amazonaws.com
+    ~/.ssh/known_hosts:368: ec2-18-222-232-88.us-east-2.compute.amazonaws.com
+    ~/.ssh/known_hosts:369: ec2-18-221-100-43.us-east-2.compute.amazonaws.com
+    ~/.ssh/known_hosts:378: ec2-18-116-165-153.us-east-2.compute.amazonaws.com
+    ~/.ssh/known_hosts:379: ec2-18-221-177-198.us-east-2.compute.amazonaws.com
+    ~/.ssh/known_hosts:380: ec2-3-131-91-105.us-east-2.compute.amazonaws.com
+    (1 additional names omitted)
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-52-14-39-168.us-east-2.compute.amazonaws.com' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1048-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Oct 20 10:25:53 UTC 2023
+
+  System load:                      0.0
+  Usage of /:                       60.4% of 7.57GB
+  Memory usage:                     29%
+  Swap usage:                       0%
+  Processes:                        105
+  Users logged in:                  0
+  IPv4 address for br-0c7194beb5c8: 192.168.1.1
+  IPv4 address for docker0:         172.17.0.1
+  IPv4 address for eth0:            172.31.42.149
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+49 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+New release '22.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Fri Oct 20 07:46:58 2023 from 49.248.69.154
+ubuntu@ip-172-31-42-149:~$ sudo -i
+root@ip-172-31-42-149:~# apt-get update
+Hit:1 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Get:2 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:3 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Hit:4 https://download.docker.com/linux/ubuntu focal InRelease
+Get:5 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:6 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [2917 kB]
+Get:7 http://us-east-2.ec2.archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [2419 kB]
+Fetched 5672 kB in 2s (3134 kB/s)
+Reading package lists... Done
+root@ip-172-31-42-149:~# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@ip-172-31-42-149:~# docker images
+REPOSITORY           TAG       IMAGE ID       CREATED       SIZE
+maha4iac/myjavaapp   1         b658109e1be1   8 weeks ago   480MB
+root@ip-172-31-42-149:~# docker rmi maha4iac/myjavaapp:1 -f
+Untagged: maha4iac/myjavaapp:1
+Untagged: maha4iac/myjavaapp@sha256:e4907f910a4e78398d13043d43b555c7dbbe98eae9e2975f5bb0df0e4a9ba0d5
+Deleted: sha256:b658109e1be1009e56209deafd6f54c2d4189b3fbb3d07460a94d7409d4ff9b3
+root@ip-172-31-42-149:~# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+root@ip-172-31-42-149:~# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@ip-172-31-42-149:~# docker run -d -p 9000:9000 --restart always -v /var/run/docker.sock:/var/run/docker.sock -v /opt/portainer:/data portainer/portainer
+Unable to find image 'portainer/portainer:latest' locally
+latest: Pulling from portainer/portainer
+772227786281: Pull complete
+96fd13befc87: Pull complete
+0bad1d247b5b: Pull complete
+b5d1b01b1d39: Pull complete
+Digest: sha256:47b064434edf437badf7337e516e07f64477485c8ecc663ddabbe824b20c672d
+Status: Downloaded newer image for portainer/portainer:latest
+6703b2e1ab6cfe4a7322e5bdae3f8b1b54c42df7b48530a78ddebb24a5618339
+root@ip-172-31-42-149:~# docker run -d -p 9000:9000 --restart always -v /var/run/docker.sock:/var/run/docker.sock -v /opt/portainer:/data portainer/portainer
+3faaa86662b0cd024dad56f4665f17a73b624e4e55ffae5418440bbebe5ac156
+docker: Error response from daemon: driver failed programming external connectivity on endpoint nice_wozniak (88b546d4e27d281bb8126ab4cc44e0d4d8d2a2b2061275990c3bb885137dcfa9): Bind for 0.0.0.0:9000 failed: port is already allocated.
+root@ip-172-31-42-149:~# sudo docker start portainer
+Error response from daemon: No such container: portainer
+Error: failed to start containers: portainer
+root@ip-172-31-42-149:~#
+root@ip-172-31-42-149:~#
+root@ip-172-31-42-149:~# sudo docker start portainer
+Error response from daemon: No such container: portainer
+Error: failed to start containers: portainer
+root@ip-172-31-42-149:~# sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+c670166a90604421502a103739a4432394f1254567b2c8af7b4ded73872bb696
+docker: Error response from daemon: driver failed programming external connectivity on endpoint portainer (52e15958120e12553e41974557f005009c8278a11c5ced3427431a5eb1430c5c): Bind for 0.0.0.0:9000 failed: port is already allocated.
+root@ip-172-31-42-149:~# sudo docker restart portainer
+Error response from daemon: Cannot restart container portainer: driver failed programming external connectivity on endpoint portainer (c1da15dfd53b09f52b13c1c72806e6bea69eedabc292db61857f926f4131ed75): Bind for 0.0.0.0:9000 failed: port is already allocated
+root@ip-172-31-42-149:~# docker start portainer
+Error response from daemon: driver failed programming external connectivity on endpoint portainer (faf3473d7be4b70f851f39918060592e428e73c5b7edca1387d3896bdf260181): Bind for 0.0.0.0:9000 failed: port is already allocated
+Error: failed to start containers: portainer
+root@ip-172-31-42-149:~# sudo restart portainer
+sudo: restart: command not found
+root@ip-172-31-42-149:~# sudo apt-get restart portainer
+E: Invalid operation restart
+root@ip-172-31-42-149:~# docker start portainer
+Error response from daemon: driver failed programming external connectivity on endpoint portainer (03f3204d8338752b76ea8aabb30f478f6a96eaa02c054b922dbbce71a0d6426d): Bind for 0.0.0.0:9000 failed: port is already allocated
+Error: failed to start containers: portainer
+root@ip-172-31-42-149:~# docker start 03f3204d8338752b76ea8aabb30f478f6a96eaa02c054b922dbbce71a0d6426d
+Error response from daemon: No such container: 03f3204d8338752b76ea8aabb30f478f6a96eaa02c054b922dbbce71a0d6426d
+Error: failed to start containers: 03f3204d8338752b76ea8aabb30f478f6a96eaa02c054b922dbbce71a0d6426d
+root@ip-172-31-42-149:~# ls
+Dockerfile  Dockerfile2  install-docker.sh  mydocker  snap
+root@ip-172-31-42-149:~# sudo apt-get install ubuntu
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package ubuntu
+root@ip-172-31-42-149:~# sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+docker: Error response from daemon: Conflict. The container name "/portainer" is already in use by container "c670166a90604421502a103739a4432394f1254567b2c8af7b4ded73872bb696". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+root@ip-172-31-42-149:~#
+root@ip-172-31-42-149:~# docker images
+REPOSITORY            TAG       IMAGE ID       CREATED         SIZE
+portainer/portainer   latest    5f11582196a4   11 months ago   287MB
+root@ip-172-31-42-149:~# docker ps
+CONTAINER ID   IMAGE                 COMMAND        CREATED          STATUS          PORTS                                                           NAMES
+6703b2e1ab6c   portainer/portainer   "/portainer"   28 minutes ago   Up 28 minutes   8000/tcp, 9443/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp   great_snyder
+root@ip-172-31-42-149:~# docker rm 6703b2e1ab6c
+Error response from daemon: You cannot remove a running container 6703b2e1ab6cfe4a7322e5bdae3f8b1b54c42df7b48530a78ddebb24a5618339. Stop the container before attempting removal or force remove
+root@ip-172-31-42-149:~# docker rm 6703b2e1ab6c -f
+6703b2e1ab6c
+root@ip-172-31-42-149:~# docker rmi portainer -f
+Error response from daemon: No such image: portainer:latest
+root@ip-172-31-42-149:~# docker images
+REPOSITORY            TAG       IMAGE ID       CREATED         SIZE
+portainer/portainer   latest    5f11582196a4   11 months ago   287MB
+root@ip-172-31-42-149:~# docker rmi portainer/portainer -f
+Untagged: portainer/portainer:latest
+Untagged: portainer/portainer@sha256:47b064434edf437badf7337e516e07f64477485c8ecc663ddabbe824b20c672d
+Deleted: sha256:5f11582196a42b895cdb9322f7a650f42a0c1ed062efc71864352f314228a187
+root@ip-172-31-42-149:~# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+root@ip-172-31-42-149:~# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@ip-172-31-42-149:~# sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+Unable to find image 'portainer/portainer:latest' locally
+latest: Pulling from portainer/portainer
+772227786281: Already exists
+96fd13befc87: Already exists
+0bad1d247b5b: Already exists
+b5d1b01b1d39: Already exists
+Digest: sha256:47b064434edf437badf7337e516e07f64477485c8ecc663ddabbe824b20c672d
+Status: Downloaded newer image for portainer/portainer:latest
+docker: Error response from daemon: Conflict. The container name "/portainer" is already in use by container "c670166a90604421502a103739a4432394f1254567b2c8af7b4ded73872bb696". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+root@ip-172-31-42-149:~# sudo docker run -d -p 9000:9000 --name portainer1 --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+5142f054f6436489479a1b08f556e702bfc69cbcd2cca75df094b7dbcaf81d00
+root@ip-172-31-42-149:~# docker start portainer1
+portainer1
+root@ip-172-31-42-149:~# Connection to ec2-52-14-39-168.us-east-2.compute.amazonaws.com closed by remote host.
+Connection to ec2-52-14-39-168.us-east-2.compute.amazonaws.com closed.
